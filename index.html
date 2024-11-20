@@ -3,21 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Hangman Game</title>
   </head>
   <body>
-    <section>
-      <header>
-        <h1>Välkommen till Hangman!</h1>
-      </header>
-      <section>
-        <label for="player-name">Ange ditt namn:</label>
-        <input type="text" placeholder="Skriv ditt namn" />
-        <button>Play</button>
-      </section>
-    </section>
-
-    <section>
+    <!-- <section>  <--- kunna växla till denna del
       <header>
         <nav>
           <ul>
@@ -25,9 +16,9 @@
             <li>Score screen</li>
           </ul>
         </nav>
-      </header>
+      </header> -->
       <section>
-        <h2>Hangman</h2>
+        <h2>Hänga gubben</h2>
         <p>Gissa bokstäver för att lösa ordet!</p>
         <div>
           <!--ordet-->
@@ -35,31 +26,5 @@
         <p>Gissade bokstäver:</p>
         <p>Antal gissningar kvar:</p>
       </section>
-    </section>
-
-    <section>
-      <header>
-        <h3>Game Over</h3>
-      </header>
-      <section>
-        <p></p>
-        <p>Det hemliga ordet var:</p>
-        <p>Antalet gissningar:</p>
-        <button>Play Again</button>
-        <button>View Score</button>
-      </section>
-    </section>
-
-    <section>
-      <header>
-        <h4>Score Screen</h4>
-      </header>
-      <section>
-        <ul>
-          <!-- föregående resultat visas -->
-        </ul>
-        <button>Back to Game</button>
-      </section>
-    </section>
   </body>
 </html>
