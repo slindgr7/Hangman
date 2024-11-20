@@ -4,28 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hangman Game</title>
+    <link rel="stylesheet" href="home-screen.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <section>
-      <header>
-        <h1>Välkommen till Hangman!</h1>
+    <section class="home-screen-section1">
+      <header class="header-home-screen">
+        <h1 class="h1-homes-screen">Välkommen till Hangman!</h1>
       </header>
-      <section>
-        <label for="player-name">Ange ditt namn:</label>
-        <input type="text" placeholder="Skriv ditt namn" />
-        <button>Play</button>
+      <section class="home-screen-section2">
+        <label class="home-screen-label" for="player-name">Ange ditt namn:</label>
+        <input class="input-screen" type="text" placeholder="Skriv ditt namn" />
+        <button class="home-screen-play-button">Play</button>
+        <button class="home-screen-score-button">Score</button>
       </section>
     </section>
-
     <section>
-      <header>
-        <nav>
-          <ul>
-            <li>Game view</li>
-            <li>Score screen</li>
-          </ul>
-        </nav>
-      </header>
+
       <section>
         <h2>Hangman</h2>
         <p>Gissa bokstäver för att lösa ordet!</p>
@@ -36,7 +31,6 @@
         <p>Antal gissningar kvar:</p>
       </section>
     </section>
-
     <section>
       <header>
         <h3>Game Over</h3>
@@ -49,7 +43,6 @@
         <button>View Score</button>
       </section>
     </section>
-
     <section>
       <header>
         <h4>Score Screen</h4>
