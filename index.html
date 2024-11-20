@@ -9,7 +9,18 @@
     <title>Hangman Game</title>
   </head>
   <body>
-    <!-- <section>  <--- kunna växla till denna del
+    <section>
+      <header>
+        <h1>Välkommen till Hangman!</h1>
+      </header>
+      <section>
+        <label for="player-name">Ange ditt namn:</label>
+        <input type="text" placeholder="Skriv ditt namn" />
+        <button>Play</button>
+      </section>
+    </section>
+
+    <section>
       <header>
         <nav>
           <ul>
@@ -17,26 +28,78 @@
             <li>Score screen</li>
           </ul>
         </nav>
-      </header> -->
-      <section class="game-container">
+      </header>
+  <main>
+    <section class="game-container">
+      <section class="info-img-section">
         <h2>Hänga gubben</h2>
         <p class="game-info">Gissa bokstäver för att lösa ordet!</p>
+
       <div class="hangman-container">
         <img id="hangman-img" src="images/hangman.jpg" alt="hangman">
       </div>
+      </section>
+
+      <!-- visa poäng/info -->
+      <div id="show-name">Heja namn</div>
+      <div class="score-counter"></div>
+      <section class="counter-hint">
+        <button class="hint-btn">Hint</button>
+        <p class="hint-text-show">"Lorem ipsum dolor sit amet...</p>
+      </section>
       
       <!-- input för gissningar -->
-      < class >
-      <div class="word-display">Ordet är:_ _ _ _ _ _ _ _ </div>
-        <input type="text" id="letter-input" maxlength="1" placeholder="Skriv in en bokstav..">
+      <div class="word-display">Ordet är: _ _ _ _ _ _ _ _ </div>
+        <input type="text" id="letter-input" maxlength="1" placeholder="Skriv en bokstav..">
         <button class="guess-btn">Gissa</button>
-  
-        <div>
-         
-        </div>
+      
         <p class="guessed-letters">Gissade bokstäver:<span class="show-guessed-letters"> 3</span></p>
         <p class="remaining-guesses">Antal gissningar kvar: <span class="show-remaining"> 2</span></p>
         <button class="spela-om-btn">Spela om</button>
-      </section>
+    </section>
+  </main>
+  
+  <section>
+    <header>
+      <h3>Game Over</h3>
+    </header>
+    <section>
+      <p></p>
+      <p>Det hemliga ordet var:</p>
+      <p>Antalet gissningar:</p>
+      <button>Play Again</button>
+      <button>View Score</button>
+    </section>
+  </section>
+
+<section>
+  <header>
+    <h3>Congratulations, you have made it! </h3>
+  </header>
+  <section>
+    <p></p>
+    <p>Du lyckades hitta det hemliga ordet</p>
+    <p>Antalet gissningar:</p>
+    <button>Play Again</button>
+    <button>View Score</button>
+  </section>
+  </section>
+
+  <section>
+    <header>
+      <h4>Score Screen</h4>
+    </header>
+    <section>
+  <p>Spelarens namn:</p>
+  <p>Antal felaktika gissningar:</p>
+  <p>Ordets längd:</p>
+  <p>Datum och tid för omgången:</p>
+  <p>Om man vunnit eller förlorat den omgången:</p>
+      <ul>
+        <!-- föregående resultat visas -->
+      </ul>
+      <button>Back to Game</button>
+    </section>
+  </section>
   </body>
 </html>

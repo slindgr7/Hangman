@@ -1,27 +1,25 @@
 body {
     font-family: 'Luckiest Guy', cursive;
-    background-color: #f0f8ff; 
+    background-color: #e0fafa; 
     color: black;
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     text-align: center;
-    
 }
 
 .game-container {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     background-color: white;
     border-radius: 10px;
-    width: 100%;
-    max-width: 500px;
-    padding: 2em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    padding: 1em;
+    margin: 1em;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 
 }
 h2 {
@@ -62,17 +60,17 @@ div {
 }
 .spela-om-btn{
     font-family: 'Luckiest Guy', cursive;
-    background-color: #a1d3f7;
+    background-color: #d4f0f0;
     font-size: 16px;
     border-radius: 5px;
-    padding: 0.5em 0.10em;
+    padding: 0.5em 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 1em;
 
 }
-.spela-om:hover {
-    background-color: #c7e2f5;
+button:hover {
+    background-color: #d7e3ec;
 }
 .hangman-img{
     height: auto;
@@ -82,8 +80,8 @@ div {
     font-family: 'Luckiest Guy', cursive;
     font-size: 18px;
     color: black;
-    border: 2px solid #656161;
     height: 30px;
+    width: 150px;
   
 }
 
@@ -93,23 +91,72 @@ div {
 
 .guess-btn {
     font-family: 'Luckiest Guy', cursive;
-    background-color: #a1d3f7;
-    font-size: 14px;
+    background-color: #d4f0f0;
+    font-size: 18px;
     border-radius: 5px;
-    padding: 0.4em 0.6em;
+    padding: 0.3em 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: 1em;
+
+
 }
 .hangman-container {
     margin: 1em;
 }
 .word-display {
-    font-size: 22px;
+    font-size: 24px;
+    font-weight: bold;
     color: #656161;
+    margin: 2em;
+    padding-right: 1em;
 
 }
 /* styling gissade/ antal bokstäver kvar att gissa */
 .show-remaining, .show-guessed-letters {
     color: red;
 }
+.hint-btn {
+    font-family: 'Luckiest Guy', cursive;
+    background-color: #d7dbde;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 0.3em 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 1em;
+    
+    
+}
+/* .hint-text-show {
+    display: none; */
+
+    /* document.querySelector(".hint-btn").addEventListener("click", () => {
+        infoTextEl.classList.remove("hide"); */
+
+
+.counter-hint {
+   flex-direction: column;
+   align-items: end;
+   
+
+}
+.counter-hint, .hint-btn {
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+#letter-input:focus {
+    border-color: #3498db;
+    animation: focusAnimation 0.3s ease-out;
+    outline: none;
+  }
+  
+  @keyframes focusAnimation {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.05);
+    }
+  }
