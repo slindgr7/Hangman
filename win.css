@@ -1,0 +1,28 @@
+.win {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+.titel-win{
+	font-size: 4em;
+	color: rgb(255, 1, 1);
+}
+.win-p {
+	font-size: 2em;
+}
+.win-button {
+	font-size: 1.8em;
+	padding: 0.30em;
+	margin: 0.25em;
+	border-radius: 8px;
+	border: 3px solid rgb(15, 171, 243);
+	background-color: rgb(9, 191, 236);
+	color: white;
+}
+.win-button:hover {
+	cursor: pointer;
+	border: 3px solid rgb(91, 193, 240);
+	background-color: rgb(90, 211, 241);
+	color: white;
+}
