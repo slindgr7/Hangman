@@ -19,3 +19,18 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
 }
+h2 {
+    font-size: 38px;
+    margin-bottom: 2em;
+    color: #656161;
+}
+p {
+    font-size: 22px;
+    margin-bottom: 2em;
+    color: #656161;
+}
+div {
+    font-size: 22px;
+    margin-bottom: 2em;
+    color: #656161;
+}
