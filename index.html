@@ -19,9 +19,14 @@
       </header> -->
       <section>
         <h2>Hänga gubben</h2>
+        <p class="game-info">Gissa bokstäver för att lösa ordet!</p>
+      <div class="hangman-container">
         <img id="hangman-img" src="images/hangman.jpg" alt="hangman">
-        <p class="guess-letter">Gissa bokstäver för att lösa ordet!</p>
-        <input type="text" id="letter-input" placeholder="skriv in en bokstav">
+      </div>
+
+      <div class="word-display">_ _ _ _ _ _ _ _ </div>
+        <input type="text" id="letter-input" maxlength="1" placeholder="Skriv in en bokstav..">
+        <button class="guess-btn">Gissa</button>
         <div>
           <!--ordet-->
         </div>

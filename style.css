@@ -21,14 +21,15 @@ section {
 }
 h2 {
     font-size: 38px;
-    margin-bottom: 2em;
+    margin-bottom: 0.5em;
     color: #656161;
 }
 
 /* instruktion-text */
-p {
+.game-info {
     font-size: 22px;
-    margin-bottom: 2em;
+    font-weight: bold;
+    margin-bottom: 1em;
     color: #656161;
 }
 /* styling ordet som ska gissas */
@@ -39,18 +40,30 @@ div {
     color: #656161;
     
 }
+
+.guessed-letters {
+    font-size: 22px;
+    color: #656161;
+    margin-bottom: 1em;
+}
 /* styling gissade bostäver*/
 
-guessed-letters:nth-of-type(2) { 
+.guessed-letters:nth-of-type { 
     font-size: 22px;
-    font-weight: bold;
     color: green;
     margin-bottom: 2em;
 
 }
+
+.remaining-guesses {
+    font-size: 22px;
+    color: #656161;
+    margin-bottom: 1em;
+    
+}
 /*antal gissningar kvar*/
 
-guessed-letters:nth-of-type {
+.guessed-letters:nth-of-type {
     font-size: 22px;
     font-weight: bold;
     color: red;
@@ -63,8 +76,35 @@ guessed-letters:nth-of-type {
     padding: 0.3em 0.6em;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 1em;
 
 }
 .spela-om:hover {
     background-color: #c7e2f5;
+}
+.hangman-img{
+    height: auto;
+
+}
+#letter-input{
+    font-size: 18px;
+    color: black;
+    border: 2px solid #656161;
+    height: 30px;
+
+}
+.guess-btn {
+    background-color: #a1d3f7;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 0.3em 0.4em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 1em;
+}
+.hangman-container {
+    margin: 1em;
+}
+.word-display {
+
 }
