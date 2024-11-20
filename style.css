@@ -41,7 +41,7 @@ div {
 }
 /* styling gissade bostäver*/
 
-p :nth-of-type(2) { 
+guessed-letters:nth-of-type(2) { 
     font-size: 22px;
     font-weight: bold;
     color: green;
@@ -50,7 +50,7 @@ p :nth-of-type(2) {
 }
 /*antal gissningar kvar*/
 
-p:nth-of-type(3) {
+guessed-letters:nth-of-type {
     font-size: 22px;
     font-weight: bold;
     color: red;
@@ -64,4 +64,7 @@ p:nth-of-type(3) {
     cursor: pointer;
     transition: background-color 0.3s ease;
 
+}
+.spela-om:hover {
+    background-color: #c7e2f5;
 }
