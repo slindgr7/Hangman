@@ -1,6 +1,6 @@
 body {
     font-family: 'Luckiest Guy', cursive;
-    background: linear-gradient(135deg, #e0fafa, #d1f0f0);
+    background: linear-gradient(135deg, #e5fcfc, #d1f0f0);
     color: black;
     margin: 0;
     padding: 0;
@@ -67,8 +67,15 @@ div {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 1em;
-
 }
+
+.spela-om-btn:focus {
+    transform: scale(1.05);
+    background-color: #a3c2e0; /* Lite ljusare blå vid fokus */
+    border-color: #3498db;
+    outline: none;
+}
+
 button:hover {
     background-color: #d7e3ec;
     transform: scale(1.05);
@@ -100,9 +107,14 @@ button:hover {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: 1em;
-
-
 }
+.guess-btn:focus {
+    transform: scale(1.05);
+    background-color: #a3c2e0; /* Lite ljusare blå vid fokus */
+    border-color: #3498db;
+    outline: none;
+}
+
 .hangman-container {
     margin: 1em;
 }
@@ -126,10 +138,15 @@ button:hover {
     padding: 0.3em 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin: 1em;
-    
+    margin: 1em;  
     
 }
+.hint-btn:focus {
+    transform: scale(1.05);
+    background-color: #a3c2e0; /* Lite ljusare blå vid fokus */
+    border-color: #3498db;
+    outline: none;
+  }
 /* .hint-text-show {
     display: none; */
 
