@@ -24,13 +24,44 @@ h2 {
     margin-bottom: 2em;
     color: #656161;
 }
+
+/* instruktion-text */
 p {
     font-size: 22px;
     margin-bottom: 2em;
     color: #656161;
 }
-div {
+/* styling ordet som ska gissas */
+div { 
     font-size: 22px;
+    font-weight: bold;
     margin-bottom: 2em;
     color: #656161;
+    
+}
+/* styling gissade bostäver*/
+
+p :nth-of-type(2) { 
+    font-size: 22px;
+    font-weight: bold;
+    color: green;
+    margin-bottom: 2em;
+
+}
+/*antal gissningar kvar*/
+
+p:nth-of-type(3) {
+    font-size: 22px;
+    font-weight: bold;
+    color: red;
+    margin-bottom: 2em;
+}
+.spela-om{
+    background-color: #a1d3f7;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 0.3em 0.6em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
 }
