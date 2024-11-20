@@ -1,6 +1,6 @@
 body {
     font-family: 'Luckiest Guy', cursive;
-    background-color: #e0fafa; 
+    background: linear-gradient(135deg, #e0fafa, #d1f0f0);
     color: black;
     margin: 0;
     padding: 0;
@@ -71,6 +71,8 @@ div {
 }
 button:hover {
     background-color: #d7e3ec;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .hangman-img{
     height: auto;
@@ -148,6 +150,7 @@ button:hover {
 }
 #letter-input:focus {
     border-color: #3498db;
+    background-color: #e0f8ff;
     animation: focusAnimation 0.3s ease-out;
     outline: none;
   }
@@ -158,5 +161,41 @@ button:hover {
     }
     100% {
       transform: scale(1.05);
+    }
+  }
+  @media (max-width: 768px) {
+    .game-container {
+      width: 90%;
+      padding: 1em;
+    }
+  
+    h2 {
+      font-size: 30px;
+    }
+  
+    .word-display {
+      font-size: 18px;
+    }
+  
+    #letter-input {
+      width: 120px;
+    }
+  }
+  @media (max-width: 360px) {
+    .game-container {
+      width: 85%;
+      padding: 0.5em;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+  
+    .word-display {
+      font-size: 16px;
+    }
+  
+    #letter-input {
+      width: 90px;
     }
   }
