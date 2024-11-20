@@ -60,20 +60,13 @@ div {
     color: #656161;
     margin-bottom: 1em;
     
-}
-/*antal gissningar kvar*/
 
-.guessed-letters:nth-of-type {
-    font-size: 22px;
-    font-weight: bold;
-    color: red;
-    margin-bottom: 2em;
 }
-.spela-om{
+.spela-om-btn{
     background-color: #a1d3f7;
     font-size: 16px;
     border-radius: 5px;
-    padding: 0.3em 0.6em;
+    padding: 0.5em 0.10em;
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 1em;
@@ -97,7 +90,7 @@ div {
     background-color: #a1d3f7;
     font-size: 14px;
     border-radius: 5px;
-    padding: 0.3em 0.4em;
+    padding: 0.4em 0.6em;
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: 1em;
@@ -106,5 +99,10 @@ div {
     margin: 1em;
 }
 .word-display {
+    font-size: 22px;
+    color: #656161;
 
+}
+.show-remaining, .show-guessed-letters{
+    color: red;
 }

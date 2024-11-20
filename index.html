@@ -24,15 +24,17 @@
         <img id="hangman-img" src="images/hangman.jpg" alt="hangman">
       </div>
 
-      <div class="word-display">_ _ _ _ _ _ _ _ </div>
+      <!-- input för gissningar -->
+      <div class="word-display">Ordet är:_ _ _ _ _ _ _ _ </div>
         <input type="text" id="letter-input" maxlength="1" placeholder="Skriv in en bokstav..">
         <button class="guess-btn">Gissa</button>
+
         <div>
-          <!--ordet-->
+         
         </div>
-        <p class="guessed-letters">Gissade bokstäver:</p>
-        <p class="remaining-guesses"> Antal gissningar kvar:</p>
-        <button class="spela-om">Spela om</button>
+        <p class="guessed-letters">Gissade bokstäver:<span class="show-guessed-letters"> 3</span></p>
+        <p class="remaining-guesses">Antal gissningar kvar: <span class="show-remaining"> 2</span></p>
+        <button class="spela-om-btn">Spela om</button>
       </section>
   </body>
 </html>
