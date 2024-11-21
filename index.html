@@ -33,36 +33,33 @@
     <section class="game-container">
       <h2>Hänga gubben</h2>
         <p class="game-info">Gissa bokstäver för att lösa ordet!</p>
-      <section class="info-img-section">
 
       <div class="hangman-container">
         <img id="figur" src="images/figur.svg" alt="hangman-figur">
-        <div class="score-counter" data-score="10">Poänglistan:</div>
       </div>
-      </section>
-
-      <!-- visa poäng/info -->
-      <div id="show-name">Heja namn</div>
-      <div class="score-counter"></div>
-      <section class="counter-hint">
-        <button class="hint-btn">Hint</button>
-        <p class="hint-text-show">"Lorem ipsum dolor sit amet...</p>
-      </section>
       
       <!-- input för gissningar -->
       <p class="ordet">Ordet är: <span class="word-display">_ _ _ _ _ _ _ _</span></p>
       <div class="input-group">
-        <input type="text" id="letter-input" maxlength="1" placeholder="Skriv en bokstav..">
+        <input type="text" id="letter-input" maxlength="1" placeholder="Knappa in bokstav..">
         <button type="submit" class="guess-btn">Gissa</button>
       </div>
 
-          <!-- antal/förbrukade gissningar -->
-      <section class="input-letter-section">
-        <p class="guessed-letters">Gissade bokstäver:<span class="show-guessed-letters"> 3</span></p>
-        <p class="remaining-guesses">Antal gissningar kvar: <span class="show-remaining"> 2</span></p>
+      <!-- visa poäng/info -->
+      <section class="guess-hint-section">
+        <div class="guesses">
+          <p>Namn: <span class="player-name">Sara</span></p>
+          <p>Gissade bokstäver: <span class="show-guessed-letters">a, j ,lllllll</span></p>
+          <p>Antal gissningar kvar: <span class="show-remaining">2</span></p>
+        </div>
+        <div class="hint">
+        <button class="hint-btn">Hint</button>
+        <p class="hint-text">"Lorem ipsum dolor sit amet...</p></div>
       </section>
-      
-        <button type="reset" class="spela-om-btn">Spela om</button>
+
+          <!-- antal/förbrukade gissningar -->
+      <div class="input-letter-section"></div>
+        <button type="reset" class="spela-om-btn hide">Spela om</button>
     </section>
   </main>
 
