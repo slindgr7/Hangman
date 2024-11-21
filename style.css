@@ -25,14 +25,14 @@ body {
 h2 {
     font-size: 38px;
     margin-bottom: 0.5em;
-    color: #656161;
+    color: #585555;
 }
 
 /* instruktion-text */
 .game-info {
     font-size: 22px;
     font-weight: bold;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     color: #656161;
 }
 /* styling ordet som ska gissas */
@@ -55,9 +55,8 @@ div {
     font-size: 22px;
     color: #656161;
     margin-bottom: 1em;
-    
-
 }
+
 .spela-om-btn{
     font-family: 'Luckiest Guy', cursive;
     background-color: #d4f0f0;
@@ -106,7 +105,7 @@ button:hover {
     padding: 0.3em 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin: 1em;
+    margin: 0.5em;
 }
 .guess-btn:focus {
     transform: scale(1.05);
@@ -117,19 +116,41 @@ button:hover {
 
 .hangman-container {
     margin: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.score-counter{
+    
+
 }
 .word-display {
     font-size: 24px;
     font-weight: bold;
     color: #656161;
-    margin: 2em;
-    padding-right: 1em;
+    margin: 0.5em;
+    padding: 0.5em;
+    width: 400px;
+    border-radius: 5px;
 
+}
+
+.ordet{
+    font-size: 24px;
+    font-weight: bold;
+    color: #656161;
+    margin: 0.5em;
+    width: 400px;
 }
 /* styling gissade/ antal bokstäver kvar att gissa */
 .show-remaining, .show-guessed-letters {
-    color: red;
+    color: red; 
+
 }
+
 .hint-btn {
     font-family: 'Luckiest Guy', cursive;
     background-color: #d7dbde;
@@ -138,7 +159,7 @@ button:hover {
     padding: 0.3em 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin: 1em;  
+    margin: 0.5em;  
     
 }
 .hint-btn:focus {
@@ -165,6 +186,11 @@ button:hover {
     justify-content: space-evenly;
    
 }
+
+.input-group{
+    margin: 1em;
+    padding: 1em;
+}
 #letter-input:focus {
     border-color: #3498db;
     background-color: #e0f8ff;
@@ -188,10 +214,6 @@ button:hover {
   
     h2 {
       font-size: 30px;
-    }
-  
-    .word-display {
-      font-size: 18px;
     }
   
     #letter-input {

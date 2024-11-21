@@ -31,12 +31,13 @@
       </header>
   <main>
     <section class="game-container">
-      <section class="info-img-section">
-        <h2>Hänga gubben</h2>
+      <h2>Hänga gubben</h2>
         <p class="game-info">Gissa bokstäver för att lösa ordet!</p>
+      <section class="info-img-section">
 
       <div class="hangman-container">
-        <img id="hangman-img" src="images/hangman.jpg" alt="hangman">
+        <img id="figur" src="images/figur.svg" alt="hangman-figur">
+        <div class="score-counter" data-score="10">Poänglistan:</div>
       </div>
       </section>
 
@@ -49,12 +50,18 @@
       </section>
       
       <!-- input för gissningar -->
-      <div class="word-display">Ordet är: _ _ _ _ _ _ _ _ </div>
+      <p class="ordet">Ordet är: <span class="word-display">_ _ _ _ _ _ _ _</span></p>
+      <div class="input-group">
         <input type="text" id="letter-input" maxlength="1" placeholder="Skriv en bokstav..">
         <button type="submit" class="guess-btn">Gissa</button>
-      
+      </div>
+
+          <!-- antal/förbrukade gissningar -->
+      <section class="input-letter-section">
         <p class="guessed-letters">Gissade bokstäver:<span class="show-guessed-letters"> 3</span></p>
         <p class="remaining-guesses">Antal gissningar kvar: <span class="show-remaining"> 2</span></p>
+      </section>
+      
         <button type="reset" class="spela-om-btn">Spela om</button>
     </section>
   </main>
