@@ -78,12 +78,13 @@ div {
     background-color: #a3c2e0; /* Lite ljusare blå vid fokus */
     border-color: #94b4ca;
     outline: none;
+    
 }
 
 button:hover {
     background-color: #d7e3ec;
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .hangman-img{
     height: auto;
@@ -132,19 +133,21 @@ button:hover {
 
 }
 
-.guesses{
-  font-size: 16px;
+.guesses li{
+  font-size: 18px;
   display:flex;
   flex-direction: column;
   gap: 5px;
   text-align: left;
   padding: 0.5em;
-  background-color: #f0f0f0;
-  border-radius: 5px;
-  min-width: 150px;
+  background-color: #f4f2f2;
+  border-radius: 10px;
+  min-width: 170px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-
+  padding-left: 0.2em;
+  width: 180px;
 }
+
 
 .word-display {
     font-size: 24px;
@@ -166,6 +169,7 @@ button:hover {
 /* styling gissade/ antal bokstäver kvar att gissa */
 .show-remaining, .show-guessed-letters, .player-name {
     color: red; 
+    
 
 }
 
@@ -190,6 +194,7 @@ button:hover {
 
   .hint-btn:hover{
     opacity: 1;
+    
 
   }
 .hint-text {
@@ -207,7 +212,7 @@ button:hover {
    flex-direction: row;
    align-items: baseline;
    justify-content: space-around;
-   margin: 1em;
+   margin: 0.5em;
    padding: 1em;
    gap: 1em;  
 }
@@ -268,7 +273,7 @@ button:hover {
       width: 100px; 
     }
   
-    .guesses {
+    .guesses li {
       font-size: 14px;
     }
 
