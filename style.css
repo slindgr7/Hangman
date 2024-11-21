@@ -1,15 +1,12 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-
 }
+
+
 body {
     font-family: 'Luckiest Guy', cursive;
     background: linear-gradient(135deg, #e5fcfc, #d1f0f0);
     color: black;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,11 +18,12 @@ body {
 .game-container {
     background-color: white;
     border-radius: 10px;
-    width: 100vh;
+    width: 700px;
     padding: 1em;
     margin: 1em;
     text-align: center;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    
 
 }
 h2 {
@@ -107,7 +105,7 @@ button:hover {
     background-color: #d4f0f0;
     font-size: 18px;
     border-radius: 5px;
-    padding: 0.3em 1em;
+    padding: 0.4em 1.1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: 0.5em;
@@ -147,6 +145,7 @@ button:hover {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 
 }
+
 .word-display {
     font-size: 24px;
     font-weight: bold;
@@ -155,11 +154,10 @@ button:hover {
     padding: 0.5em;
     width: 400px;
     border-radius: 5px;
-
 }
 
 .ordet{
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
     color: #656161;
     margin: 1em;
@@ -180,28 +178,29 @@ button:hover {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: 0.5em;  
-    opacity: 0.5;
-
-    
+    opacity: 0.5;   
 }
+
 .hint-btn:focus {
     transform: scale(1.05);
     background-color: #a3c2e0; /* Lite ljusare blå vid fokus */
     border-color: #94b4ca;
     outline: none;
   }
+
+  .hint-btn:hover{
+    opacity: 1;
+
+  }
 .hint-text {
     font-size: 16px;
     color: #656161;
     font-weight: lighter;
     /* display: none; */
-    
-
 }
 
     /* document.querySelector(".hint-btn").addEventListener("click", () => {
         infoTextEl.classList.remove("hide"); */
-
 
 .guess-hint-section {
    display: flex;
@@ -210,9 +209,7 @@ button:hover {
    justify-content: space-around;
    margin: 1em;
    padding: 1em;
-   gap: 1em;
-   
-   
+   gap: 1em;  
 }
 
 .input-group{
@@ -221,21 +218,21 @@ button:hover {
     align-items: center;
     gap: 10px;
     padding: 0.5em;
-
+    
 }
+
 #letter-input:focus {
     border-color: #94b4ca;
     background-color: #e0f8ff;
     animation: focusAnimation 0.3s ease-out;
     outline: none;
-  }
+}
   
-  .poang {
+.poang {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
-  }
-  
+}
   
   @keyframes focusAnimation {
     0% {
@@ -245,6 +242,7 @@ button:hover {
       transform: scale(1.05);
     }
   }
+
   @media (max-width: 768px) {
     .game-container {
       width: 90%;
@@ -254,10 +252,10 @@ button:hover {
     h2 {
       font-size: 30px;
     }
+
     .game-info {
       font-size: 18px;
       font-weight: none;
-    
     }
 
     #letter-input {
@@ -271,13 +269,12 @@ button:hover {
     }
   
     .guesses {
-      font-size: 16px;
-    
+      font-size: 14px;
     }
 
     .score-value, .show-guessed-letters, .show-remaining {
       font-weight: bold;
-      font-size: 16px;
+      font-size: 14px;
     }
 
     .input-letter-section {
@@ -288,13 +285,11 @@ button:hover {
 
     .input-section {
       padding-left: 0;
-
     }
-  
+  }
 
   @media (max-width: 360px) {
     .game-container {
-      width: 100%;
       padding: 0.5em;
       text-align: center;
     }
@@ -313,4 +308,10 @@ button:hover {
     .game-info {
       font-size: 16px;
       font-weight: none;
-  }}
+    }
+    .guesses, .guessed-letters, .remaining-guesses{
+      font-size: 14px;
+
+    }
+  }
+  
