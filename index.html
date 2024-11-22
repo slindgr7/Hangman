@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <title>Hangman Game</title>
 	<link rel="stylesheet" href="game_over.css">
+	<link rel="stylesheet" href="win.css">
   </head>
   <body>
     <!-- <section>
@@ -51,21 +52,21 @@
         
         <p class="gameover-p">Det hemliga ordet var:</p>
         <p class="gameover-p">Ditt antal gissningar var:</p>
-        <button class="gameover-button">Play Again</button>
-        <button class="gameover-button">View Score</button>
+        <button class="gameover-button">Spela igen</button>
+        <button class="gameover-button">Poäng-tavlan</button>
       </section>
     </section>
 
-	<section>
+	<section class="win">
 		<header>
-		  <h3>Congratulations, you have made it! </h3>
+		  <h3 class="titel-win"> Bra jobbat! </h3>
 		</header>
 		<section>
-		  <p></p>
-		  <p>Du lyckades hitta det hemliga ordet</p>
-		  <p>Antalet gissningar:</p>
-		  <button>Play Again</button>
-		  <button>View Score</button>
+			
+		  <p class="win-p">Du lyckades hitta det hemliga ordet!</p>
+		  <p class="win-p">Ditt antal gissningar var:</p>
+		  <button class="win-button">Spela igen</button>
+		  <button class="win-button">Poäng-tavlan</button>
 		</section>
 	  </section>
 
