@@ -1,0 +1,34 @@
+
+body {
+	background: linear-gradient(162deg, rgb(0, 0, 0), rgba(36, 36, 36, 0.965));
+}
+.gameover {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+.titel-gameover{
+	font-size: 4em;
+	color: rgb(230, 153, 11);
+}
+.gameover-p {
+	font-size: 2em;
+	color: rgb(245, 160, 4);
+}
+.gameover-button {
+	font-size: 1.8em;
+	font-weight: bold;
+	padding: 0.30em;
+	margin: 0.25em;
+	border-radius: 8px;
+	border: 3px solid rgb(238, 241, 243);
+	background-color: rgb(255, 255, 255);
+	color: rgb(228, 78, 8);
+}
+.gameover-button:hover {
+	cursor: pointer;
+	border: 3px solid rgb(165, 167, 168);
+	background-color: rgb(187, 191, 192);
+	color: rgb(250, 104, 36);
+}
