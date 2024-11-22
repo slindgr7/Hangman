@@ -9,9 +9,9 @@
 	<link rel="stylesheet" href="win.css">
   </head>
   <body>
-    <!-- <section>
-      <header>
-        <h1>Välkommen till Hangman!</h1>
+    <section class="home-screen-section1">
+      <header class="header-home-screen">
+        <h1 class="h1-homes-screen">Välkommen till Hangman!</h1>
       </header>
       <section class="home-screen-section2">
         <label class="home-screen-label" for="player-name">Ange ditt namn:</label>
@@ -19,41 +19,67 @@
         <button class="home-screen-play-button">Play</button>
         <button class="home-screen-score-button">Score</button>
       </section>
-    </section> -->
-
-    <!-- <section>
-      <header>
-        <nav>
-          <ul>
-            <li>Game view</li>
-            <li>Score screen</li>
-          </ul>
-        </nav>
-      </header>
-      <section>
-        <h2>Hangman</h2>
-        <p>Gissa bokstäver för att lösa ordet!</p>
-        <div>
-          <!--ordet-->
-        </div>
-        <p>Gissade bokstäver:</p>
-        <p>Antal gissningar kvar:</p>
-        <button>Hint +</button>
-      </section>
     </section>
+    <section>
+      <main>
+        <section class="game-container">
+          <h2>Hänga gubben</h2>
+            <p class="game-info">Gissa bokstäver för att lösa ordet!</p>
+    
+          <div class="hangman-container">
+            <img id="figur" src="images/figur.svg" alt="hangman-figur">
+          </div>
+          
+          <!-- input för gissningar -->
+          <p class="ordet">Ordet är: <span class="word-display">_ _ _ _ _ _ _ _</span></p>
+          <div class="input-group">
+            <input type="text" id="letter-input" maxlength="1" placeholder="Knappa in bokstav..">
+            <button type="submit" class="guess-btn">Gissa</button>
+          </div>
+    
+          <!-- visa poäng/info -->
+          <section class="guess-hint-section">
+            <ul class="guesses">
+              <li>Namn: <span class="player-name">Sara</span></li>
+              <li>Gissade bokstäver: <span class="show-guessed-letters">a, j ,lllllll</span></li>
+              <li>Gissningar kvar: <span class="show-remaining">2</span></li>
+            </ul>
+            <div class="hint">
+            <button class="hint-btn">Hint</button>
+            <p class="hint-text">"Lorem ipsum dolor sit amet...</p></div>
+          </section>
+    
+              <!-- antal/förbrukade gissningar -->
+          <div class="input-letter-section"></div>
+            <button type="reset" class="spela-om-btn hide">Spela om</button>
+        </section>
+      </main>
 
-    <section class="gameover">
-      <header>
-        <h3 class="titel-gameover">Game Over</h3>
-      </header>
-      <section>
-        
-        <p class="gameover-p">Det hemliga ordet var:</p>
-        <p class="gameover-p">Ditt antal gissningar var:</p>
-        <button class="gameover-button">Spela igen</button>
-        <button class="gameover-button">Poäng-tavlan</button>
+      <section class="gameover">
+        <header>
+          <h3 class="titel-gameover">Game Over</h3>
+        </header>
+        <section>
+          
+          <p class="gameover-p">Det hemliga ordet var:</p>
+          <p class="gameover-p">Ditt antal gissningar var:</p>
+          <button class="gameover-button">Play Again</button>
+          <button class="gameover-button">View Score</button>
+        </section>
       </section>
-    </section>
+  
+      <section class="win">
+        <header>
+          <h3 class="titel-win"> Bra jobbat! </h3>
+        </header>
+        <section>
+          
+          <p class="win-p">Du lyckades hitta det hemliga ordet!</p>
+          <p class="win-p">Ditt antal gissningar var:</p>
+          <button class="win-button">Spela igen</button>
+          <button class="win-button">Poäng-tavlan</button>
+        </section>
+        </section>
 
     <section>
       <header>
