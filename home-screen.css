@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    background: linear-gradient(162deg, rgb(0, 0, 0), rgba(36, 36, 36, 0.965));
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+
+.home-screen-section1 {
+    text-align: center;
+  }
+  
+
+.h1-homes-screen {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+  }
+  
+
+.home-screen-label {
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+.input-screen[type="text"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    margin-bottom: 1rem;
+  }
+  
+.home-screen-play-button {
+    display: block;
+    width: 10rem;
+    padding: 0.8rem;
+    margin: 10px auto;
+    background-color: #003d99;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.856);
+    text-transform: uppercase;
+  }
+  
+.home-screen-play-button:hover {
+    background-color: #005ce6;
+  }
+
+.home-screen-score-button {
+    display: block;
+    width: 10rem;
+    padding: 0.8rem;
+    margin: 10px auto;
+    background-color: #003d99;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.856);
+    text-transform: uppercase;
+  }
+  
+.home-screen-score-button:hover {
+    background-color: #005ce6;
+  }
+  
+
+
+  
