@@ -1,11 +1,13 @@
 * {
 	box-sizing: border-box;
+	font-family: "Orbitron", sans-serif;
 	/* margin: 0;
 	padding: 0; */
 }
 
 
 .score-container {
+	width: 100vw;
 	background: linear-gradient(162deg, rgb(0, 0, 0), rgba(36, 36, 36, 0.965));
 	color: rgb(194, 126, 0);
 	display: flex;
@@ -35,7 +37,7 @@
 			letter-spacing: 5px;
 			color: rgb(215, 215, 215);
 			border: 1px solid rgb(194, 126, 0);
-			border-radius: 1.5rem 0.4rem;
+			border-radius: 0.3rem;
 			box-shadow: inset 0px 0px 9px 1px rgba(194, 126, 0, 0.651), inset 0 0 5px rgb(194, 126, 0), 0 5px 5px rgba(0, 0, 0, 0.164);
 
 			span {
