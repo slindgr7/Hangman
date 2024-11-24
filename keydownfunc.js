@@ -22,6 +22,23 @@ document.addEventListener("DOMContentLoaded", function() { //
             guessedLetters.push(inputValue);
             console.log('lägger till värdet')
     
-            
+            if (secretWord.includes(inputValue)) {
+              console.log('innehåller secretWord')
+              // Uppdatera word-display
+              console.log(secretWord)
+              console.log(secretWord.split('')) //'split' tar ett ord, gör om till en array med alla bokstäver
+              let displayText = secretWord.split('').map(letter => 
+                guessedLetters.includes(letter) ? letter : '_'
+              ).join(' ');
+              wordDisplay.textContent = displayText;
+            } else {
+              console.log('bokstaven finns inte i secretword')
+              // Uppdatera show-guessed-letters
+              guessedLettersDisplay.textContent = guessedLetters.join(', ');
+            }
+          }
+        }
+      });
     });
+  
 
