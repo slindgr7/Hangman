@@ -34,7 +34,7 @@ function showGameOverContainer() {
 }
 
 function hideGameOverContainer() {
-    let gameOverContainerElements = document.querySelectorAll("section.gamerover *")
+    let gameOverContainerElements = document.querySelectorAll("section.gameover *")
     gameOverContainerElements.forEach(function(element){
         element.setAttribute('hidden', true);
     });
@@ -85,22 +85,7 @@ function hideUserDetails(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export { hideHomeScreenContainer, showHomeScreenContainer, hideGameContainer, showGameContainer
-        ,showGameOverContainer, hideGameOverContainer, showScoreContainer, hideScoreContainer
-        ,showUserDetails, hideUserDetails
+        ,showGameOverContainer, hideGameOverContainer, showWinContainer, hideWinContainer 
+        ,showScoreContainer, hideScoreContainer ,showUserDetails, hideUserDetails
  };
