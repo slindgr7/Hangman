@@ -15,5 +15,13 @@ document.addEventListener("DOMContentLoaded", function() { //
       const inputValue = letterInput.value.toLowerCase(); //alla bokstäver göras om till små, för enbart stora bokstääver, ändra i efterhand
       letterInput.value = ""; // rensar inputfältet
 
-     
-});
+          //i if-satsen nedan kollar man om inputValue innehåller bokstäver eller/och om bokstaven inte finns med i mina tidigare gissade bokstäver
+          //ifall detta är sant lägger man till bokstaven i guessedLetters
+          console.log(' tryckt på enter')
+          if (inputValue && !guessedLetters.includes(inputValue)) {
+            guessedLetters.push(inputValue);
+            console.log('lägger till värdet')
+    
+            
+    });
+
