@@ -6,3 +6,5 @@ document.querySelector('.home-screen-play-button').addEventListener('click',hide
 document.querySelector('.spela-om-btn').addEventListener('click', getRandomWord);
 
 getRandomWord()
+
+// missing somthing with the funcation, mby import is worng?
