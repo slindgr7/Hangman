@@ -14,7 +14,7 @@ body {
 
 .h1-homes-screen {
     font-size: 2rem;
-    color: #ffffff;
+    color: rgb(194, 126, 0);
     margin-bottom: 2rem;
   }
   
@@ -23,6 +23,7 @@ body {
     font-size: 1rem;
     display: block;
     margin-bottom: 1rem;
+	color: rgb(194, 126, 0);
   }
   
 .input-screen[type="text"] {
@@ -34,9 +35,9 @@ body {
   }
   
 .home-screen-play-button {
-    display: block;
+    /* display: block; */
     width: 10rem;
-    padding: 0.8rem;
+    /* padding: 0.8rem;
     margin: 10px auto;
     background-color: #003d99;
     color: #ffffff;
@@ -45,17 +46,29 @@ body {
     font-size: 1.2rem;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.856);
-    text-transform: uppercase;
+    text-transform: uppercase; */
+	font-size: 1.8em;
+	font-weight: bold;
+	padding: 0.30em;
+	margin: 0.25em;
+	border-radius: 8px;
+	border: 3px solid rgb(238, 241, 243);
+	background-color: rgb(255, 255, 255);
+	color: rgb(228, 78, 8);
   }
   
 .home-screen-play-button:hover {
-    background-color: #005ce6;
+    /* background-color: #005ce6; */
+	cursor: pointer;
+	border: 3px solid rgb(165, 167, 168);
+	background-color: rgb(187, 191, 192);
+	color: rgb(250, 104, 36);
   }
 
 .home-screen-score-button {
-    display: block;
+    /* display: block; */
     width: 10rem;
-    padding: 0.8rem;
+    /* padding: 0.8rem;
     margin: 10px auto;
     background-color: #003d99;
     color: #ffffff;
@@ -64,11 +77,23 @@ body {
     font-size: 1.2rem;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.856);
-    text-transform: uppercase;
+    text-transform: uppercase; */
+	font-size: 1.8em;
+	font-weight: bold;
+	padding: 0.30em;
+	margin: 0.25em;
+	border-radius: 8px;
+	border: 3px solid rgb(238, 241, 243);
+	background-color: rgb(255, 255, 255);
+	color: rgb(228, 78, 8);
   }
   
 .home-screen-score-button:hover {
-    background-color: #005ce6;
+    /* background-color: #005ce6; */
+	cursor: pointer;
+	border: 3px solid rgb(165, 167, 168);
+	background-color: rgb(187, 191, 192);
+	color: rgb(250, 104, 36);
   }
   
 
