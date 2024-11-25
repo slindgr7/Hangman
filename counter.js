@@ -78,6 +78,7 @@ console.log(incorrectGuesses)
 
 
 
+
 /* Score-style-page
 
 name = input.value ......
@@ -93,9 +94,5 @@ result.appendChild(win);
 result.appendChild(lose);
 
 const incorrectGuesses = document.querySelector('#incorrect');
-
-
-
-
 
 */

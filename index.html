@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="score-style.css" />
     <title>Hangman Game</title>
-	<link rel="stylesheet" href="game_over.css">
-	<link href="win.css" rel="stylesheet">
-	<link href="secondpage.css" rel="stylesheet">
-	<link rel="stylesheet" href="home-screen.css">
-	<script type="module" src="counter.js"></script>
+    <link rel="stylesheet" href="game_over.css" />
+    <link href="win.css" rel="stylesheet" />
+    <link href="secondpage.css" rel="stylesheet" />
+    <link rel="stylesheet" href="home-screen.css" />
+    <script type="module" src="counter.js"></script>
   <script type="module" src="keydownfunc.js"></script>
   <script type="module" src="storage.js"></script>
   <script type="module" src="score.js"></script>
   <script type="module" src="script.js"></script>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <section class="home-screen-section1"  >
@@ -24,12 +27,18 @@
         <h1 class="h1-homes-screen">Välkommen till Hangman!</h1>
       </header>
       <section class="home-screen-section2">
-        <label class="home-screen-label" for="player-name">Ange ditt namn:</label>
-        <input id="player-name-input" class="input-screen" type="text" placeholder="Skriv ditt namn" />
-		<p id="meddelande" ></p>
+        <label class="home-screen-label" for="player-name"
+          >Ange ditt namn:</label
+        >
+        <input
+          id="player-name-input"
+          class="input-screen"
+          type="text"
+          placeholder="Skriv ditt namn"
+        />
+        <p id="meddelande"></p>
         <button class="home-screen-play-button" id="play-button">Play</button>
         <button class="home-screen-score-button">Score</button>
-		
       </section>
     </section>
     <section>
@@ -55,7 +64,7 @@
               <p class="ordet">Ordet är: <span class="word-display">_ _ _ _ _ _ _ _</span></p>
               <div class="input-group">
                 <input type="text" id="letter-input" maxlength="1" placeholder="Knappa in bokstav..">
-                <button type="submit" class="guess-btn">Gissa</button>
+                <!-- <button type="submit" class="guess-btn">Gissa</button> -->
               </div>
         
               <!-- visa poäng/info -->
@@ -72,7 +81,7 @@
         
                   <!-- antal/förbrukade gissningar -->
               <div class="input-letter-section"></div>
-                <button type="reset" class="spela-om-btn hide">Spela om</button>
+                <!-- <button type="reset" class="spela-om-btn hide">Spela om</button> -->
             </section>
             </section>
           </main>
@@ -82,53 +91,49 @@
           <h3 class="titel-gameover">Game Over</h3>
         </header>
         <section>
-          
           <p class="gameover-p">Det hemliga ordet var:</p>
           <p class="gameover-p">Ditt antal gissningar var:</p>
           <button class="gameover-button">Play Again</button>
           <button class="gameover-score-button">View Score</button>
         </section>
       </section>
-  
+
       <section class="win">
         <header>
-          <h3 class="titel-win"> Bra jobbat! </h3>
+          <h3 class="titel-win">Bra jobbat!</h3>
         </header>
         <section>
-          
           <p class="win-p">Du lyckades hitta det hemliga ordet!</p>
           <p class="win-p">Ditt antal gissningar var:</p>
           <button class="win-button">Play again</button>
           <button class="win-score-button">Poäng-tavlan</button>
         </section>
-        </section>
+      </section>
 
-    
-
-          <!-- antal/förbrukade gissningar -->
+      <!-- antal/förbrukade gissningar -->
       <div class="input-letter-section"></div>
-        <button type="reset" class="spela-om-btn hide">Spela om</button>
+        <!-- <button type="reset" class="spela-om-btn hide">Spela om</button> -->
     </section>
 
     <section class="score-container">
       <header>
-		<p id="score">Score: 0</p>
+        <p id="score">Score: 0</p>
         <h4>Score Screen</h4>
         <p>07:33 / <span>20/11</span></p>
-	
       </header>
       <section class="user-details">
         <p>Name</p>
         <p id="result">Result</p>
         <p>Incorrect guesses</p>
-		<p id="incorrectGuesses"></p>
+        <p id="incorrectGuesses"></p>
         <p>The word's length</p>
       </section>
       <ul>
         <!-- föregående resultat visas -->
       </ul>
-      <button class="back-to-game">Back to Game</button>
+      <button>Back to Game</button>
     </section>
+<<<<<<< HEAD
 
 	<!-- <div id="test-svg">3
 		<figure class="">
@@ -142,5 +147,9 @@
 			</svg>    
 		</figure>
 	</div> -->
+=======
+    <script src="keydownfunc.js"></script>
+>>>>>>> keydownfunc
   </body>
 </html>
+

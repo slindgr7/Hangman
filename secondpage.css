@@ -85,11 +85,11 @@ button:hover {
 
 }
 #letter-input{
-    font-family: 'Luckiest Guy', cursive;
+    /* font-family: 'Luckiest Guy', cursive; */
     font-size: 18px;
     color: rgb(119, 113, 113);
     height: 50px;
-    width: 170px;
+    width: 220px;
     padding: 0.3em;
     border-radius: 5px;
   
@@ -134,7 +134,7 @@ button:hover {
   gap: 5px;
   text-align: left;
   padding: 0.5em;
-  background-color: #f4f2f2;
+  background-color: #d6d4d488;
   border-radius: 10px;
   min-width: 170px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
@@ -168,7 +168,7 @@ button:hover {
 }
 
 .hint-btn {
-    font-family: 'Luckiest Guy', cursive;
+    /* font-family: 'Luckiest Guy', cursive; */
     background-color: #d7dbde;
     font-size: 16px;
     border-radius: 5px;
@@ -181,7 +181,7 @@ button:hover {
 
 .hint-btn:focus {
     transform: scale(1.05);
-    background-color: #a3c2e0; /* Lite ljusare blå vid fokus */
+    background-color: #afcae6; /* Lite ljusare blå vid fokus */
     border-color: #94b4ca;
     outline: none;
   }
@@ -209,6 +209,8 @@ button:hover {
    margin: 0.5em;
    padding: 1em;
    gap: 1em;  
+   color: black;
+   
 }
 
 .input-group{
@@ -221,8 +223,8 @@ button:hover {
 }
 
 #letter-input:focus {
-    border-color: #94b4ca;
-    background-color: #e0f8ff;
+    border-color: #c0c2c4;
+    background-color: #b1b5b6;
     animation: focusAnimation 0.3s ease-out;
     outline: none;
 }
