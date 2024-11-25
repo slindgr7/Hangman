@@ -1,28 +1,28 @@
 
 // först hämtar jag dom knapparna jag behöver med "getElementById", jag måste hämta knapparna först för att sen kunna ge dom en funktion
-const gameoverButton = document.getElementById('gameover-button');
-const winButton = document.getElementById('win-button');
-const gameoverScoreButton = document.getElementById('gameover-score-button');
-const winScoreButton = document.getElementById('win-score-button');
+// const gameoverButton = document.getElementById('gameover-button');
+// const winButton = document.getElementById('win-button');
+// const gameoverScoreButton = document.getElementById('gameover-score-button');
+// const winScoreButton = document.getElementById('win-score-button');
 
 //här under har jag funktionerna för att se sina tidigare poäng när man klickar på "View score" knappen
 
-gameoverScoreButton.addEventListener('click', function () {
-	displayScore();
-});
-winScoreButton.addEventListener('click', function () {
-	dispalyScores();
-});
+// gameoverScoreButton.addEventListener('click', function () {
+// 	displayScore();
+// });
+// winScoreButton.addEventListener('click', function () {
+// 	dispalyScores();
+// });
 
-// här under är funktionen för att spela spelet igen när man tyrycker på "play again" knappen
+// // här under är funktionen för att spela spelet igen när man tyrycker på "play again" knappen
 
-gameoverButton.addEventListener('click', function () {
-	resetGame();
-});
+// gameoverButton.addEventListener('click', function () {
+// 	resetGame();
+// });
 
-winButton.addEventListener('click', function () {
-	resetGame();
-});
+// winButton.addEventListener('click', function () {
+// 	resetGame();
+// });
 
 
 //här är funktionen som sparar poängen spelarens aktuella poäng till local storage. Funktionen skapar ett objekt med poängen och den "skickas" till localstorage med JSON och görs så om till en sträng (tror jag XD)
@@ -78,24 +78,24 @@ function dispalyScores() {
 		document.querySelector('.score-container ul').innerHTML = "<li>Inga poäng sparade än.</li>";
 	}
 
-	document.querySelector('.score-container').style.display = 'flex';
-	document.querySelector('.game-container').style.display = 'none';
-	document.querySelector('.win').style.display = 'none';
-	document.querySelector('.gameover').style.display = 'none';
+	// document.querySelector('.score-container').style.display = 'flex';
+	// document.querySelector('.game-container').style.display = 'none';
+	// document.querySelector('.win').style.display = 'none';
+	// document.querySelector('.gameover').style.display = 'none';
 }
 
 //här är funktionen när man har spelat klart och sett sitt score och vill spela om spelet. 
 
-function resetGame() {
-	document.querySelector('.score-container').style.display = 'none';
-	document.querySelector('.home-screen-sction1').style.display ='flex';
+// function resetGame() {
+// 	document.querySelector('.score-container').style.display = 'none';
+// 	document.querySelector('.home-screen-sction1').style.display ='flex';
 
-	 document.querySelector('.game-container').style.display = 'none';  
-	 document.querySelector('.win').style.display = 'none';  
-	 document.querySelector('.gameover').style.display = 'none';  
+// 	 document.querySelector('.game-container').style.display = 'none';  
+// 	 document.querySelector('.win').style.display = 'none';  
+// 	 document.querySelector('.gameover').style.display = 'none';  
 	 
 	
-	 document.querySelector('.input-screen').value = '';  
-	 document.querySelector('.word-display').textContent = '_ _ _ _ _ _ _ _';  
+// 	 document.querySelector('.input-screen').value = '';  
+// 	 document.querySelector('.word-display').textContent = '_ _ _ _ _ _ _ _';  
 	 
-}
+// }
