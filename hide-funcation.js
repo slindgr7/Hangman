@@ -3,7 +3,7 @@ function hideHomeScreenContainer() {
     homeContainerElements.forEach(function(element) {
         element.setAttribute('hidden', true);
     });
-};
+}
 
 function showHomeScreenContainer() {
     let homeContainerElements = document.querySelectorAll('section.home-screen-section1 *');
