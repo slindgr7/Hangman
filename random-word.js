@@ -6,5 +6,5 @@ function getRandomWord() {
     console.log("does it work", randomWord);
     return randomWord;
 }
-
+//if else for word string lenght
 export  { getRandomWord };
