@@ -130,7 +130,9 @@ wrongGuessCounter()
 
 console.log(incorrectGuesses)
 
+export function wrongGuessCounter() {
 
+  }
 
 
 

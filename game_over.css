@@ -1,7 +1,5 @@
 
-body {
-	background: linear-gradient(162deg, rgb(0, 0, 0), rgba(36, 36, 36, 0.965));
-}
+
 .gameover {
 	display: flex;
 	flex-direction: column;

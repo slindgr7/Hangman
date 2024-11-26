@@ -1,22 +1,15 @@
-* {
-  box-sizing: border-box;
-}
-
-
-body {
+.game-container {
     display: flex;
     flex-direction: column;
-}
-
-.game-container {
+    justify-content: center;
     background-color: white;
     border-radius: 10px;
-    /* width: 700px;
+    min-width: 350px;
     padding: 1em;
-    margin: 1em; */
+    margin-left: 20%;
+    margin-right: 20%;
     text-align: center;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-    
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);    
 }
 
 h2 {
@@ -25,7 +18,6 @@ h2 {
     color: var(--color);
 }
 
-/* instruktion-text */
 .game-info {
     font-size: 22px;
     font-weight: bold;
@@ -38,45 +30,17 @@ h2 {
     color: #656161;
     margin-bottom: 1em;
 
-}
-
-.remaining-guesses {
-    font-size: 22px;
-    color: #656161;
-    margin-bottom: 1em;
-
-}
-.spela-om-btn{
-    font-family: 'Luckiest Guy', cursive;
-    background-color: #d4f0f0;
-    font-size: 16px;
-    border-radius: 5px;
-    padding: 0.5em 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 1em;
-    /* display: none;  */
-
-}
-.spela-om-btn:focus {
-    transform: scale(1.05);
-    background-color: #a3c2e0; /* Lite ljusare blå vid fokus */
-    border-color: #94b4ca;
-    outline: none;
-    
-}
+}   
 
 button:hover {
-    background-color: #d7e3ec;
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-.hangman-img{
-    height: auto;
+    /* background-color: #005ce6; */
+	cursor: pointer;
+	border: 3px solid rgb(165, 167, 168);
+	background-color: rgb(187, 191, 192);
+	color: rgb(250, 104, 36);
 
 }
 #letter-input{
-    /* font-family: 'Luckiest Guy', cursive; */
     font-size: 18px;
     color: rgb(119, 113, 113);
     height: 50px;
@@ -87,52 +51,24 @@ button:hover {
 }
 
 .guess-btn {
-    font-family: 'Luckiest Guy', cursive;
-    background-color: #d4f0f0;
-    font-size: 18px;
-    border-radius: 5px;
-    padding: 0.4em 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin: 0.5em;
+  width: 8rem;
+  font-size: 1.3em;
+	font-weight: bold;
+	padding: 0.30em;
+	margin: 0.25em;
+	border-radius: 8px;
+	border: 3px solid rgb(104, 105, 107);
+	background-color: rgb(255, 255, 255);
+	color: rgb(228, 78, 8);
 }
+
 .guess-btn:focus {
     transform: scale(1.05);
     background-color: #a3c2e0; /* Lite ljusare blå vid fokus */
     border-color: #94b4ca;
-    outline: none;
+    outline: none; 
+
 }
-
-.guesses p {
-  margin-bottom: 0.2em; 
-}
-
-.guesses span {
-  display: block;
-  margin-top: 0.2em;
-}
-
-/* #figur {
-   width: 300px;
-   height: auto;
-
-} */
-
-.guesses li{
-  font-size: 18px;
-  display:flex;
-  flex-direction: column;
-  gap: 5px;
-  text-align: left;
-  padding: 0.5em;
-  background-color: #d6d4d488;
-  border-radius: 10px;
-  min-width: 170px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-  padding-left: 0.2em;
-  width: 180px;
-}
-
 
 .word-display {
     font-size: 24px;
@@ -140,7 +76,7 @@ button:hover {
     color: #434040;
     margin: 0.5em;
     padding: 0.5em;
-    width: 400px;
+    width: 300px;
     border-radius: 5px;
 }
 
@@ -151,57 +87,32 @@ button:hover {
     margin: 1em;
     padding-right: 1em;
 }
-/* styling gissade/ antal bokstäver kvar att gissa */
-.show-remaining, .show-guessed-letters, .player-name {
-    color: red; 
-    
+
+.show-guessed-letters {
+    color: red;    
 
 }
 
 .hint-btn {
-    /* font-family: 'Luckiest Guy', cursive; */
-    background-color: #d7dbde;
-    font-size: 16px;
-    border-radius: 5px;
-    padding: 0.2em 0.9em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin: 0.5em;  
-    opacity: 0.5;   
+  width: 7rem;  
+  font-size: 1.1em;
+	font-weight: bold;
+	padding: 0.30em;
+	margin: 0.25em;
+	border-radius: 8px;
+	border: 3px solid rgb(104, 105, 107);
+	background-color: rgb(255, 255, 255);
+	color: rgb(228, 78, 8); 
+      
 }
 
-.hint-btn:focus {
-    transform: scale(1.05);
-    background-color: #afcae6; /* Lite ljusare blå vid fokus */
-    border-color: #94b4ca;
-    outline: none;
-  }
-
-  .hint-btn:hover{
-    opacity: 1;
-    
-
-  }
+  
 .hint-text {
     font-size: 16px;
     color: #656161;
     font-weight: lighter;
-    /* display: none; */
-}
+    display: none; 
 
-    /* document.querySelector(".hint-btn").addEventListener("click", () => {
-        infoTextEl.classList.remove("hide"); */
-
-.guess-hint-section {
-   display: flex;
-   flex-direction: row;
-   align-items: baseline;
-   justify-content: space-around;
-   margin: 0.5em;
-   padding: 1em;
-   gap: 1em;  
-   color: black;
-   
 }
 
 .input-group{
@@ -218,14 +129,12 @@ button:hover {
     background-color: #b1b5b6;
     animation: focusAnimation 0.3s ease-out;
     outline: none;
+ }
+
+ :root {
+  --color: rgb(194, 126, 0);
 }
-  
-.poang {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-  
+
   @keyframes focusAnimation {
     0% {
       transform: scale(1);
@@ -235,13 +144,13 @@ button:hover {
     }
   }
 
-  /* @media (max-width: 768px) {
+  @media (max-width: 350px) {
     .game-container {
-      width: 90%;
-      padding: 1em;
+        margin: 0;
     }
-   */
-    h2 {
+}
+  
+    /* h2 {
       font-size: 30px;
     }
 
@@ -254,30 +163,13 @@ button:hover {
       width: 120px;
       border-radius: 5px;
       font-size: 16px;
-    }
-  
-    /* #figur {
-      width: 100px; 
     } */
-  
-    .guesses li {
-      font-size: 14px;
-    }
 
-    .score-value, .show-guessed-letters, .show-remaining {
+    /* .show-guessed-letters{
       font-weight: bold;
       font-size: 14px;
-    }
+    } */
 
-    .input-letter-section {
-      margin-top: 20px;
-      text-align: left;
-      padding-left: 20px;
-    }
-
-    .input-section {
-      padding-left: 0;
-    }
   /* } */
 
   /* @media (max-width: 360px) {
@@ -286,7 +178,7 @@ button:hover {
       text-align: center;
     } */
   
-    h2 {
+    /* h2 {
       font-size: 24px;
       
     }
@@ -302,11 +194,8 @@ button:hover {
       font-size: 16px;
       font-weight: none;
     }
-    .guesses, .guessed-letters, .remaining-guesses{
+    .guessed-letters{
       font-size: 14px;
 
     }
-  /* } */
-  :root {
-    --color: rgb(194, 126, 0);
   }

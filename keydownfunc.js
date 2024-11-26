@@ -1,75 +1,92 @@
-  const secretWord = "sara"; // ordet man ska gissa, SLUMPA HÄR SEN!
-  const wordDisplay = document.querySelector(".word-display");
-  const wrongLettersDisplay = document.querySelector(".show-guessed-letters");
-  const letterInput = document.getElementById("letter-input");
+const secretWord = getRandomWord(); // ordet man ska gissa, SLUMPA HÄR SEN!
+const wordDisplay = document.querySelector(".word-display");
+const wrongLettersDisplay = document.querySelector(".show-guessed-letters");
+const letterInput = document.getElementById("letter-input");
+const guessButton = document.querySelector('.guess-btn');
+const allGuessed = document.querySelectorAll('.win')
 
-  // const remainingGuessesDisplay = document.querySelector(".show-remaining"); vet ej hur
+let guessedLetters = []; // lista över gissade bokstäver
+let wrongLetters = [];   // lista över felaktiga bokstäver
+
+// Funktion för att uppdatera ordet
+function updateWordDisplay() {
+  let displayText = "";
+  let allGuessed = true;  // Kontrollera om alla bokstäver är gissade
+
+  // Bygg upp ordet baserat på gissningarna
+  for (let i = 0; i < secretWord.length; i++) {
+    const letter = secretWord[i];
+    if (guessedLetters.includes(letter)) {
+      displayText += letter; // Visa bokstaven om den är gissad
+    } else {
+      displayText += "_"; // Visa understreck om den inte är gissad
+      allGuessed = false;
+    }
+    displayText += " "; // mellanrum mellan bokstäverna
+  }
+
+  wordDisplay.textContent = displayText.trim(); // Uppdatera ordet på skärmen
+
+  // Om alla bokstäver är gissade, visa vinstmeddelande
+  if (allGuessed) {
+    alert("Grattis! Du har gissat rätt ord!");
+  }
+}
+
+// Funktion för att uppdatera felaktiga gissningar
+function updateWrongLettersDisplay() {
+  wrongLettersDisplay.textContent = wrongLetters.join(", ");
+}
+
+guessButton.addEventListener('click', function() {
+  const inputValue = letterInput.value.toLowerCase(); // Omvandla till små bokstäver
+  letterInput.value = ""; // Rensa inputfältet
+
+  // Lägg till din if-sats här för att kontrollera om bokstaven är ny 
+  if (inputValue && !guessedLetters.includes(inputValue) && !wrongLetters.includes(inputValue)) {
+    guessedLetters.push(inputValue); // Lägg till bokstaven i gissade bokstäver
+    console.log('lägger till värdet: ' + inputValue);
+
+    if (secretWord.includes(inputValue)) {
+      // Om bokstaven finns i det hemliga ordet, uppdatera ordet
+      updateWordDisplay();
+    } else {
+      // Om bokstaven inte finns, lägg till den i felaktiga gissningar
+      wrongLetters.push(inputValue);
+      console.log('Felaktig bokstav: ' + inputValue);
+      updateWrongLettersDisplay(); // Uppdatera felaktiga gissningar
+      wrongGuessCounter()
+    }
+  }
+});
+
+import { getRandomWord } from './random-word.js'
+
+// import { wrongGuessCounter } from './counter.js';
+
+
+
+const hintButton = document.querySelector('.hint-btn'); 
+const hintText = document.querySelector('.hint-text');
+
+hintButton.addEventListener('click', showHint);
+
+function showHint() {
+  // Skapa en array med alla icke-gissade bokstäver i det hemliga ordet
+  const remainingLetters = secretWord.split("").filter(letter => !guessedLetters.includes(letter));
+  if (remainingLetters.length > 0) {
+    // Välj en slumpmässig bokstav från de återstående bokstäverna
+    const randomLetter = remainingLetters[Math.floor(Math.random() * remainingLetters.length)];
+    guessedLetters.push(randomLetter); // Lägg till denna bokstav till gissade bokstäver
+    console.log("Slumpmässig hint: " + randomLetter); // Logga den valda bokstaven
+    updateWordDisplay(); // Uppdatera ordet med den nya gissningen
   
-  
-  let guessedLetters = []; //antal gissningar kvar
-
-
-  letterInput.addEventListener("keydown", function(event) {
-    console.log("hej")
-    if (event.key === "Enter") {
-      event.preventDefault() //förhindrar att sidan skall laddas om när man trycker på enter
-      
-  const inputValue = letterInput.value.toLowerCase(); //alla bokstäver göras om till små
-
-  letterInput.value = ""; // detta rensar inputfältet
-
-        //i if-satsen nedan kollar man om inputValue innehåller bokstäver eller/och om bokstaven inte finns med i mina tidigare gissade bokstäver
-        //ifall detta är sant lägger man till bokstaven i guessedLetters
-        
-          if (inputValue && !guessedLetters.includes(inputValue)) { //Kollar så att strängen inte är tom
-            guessedLetters.push(inputValue);    //bokstaven läggs inte till om vi gissar på samma bokstav igen
-            console.log('lägger till värdet')  
-
-
-          if (secretWord.includes(inputValue)) {    //om hemligt ord inhehåller det ord jag gissar
-                                                    // wordDisplay uppdat, visar ordet med rätt gissade bokstäver
-            let displayText = "";                       // påbörja en tom sträng för att bygga ordet
-            for (let i = 0; i < secretWord.length; i++) {
-            
-              const letter = secretWord[i];             // hämta varje bokstav i secretWord
-              if (guessedLetters.includes(letter)) {    //kollar om bokstav finns i guessedLetter, 
-                displayText += letter                   //då visar den bokstaven 
-              } else {
-                displayText += "_"                      //annars visas tomt understreck
-              }
-
-
-              displayText += " "; //  mellanrum mellan bokstäverna
-              }
+    // Visa den slumpmässiga bokstaven i hint-text
+    hintText.textContent = `Hint: En bokstav i ordet är '${randomLetter}'`;
     
-              wordDisplay.textContent = displayText
-              console.log(displayText)
+    hintText.style.display = 'block'; // Gör hint-text synlig
+  } else {
+    alert("Du har redan gissat alla bokstäver!");
+}
 
-            } else {
-              // Om bokstaven inte finns i ordet, uppdatera gissade bokstäver
-              wrongLettersDisplay.textContent = guessedLetters.reduce((acc, letter) => {
-                return acc ? acc + ", " + letter : letter; // reduce för att skapa lista med kommatecken eller så lägger den til len bokstav (taget från AI)
-              }, "");
-            }
-          }
-        }
-      });
-    
-//let wrongGuesses = [];
-
-// function handleGuesses(guessedLetter) {
-//   // Kontrollera om bokstaven inte finns i det hemliga ordet
-//   if (!secretWord.includes(guessedLetter)) {
-//     // lägg till bokstaven till wrongGuesses om den inte redan är där
-//     if (!wrongLetter.includes(guessedLetter)) {
-//       wrongGuesses.push(guessedLetter);
-      
-//       // uppdat display av felaktiga bokstäver
-//       wrongLettersDisplay.textContent = wrongGuesses.join(', ');
-//     }
-//   }
-// }
-// document.addEventListener('keydown', function(event) {
-//   let guessedLetter = event.key.toLowerCase();
-//   handleGuesses(guessedLetter);
-// });
+}

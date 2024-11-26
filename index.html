@@ -41,8 +41,7 @@
         <button class="home-screen-score-button">Score</button>
       </section>
     </section>
-
-    <section>
+    
       <section class="game-container">
         <button id="show-score">View score</button>
         <h2>Hänga gubben</h2>
@@ -51,7 +50,7 @@
         <div id="test-svg">
           <figure class="">
             <svg
-              width="501"
+              width="350"
               height="565"
               viewBox="0 0 501 565"
               fill="none"
@@ -110,30 +109,17 @@
             type="text"
             id="letter-input"
             maxlength="1"
-            placeholder="Knappa in bokstav.."
+            placeholder="Knappa in en bokstav.."
           />
-          <!-- <button type="submit" class="guess-btn">Gissa</button> -->
+          <button type="submit" class="guess-btn">Gissa</button>
         </div>
-
-        <!-- visa poäng/info -->
-        <section class="guess-hint-section">
-          <ul class="guesses">
-            <li>Namn: <span class="player-name">Sara</span></li>
-            <li>
-              Gissade bokstäver:
-              <span class="show-guessed-letters">a, j ,lllllll</span>
-            </li>
-            <li>Gissningar kvar: <span class="show-remaining">2</span></li>
-          </ul>
-          <div class="hint">
-            <button class="hint-btn">Hint</button>
+    
+        <p class="guessed-letters"><span>Gissade bokstäver: <span class="show-guessed-letters"></span></p>
+        
+        <div class="hint">
+          <button class="hint-btn">Hint</button>
             <p class="hint-text">"Lorem ipsum dolor sit amet...</p>
-          </div>
-        </section>
-
-        <!-- antal/förbrukade gissningar -->
-        <div class="input-letter-section"></div>
-        <!-- <button type="reset" class="spela-om-btn hide">Spela om</button> -->
+        </div>
       </section>
 
       <section class="gameover">
@@ -202,5 +188,6 @@
         <button id="close-score">Back to Game</button>
       </dialog>
     </section>
+    <script src="keydownfunc.js"></script>
   </body>
 </html>
