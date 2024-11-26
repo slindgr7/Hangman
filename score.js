@@ -64,7 +64,7 @@ function gameWon() {
 
 
 
-function dispalyScores() {
+function displayScores() {
 	let scores = JSON.parse(localStorage.getItem('scores')) || [];
 
 	if (scores.lenght > 0) {
