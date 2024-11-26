@@ -73,16 +73,20 @@
 	
 	p:nth-child(odd) {
 		font-size: 1rem;
+		font-weight: bold;
 	}
 
 	p:nth-child(even) {
 		font-size: 1rem;
+		letter-spacing: 2px;
 		margin: 1.5rem 0rem 0.5rem 0rem;
 		font-weight: 400;
 		color: rgba(194, 126, 0, 0.708);
 	}
 
+
 }
+
 
 #close-score {
 	display: flex;
