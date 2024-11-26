@@ -67,7 +67,9 @@
 	
 .user-details {
 	display: flex;
-	gap: 2rem;
+	justify-content:space-evenly;
+	text-align: center;
+	gap: 1rem;
 	color: rgb(215, 215, 215);
 	border-bottom: 1px solid rgba(194, 126, 0, 0.708);	
 	
@@ -78,7 +80,7 @@
 
 	p:nth-child(even) {
 		font-size: 1rem;
-		letter-spacing: 2px;
+		letter-spacing: 3px;
 		margin: 1.5rem 0rem 0.5rem 0rem;
 		font-weight: 400;
 		color: rgba(194, 126, 0, 0.708);
