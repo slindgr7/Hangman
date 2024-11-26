@@ -61,6 +61,32 @@ guessButton.addEventListener('click', function() {
 });
 
 import { getRandomWord } from './random-word.js'
-const randomWord = getRandomWord();
 
 // import { wrongGuessCounter } from './counter.js';
+
+
+
+const hintButton = document.querySelector('.hint-btn'); 
+const hintText = document.querySelector('.hint-text');
+
+hintButton.addEventListener('click', showHint);
+
+function showHint() {
+  // Skapa en array med alla icke-gissade bokstäver i det hemliga ordet
+  const remainingLetters = secretWord.split("").filter(letter => !guessedLetters.includes(letter));
+  if (remainingLetters.length > 0) {
+    // Välj en slumpmässig bokstav från de återstående bokstäverna
+    const randomLetter = remainingLetters[Math.floor(Math.random() * remainingLetters.length)];
+    guessedLetters.push(randomLetter); // Lägg till denna bokstav till gissade bokstäver
+    console.log("Slumpmässig hint: " + randomLetter); // Logga den valda bokstaven
+    updateWordDisplay(); // Uppdatera ordet med den nya gissningen
+  
+    // Visa den slumpmässiga bokstaven i hint-text
+    hintText.textContent = `Hint: En bokstav i ordet är '${randomLetter}'`;
+    
+    hintText.style.display = 'block'; // Gör hint-text synlig
+  } else {
+    alert("Du har redan gissat alla bokstäver!");
+}
+
+}
