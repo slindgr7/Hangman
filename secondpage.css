@@ -32,14 +32,6 @@ h2 {
     margin-bottom: 2em;
     color: var(--color);
 }
-/* styling ordet som ska gissas */
-div { 
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 2em;
-    color: #656161;
-    
-}
 
 .guessed-letters {
     font-size: 22px;
