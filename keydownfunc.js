@@ -2,6 +2,7 @@
   const wordDisplay = document.querySelector(".word-display");
   const wrongLettersDisplay = document.querySelector(".show-guessed-letters");
   const letterInput = document.getElementById("letter-input");
+  const guessButton = document.querySelector(".guess-btn");
 
   // const remainingGuessesDisplay = document.querySelector(".show-remaining"); vet ej hur
   
@@ -9,9 +10,9 @@
   let guessedLetters = []; //antal gissningar kvar
 
 
-  letterInput.addEventListener("keydown", function(event) {
+  guessButton.addEventListener('click', function(event) {
     console.log("hej")
-    if (event.key === "Enter") {
+    if (event === 'click') {
       event.preventDefault() //förhindrar att sidan skall laddas om när man trycker på enter
       
   const inputValue = letterInput.value.toLowerCase(); //alla bokstäver göras om till små
@@ -48,7 +49,7 @@
             } else {
               // Om bokstaven inte finns i ordet, uppdatera gissade bokstäver
               wrongLettersDisplay.textContent = guessedLetters.reduce((acc, letter) => {
-                return acc ? acc + ", " + letter : letter; // reduce för att skapa lista med kommatecken eller så lägger den til len bokstav (taget från AI)
+                return acc ? acc + ", " + letter : letter; // reduce för att skapa lista med kommatecken eller så lägger den till en bokstav (taget från AI)
               }, "");
             }
           }
