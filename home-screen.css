@@ -5,18 +5,19 @@ body {
 }
 .home-screen-section1 {
     text-align: center;
+    
   }
   
 
 .h1-homes-screen {
-    font-size: 2rem;
+   
     color: rgb(194, 126, 0);
     margin-bottom: 2rem;
   }
   
 
 .home-screen-label {
-    font-size: 1rem;
+    
     display: block;
     margin-bottom: 1rem;
 	color: rgb(194, 126, 0);
@@ -24,7 +25,7 @@ body {
   
 .input-screen[type="text"] {
     padding: 0.5rem;
-    font-size: 1rem;
+   
     border-radius: 0.5rem;
     border: none;
     margin-bottom: 1rem;
@@ -43,7 +44,7 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.856);
     text-transform: uppercase; */
-	font-size: 1.8em;
+	
 	font-weight: bold;
 	padding: 0.30em;
 	margin: 0.25em;
@@ -74,7 +75,7 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.856);
     text-transform: uppercase; */
-	font-size: 1.8em;
+	
 	font-weight: bold;
 	padding: 0.30em;
 	margin: 0.25em;
