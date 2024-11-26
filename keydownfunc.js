@@ -1,9 +1,9 @@
-const secretWord = "sara"; // ordet man ska gissa, SLUMPA HÄR SEN!
+const secretWord = getRandomWord(); // ordet man ska gissa, SLUMPA HÄR SEN!
 const wordDisplay = document.querySelector(".word-display");
 const wrongLettersDisplay = document.querySelector(".show-guessed-letters");
 const letterInput = document.getElementById("letter-input");
 const guessButton = document.querySelector('.guess-btn');
-
+const allGuessed = document.querySelectorAll('.win')
 
 let guessedLetters = []; // lista över gissade bokstäver
 let wrongLetters = [];   // lista över felaktiga bokstäver
@@ -55,6 +55,12 @@ guessButton.addEventListener('click', function() {
       wrongLetters.push(inputValue);
       console.log('Felaktig bokstav: ' + inputValue);
       updateWrongLettersDisplay(); // Uppdatera felaktiga gissningar
+      wrongGuessCounter()
     }
   }
 });
+
+import { getRandomWord } from './random-word.js'
+const randomWord = getRandomWord();
+
+// import { wrongGuessCounter } from './counter.js';
