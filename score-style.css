@@ -17,13 +17,15 @@
 	width: 100%;
 	height: 100%;
 	left: 0;
-	top: 15%;
+	top: 10%;
 
 	dialog {
 		background: linear-gradient(162deg, rgb(0, 0, 0), rgba(36, 36, 36, 0.965));
 		display: flex;
 		flex-direction: column;
 		position: relative;
+		padding: 2rem;
+		width: 100%;
 		box-shadow: inset 0px 0px 9px 1px rgba(194, 126, 0, 0.651), inset 0 0 5px rgb(194, 126, 0), 0 5px 5px rgba(0, 0, 0, 0.164);
 		border-radius: 0.5rem;
 
@@ -34,10 +36,11 @@
 		display: flex;
 		align-items:center;
 		gap: 1rem;
+		margin: 0.5rem 0rem 5rem 0rem;
 
 		h4 {
-			font-size: 1.8rem;
-			letter-spacing: 2px;
+			font-size: 2rem;
+			letter-spacing: 1px;
 			background: linear-gradient(162deg, rgb(194, 126, 0), rgb(45, 44, 43));
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
@@ -46,8 +49,8 @@
 		p {
 			display: flex;
 			position: absolute;
-			right: 1rem;
-			font-size: 0.8rem;
+			right: 2rem;
+			font-size: 1rem;
 			font-weight: 900;
 			padding: 0.8rem;
 			letter-spacing: 5px;
@@ -64,14 +67,16 @@
 	
 .user-details {
 	display: flex;
-	font-size: 14px;
-	font-weight: bold;
 	gap: 2rem;
 	color: rgb(215, 215, 215);
 	border-bottom: 1px solid rgba(194, 126, 0, 0.708);	
-		
+	
+	p:nth-child(odd) {
+		font-size: 1rem;
+	}
+
 	p:nth-child(even) {
-		font-size: 14px;
+		font-size: 1rem;
 		margin: 1.5rem 0rem 0.5rem 0rem;
 		font-weight: 400;
 		color: rgba(194, 126, 0, 0.708);

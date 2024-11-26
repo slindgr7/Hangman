@@ -1,9 +1,16 @@
+* {
+  box-sizing: border-box;
+  font-family: "Orbitron", sans-serif;
+  margin: 0;
+  font-size: 0.625rem;
+  font-size: clamp(0.625rem, 0.4856687898089172rem + 0.6369426751592356vw, 1.25rem);
+}
+
+
 body {
-    margin: 0;
     background: linear-gradient(162deg, rgb(0, 0, 0), rgba(36, 36, 36, 0.965));
     display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    font-family: "Orbitron", sans-serif;
-    
+    flex-direction: column;
+    align-items: center;  
   }
+
