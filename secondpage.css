@@ -106,12 +106,6 @@ button:hover {
       
 }
 
-.hint-btn:focus {
-    transform: scale(1.05);
-    background-color: #afcae6;  
-    border-color: #94b4ca;
-    outline: none; 
-  }
   
 .hint-text {
     font-size: 16px;
