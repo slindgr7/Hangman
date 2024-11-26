@@ -17,7 +17,7 @@
 
 	header {
 		display: flex;
-		align-items: center;
+		align-items:center;
 
 		h4 {
 			font-size: 2rem;
@@ -39,6 +39,7 @@
 			border: 1px solid rgb(194, 126, 0);
 			border-radius: 0.3rem;
 			box-shadow: inset 0px 0px 9px 1px rgba(194, 126, 0, 0.651), inset 0 0 5px rgb(194, 126, 0), 0 5px 5px rgba(0, 0, 0, 0.164);
+			margin-left: 2rem;
 
 			span {
 				font-size: 0.5rem;
@@ -53,8 +54,10 @@
 	gap: 3rem;
 	color: rgb(215, 215, 215);
 	border-bottom: 1px solid rgba(194, 126, 0, 0.708);
-	padding: 2rem;
+	
 
+
+	
 	
 }
 
@@ -62,4 +65,13 @@
 
 
 
+}
+
+
+.hidden-svg-parts {
+	display: none;
+}
+
+.block-svg-parts {
+	display: block;
 }
