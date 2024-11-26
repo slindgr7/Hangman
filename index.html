@@ -41,13 +41,14 @@
         <button class="home-screen-score-button">Score</button>
       </section>
     </section>
+
     <section>
       <section class="game-container">
+        <button id="show-score">View score</button>
         <h2>Hänga gubben</h2>
         <p class="game-info">Gissa bokstäver för att lösa ordet!</p>
 
         <div id="test-svg">
-          3
           <figure class="">
             <svg
               width="501"
@@ -63,7 +64,7 @@
                 rx="250.5"
                 ry="29"
                 fill="black"
-                fill-opacity="0.06"
+                fill-opacity="100"
               />
               <path
                 id="scaffold"
@@ -100,7 +101,6 @@
             </svg>
           </figure>
         </div>
-
         <!-- input för gissningar -->
         <p class="ordet">
           Ordet är: <span class="word-display">_ _ _ _ _ _ _ _</span>
@@ -165,41 +165,42 @@
       <!-- <button type="reset" class="spela-om-btn hide">Spela om</button> -->
     </section>
 
-    <section class="score-container" hidden="true">
-      <header>
-        <h4>Score Screen</h4>
-        <p id="score">Score: 0</p>
-      </header>
+    <section class="score-container hide">
+      <dialog>
+        <header>
+          <h4>Score Screen</h4>
+          <p id="score">Score: 0</p>
+        </header>
 
-      <section class="user-details">
-        <div>
-          <p>Name</p>
-          <p id="username"></p>
-        </div>
+        <section class="user-details">
+          <div>
+            <p>Name</p>
+            <p id="username"></p>
+          </div>
 
-        <div>
-          <p id="result">Result</p>
-          <p></p>
-        </div>
+          <div>
+            <p id="result">Result</p>
+            <p></p>
+          </div>
 
-        <div>
-          <p id="currentTime">07:33 / <span>20/11</span></p>
-        </div>
+          <div>
+            <p>Time/Date</p>
+            <p id="currentTime">
+              07:33 / <span class="todays-date">20/11</span>
+            </p>
+          </div>
 
-        <div>
-          <p>Incorrect guesses</p>
-          <p id="incorrectGuesses"></p>
-        </div>
-        <div>
-          <p>The word's length</p>
-          <p></p>
-        </div>
-      </section>
-
-      <ul>
-        <!-- föregående resultat visas -->
-      </ul>
-      <button>Back to Game</button>
+          <div>
+            <p>Incorrect guesses</p>
+            <p id="incorrectGuesses"></p>
+          </div>
+          <div>
+            <p>The word's length</p>
+            <p></p>
+          </div>
+        </section>
+        <button id="close-score">Back to Game</button>
+      </dialog>
     </section>
   </body>
 </html>

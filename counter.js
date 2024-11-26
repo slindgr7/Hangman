@@ -1,3 +1,29 @@
+
+const showScoreBtn = document.querySelector('#show-score')
+const closeScoreBtn = document.querySelector('#close-score')
+const dialog = document.querySelector('dialog')
+const scoreContainer = document.querySelector('.score-container')
+
+dialog.addEventListener('click', event => {
+	event.stopPropagation()
+})
+showScoreBtn.addEventListener('click', () => {
+	scoreContainer.classList.remove('hide')
+	dialog.show()
+})
+closeScoreBtn.addEventListener('click', closeDialog)
+scoreContainer.addEventListener('click', closeDialog)
+
+function closeDialog() {
+	dialog.close()
+	scoreContainer.classList.add('hide')
+}
+
+
+
+
+
+
 const playerNameInput = document.getElementById('player-name-input');
 const playButton = document.getElementById('play-button');
 const meddelande = document.getElementById('meddelande');
@@ -97,6 +123,9 @@ function wrongGuessCounter() {
 
 wrongGuessCounter()
 wrongGuessCounter()
+wrongGuessCounter()
+
+
 
 
 console.log(incorrectGuesses)
@@ -125,3 +154,4 @@ result.appendChild(lose);
 const incorrectGuesses = document.querySelector('#incorrect');
 
 */
+
