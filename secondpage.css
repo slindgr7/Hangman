@@ -4,7 +4,6 @@
 
 
 body {
-  font-family: 'Luckiest Guy', cursive;
     display: flex;
     flex-direction: column;
 }
@@ -12,9 +11,9 @@ body {
 .game-container {
     background-color: white;
     border-radius: 10px;
-    width: 700px;
+    /* width: 700px;
     padding: 1em;
-    margin: 1em;
+    margin: 1em; */
     text-align: center;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
     
@@ -121,11 +120,11 @@ button:hover {
   margin-top: 0.2em;
 }
 
-#figur {
+/* #figur {
    width: 300px;
    height: auto;
 
-}
+} */
 
 .guesses li{
   font-size: 18px;
@@ -244,12 +243,12 @@ button:hover {
     }
   }
 
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     .game-container {
       width: 90%;
       padding: 1em;
     }
-  
+   */
     h2 {
       font-size: 30px;
     }
@@ -265,9 +264,9 @@ button:hover {
       font-size: 16px;
     }
   
-    #figur {
+    /* #figur {
       width: 100px; 
-    }
+    } */
   
     .guesses li {
       font-size: 14px;
@@ -287,13 +286,13 @@ button:hover {
     .input-section {
       padding-left: 0;
     }
-  }
+  /* } */
 
-  @media (max-width: 360px) {
+  /* @media (max-width: 360px) {
     .game-container {
       padding: 0.5em;
       text-align: center;
-    }
+    } */
   
     h2 {
       font-size: 24px;
@@ -315,7 +314,7 @@ button:hover {
       font-size: 14px;
 
     }
-  }
+  /* } */
   :root {
     --color: rgb(194, 126, 0);
   }
