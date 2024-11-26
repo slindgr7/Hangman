@@ -7,7 +7,7 @@ function getRandomWord() {
     const randomIndex = Math.floor(Math.random() * words.length);
     const randomWord = words[randomIndex];
     console.log("does it work", randomWord);
-    return randomWord;
+
 }
 //if else for word string lenght
 export  { getRandomWord };
