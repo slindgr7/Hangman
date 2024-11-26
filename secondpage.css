@@ -76,7 +76,7 @@ button:hover {
     color: #434040;
     margin: 0.5em;
     padding: 0.5em;
-    width: 350px;
+    width: 300px;
     border-radius: 5px;
 }
 
@@ -144,12 +144,12 @@ button:hover {
     }
   }
 
-  /* @media (max-width: 768px) {
+  @media (max-width: 350px) {
     .game-container {
-      width: 90%;
-      padding: 1em;
+        margin: 0;
     }
-   */
+}
+  
     /* h2 {
       font-size: 30px;
     }
