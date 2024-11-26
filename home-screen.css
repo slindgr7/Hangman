@@ -1,13 +1,8 @@
-body {
-    margin: 0;
-    background: linear-gradient(162deg, rgb(0, 0, 0), rgba(36, 36, 36, 0.965));
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    
-  }
-  
 
+  
+body {
+  background: linear-gradient(162deg, rgb(0, 0, 0), rgba(36, 36, 36, 0.965));
+}
 .home-screen-section1 {
     text-align: center;
   }

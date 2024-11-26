@@ -2,17 +2,16 @@
   const wordDisplay = document.querySelector(".word-display");
   const wrongLettersDisplay = document.querySelector(".show-guessed-letters");
   const letterInput = document.getElementById("letter-input");
-  const guessButton = document.querySelector(".guess-btn");
-
-  // const remainingGuessesDisplay = document.querySelector(".show-remaining"); vet ej hur
+  const guessButton = document.querySelector('.guess-btn')
   
   
   let guessedLetters = []; //antal gissningar kvar
 
+  
 
-  guessButton.addEventListener('click', function(event) {
+  letterInput.addEventListener("keydown", function(event) {
     console.log("hej")
-    if (event === 'click') {
+    if (event.key === "Enter") {
       event.preventDefault() //förhindrar att sidan skall laddas om när man trycker på enter
       
   const inputValue = letterInput.value.toLowerCase(); //alla bokstäver göras om till små

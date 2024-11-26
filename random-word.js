@@ -1,13 +1,16 @@
 import { words } from './swedish-words.js';
 
+
+ // ordet längd är randomWord
 function getRandomWord() {
-    if(words.length === 0 ){
-        console.log("Empty")
+    const filteredWords = words.filter(word => word.length === 10);
+    if(filteredWords.length === 0) {
+        console.log("Empty");
     }
-    const randomIndex = Math.floor(Math.random() * words.length);
-    const randomWord = words[randomIndex];
-    console.log("does it work", randomWord);
+    const randomIndex = Math.floor(Math.random() * filteredWords.length);
+    const randomWord = filteredWords[randomIndex];
+    console.log(randomWord);
     return randomWord;
 }
-//if else for word string lenght
+
 export  { getRandomWord };

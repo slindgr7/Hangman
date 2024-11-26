@@ -43,7 +43,7 @@ function saveScore(playerName, incorrectGuesses, wordLength, result) {
 function gameOver() {
 	let playerName = document.querySelector('.player-name').textContent;
 	let incorrectGuesses = //här i behöver vi ha ett element som håller koll på hur många felgissningar spelaren har gjort;
-	let wordLength = // här i behövs ett element som håller koll på ordens längd;
+	// let wordLength = // här i behövs ett element som håller koll på ordens längd;
 
 	saveScore(playerName, incorrectGuesses, wordLength, 'lost');
 
@@ -53,7 +53,7 @@ function gameOver() {
 function gameWon() {
 	let playerName = document.querySelector('.player-name').textContent;
 	let incorrectGuesses = //här i behöver vi ha ett element som håller koll på hur många felgissningar spelaren har gjort;
-	let wordLength = // här i behövs ett element som håller koll på ordens längd;
+	// let wordLength = // här i behövs ett element som håller koll på ordens längd;
 
 	saveScore(playerName, incorrectGuesses, wordLength, 'won');
 
@@ -64,7 +64,7 @@ function gameWon() {
 
 
 
-function dispalyScores() {
+function displayScores() {
 	let scores = JSON.parse(localStorage.getItem('scores')) || [];
 
 	if (scores.lenght > 0) {

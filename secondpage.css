@@ -1,19 +1,14 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Luckiest Guy', cursive;
-    display: flex;
-    flex-direction: column;
-}
 
 .game-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
     background-color: white;
     border-radius: 10px;
-    width: 700px;
+    min-width: 350px;
     padding: 1em;
-    margin: 1em;
+    margin-left: 20%;
+    margin-right: 20%;
     text-align: center;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
     
@@ -96,9 +91,9 @@ button:hover {
 .guess-btn:focus {
     transform: scale(1.05);
     background-color: #a3c2e0; /* Lite ljusare blå vid fokus */
-    border-color: #94b4ca;
+    /* border-color: #94b4ca;
     outline: none; */
-}
+/* } */ */
 
 .guesses p {
   margin-bottom: 0.2em; 
@@ -113,7 +108,7 @@ button:hover {
    width: 300px;
    height: auto; */
 
-/* } 
+/* } */ */
 
 /* .guesses li{
   font-size: 18px;
@@ -137,7 +132,7 @@ button:hover {
     color: #434040;
     margin: 0.5em;
     padding: 0.5em;
-    width: 400px;
+    width: 350px;
     border-radius: 5px;
 }
 
@@ -224,22 +219,22 @@ button:hover {
     margin-bottom: 10px; */
 /* } */ */
   
-  @keyframes focusAnimation {
+  /* @keyframes focusAnimation {
     0% {
       transform: scale(1);
     }
     100% {
       transform: scale(1.05);
     }
-  }
+  } */
 
   /* @media (max-width: 768px) {
     .game-container {
       width: 90%;
       padding: 1em;
     }
-  
-    h2 {
+   */
+    /* h2 {
       font-size: 30px;
     }
 
@@ -252,13 +247,13 @@ button:hover {
       width: 120px;
       border-radius: 5px;
       font-size: 16px;
-    }
+    } */
   
-    #figur {
+    /* #figur {
       width: 100px; 
-    }
+    } */
   
-    .guesses li {
+    /* .guesses li {
       font-size: 14px;
     }
 
@@ -275,16 +270,16 @@ button:hover {
 
     .input-section {
       padding-left: 0;
-    }
-  }
+    } */
+  /* } */
 
-  @media (max-width: 360px) {
+  /* @media (max-width: 360px) {
     .game-container {
       padding: 0.5em;
       text-align: center;
-    }
+    } */
   
-    h2 {
+    /* h2 {
       font-size: 24px;
       
     }
@@ -305,6 +300,6 @@ button:hover {
 
     } */
   /* } */
-  :root {
+  /* :root {
     --color: rgb(194, 126, 0);
-  }
+  } */
