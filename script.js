@@ -54,12 +54,16 @@ document.addEventListener('DOMContentLoaded', function() {
 // detta är en funk för att få random word från swedish-words.js
  // ordet längd är randomWord
  
-function getRandomWord() {
+function getRandomWord() { 
+    // detta gör en ett filter för att bort word under 10 längd
    const filteredWords = words.filter(word => word.length === 10);
+   // ifall listan på ord är tom
    if(filteredWords.length === 0) {
        console.log("Empty");
    }
+   // detta gör en random index av swedish-word.js listan och tar bort floats(1.5, 2.5 4.5 nummer) och send random nummer * index swedish-words.js
    const randomIndex = Math.floor(Math.random() * filteredWords.length);
+   // tar ett random ord ur filterwords indexen
    const randomWord = filteredWords[randomIndex];
    console.log(randomWord);
    return randomWord;
