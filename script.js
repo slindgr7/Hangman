@@ -322,3 +322,25 @@ console.log(incorrectGuesses)
 //       });
       
 
+
+
+// Dialog-ruta för att använder skall enkelt kunna byta till Score view.
+const showScoreBtn = document.querySelector('#show-score')
+const closeScoreBtn = document.querySelector('#close-score')
+const dialog = document.querySelector('dialog')
+const scoreContainer = document.querySelector('.score-container')
+
+dialog.addEventListener('click', event => {
+	event.stopPropagation()
+})
+showScoreBtn.addEventListener('click', () => {
+	scoreContainer.classList.remove('hide')
+	dialog.show()
+})
+closeScoreBtn.addEventListener('click', closeDialog)
+scoreContainer.addEventListener('click', closeDialog)
+
+function closeDialog() {
+	dialog.close()
+	scoreContainer.classList.add('hide')
+}
