@@ -1,5 +1,5 @@
-
-const showScoreBtn = document.querySelector('#show-score')
+// Dialog-ruta för Score screen
+const showScore = document.querySelector('#show-score')
 const closeScoreBtn = document.querySelector('#close-score')
 const dialog = document.querySelector('dialog')
 const scoreContainer = document.querySelector('.score-container')
@@ -7,7 +7,7 @@ const scoreContainer = document.querySelector('.score-container')
 dialog.addEventListener('click', event => {
 	event.stopPropagation()
 })
-showScoreBtn.addEventListener('click', () => {
+showScore.addEventListener('click', () => {
 	scoreContainer.classList.remove('hide')
 	dialog.show()
 })
@@ -21,9 +21,7 @@ function closeDialog() {
 
 
 
-
-
-
+// Användarnamn.
 const playerNameInput = document.getElementById('player-name-input');
 const playButton = document.getElementById('play-button');
 const meddelande = document.getElementById('meddelande');
@@ -37,8 +35,7 @@ playButton.addEventListener('click', function () {
 
 
 
-
-
+// Dagens tid och datum.
 const todaysDate = new Date();
 const currentHour = todaysDate.getHours() 
 const currentMinute = todaysDate.getMinutes() < 10 ? '0' + todaysDate.getMinutes() : todaysDate.getMinutes();
@@ -54,7 +51,7 @@ currentTime.innerText = `${currentHour}:${currentMinute}    ${currentDay}/${curr
 
 
 
-
+// Poäng i dialog-rutan.
 const scoreElement = document.querySelector('#score');
 let score = 0;
 
@@ -64,12 +61,11 @@ function updateScore(points) {
 	return score;
 }
 
-updateScore(10)
+updateScore()
 //console.log(updateScore(10));
 
 
 //svg-parts
-
 const parts = [
 	document.querySelector('#ground'),
 	document.querySelector('#scaffold'),
@@ -87,7 +83,7 @@ parts[3].classList.add('hidden-svg-parts');
 parts[4].classList.add('hidden-svg-parts');
 parts[5].classList.add('hidden-svg-parts');
 
-
+// Funktion för varje fel gissning av bokstav.
 const incorrectGuessesDisplay = document.querySelector('#incorrectGuesses')
 let incorrectGuesses = 0;
 incorrectGuessesDisplay.innerText = incorrectGuesses;
@@ -121,18 +117,7 @@ function wrongGuessCounter() {
 }
 
 
-wrongGuessCounter()
-wrongGuessCounter()
-wrongGuessCounter()
 
-
-
-
-console.log(incorrectGuesses)
-
-export function wrongGuessCounter() {
-
-  }
 
 
 
