@@ -92,7 +92,7 @@ const incorrectGuessesDisplay = document.querySelector('#incorrectGuesses')
 let incorrectGuesses = 0;
 incorrectGuessesDisplay.innerText = incorrectGuesses;
 
-function wrongGuessCounter() {
+export function wrongGuessCounter() {
 	incorrectGuesses += 1;
 	incorrectGuessesDisplay.innerText = incorrectGuesses;
 
@@ -130,9 +130,7 @@ wrongGuessCounter()
 
 console.log(incorrectGuesses)
 
-export function wrongGuessCounter() {
 
-  }
 
 
 
