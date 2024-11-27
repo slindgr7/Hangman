@@ -73,61 +73,70 @@ getRandomWord()
 
 //här är funktionen som sparar poängen spelarens aktuella poäng till local storage. Funktionen skapar ett objekt med poängen och den "skickas" till localstorage med JSON och görs så om till en sträng (tror jag XD)
 // här börjar score.js
-function saveScore(playerName, incorrectGuesses, wordLength, result) {
 
+function saveScore(playerName, incorrectGuesses, wordLength, result, score, timePlayed) {
 	let newScore = {
 		name: playerName,
 		incorrectGuesses: incorrectGuesses,
 		wordLength: wordLength,
-		result: result
+		result: result,
+		score: score,
+		timePlayed: timePlayed
 	};
 
-	localStorage.setItem('currentScore', JSON.stringify(newScore));
+	let allScores = JSON.parse(localStorage.getItem('scores')) || [];
+	allScores.push(newScore);
+	localStorage.setItem('scores', JSON.stringify(allScores));
 }
+
 
 //funktion för vad som händer när spelet är slut och spelaren förlorade, då "hämtas" gameover delen i html-filen och visas på skärmen
+//Koden är "sur" nu för att vi inte anropat gameOver någonstans, det kan vi göra sen när vi vill visa dom
 function gameOver() {
-	let playerName = document.querySelector('.player-name').textContent;
-	let incorrectGuesses = //här i behöver vi ha ett element som håller koll på hur många felgissningar spelaren har gjort;
-    // let wordLength = // här i behövs ett element som håller koll på ordens längd;
+    let playerName = localStorage.getItem('playerName');
+    let wordLength = randomWord.length;
+    let incorrectGuesses = document.querySelector('#incorrectGuesses').innerText;
+    
+    const todaysDate = new Date();
+    const timePlayed = `${todaysDate.getHours()}:${todaysDate.getMinutes()} ${todaysDate.getDate()}/${todaysDate.getMonth()+1}`;
+    
+    saveScore(playerName, incorrectGuesses, wordLength, 'lost', score, timePlayed);
 
-	saveScore(playerName, incorrectGuesses, wordLength, 'lost');
-
-	document.querySelector('.gameover').style.display = 'flex';
+	// document.querySelector('.gameover').style.display = 'flex';
 }
-
+//Koden är "sur" nu för att vi inte anropat gameWon någonstans, det kan vi göra sen när vi vill visa dom
 function gameWon() {
-	let playerName = document.querySelector('.player-name').textContent;
-	let incorrectGuesses = //här i behöver vi ha ett element som håller koll på hur många felgissningar spelaren har gjort;
-	// let wordLength = // här i behövs ett element som håller koll på ordens längd;
-     // words längds är randomword.length
-	saveScore(playerName, incorrectGuesses, wordLength, 'won');
+    score += 10;  // 10 poäng för vinst
+    let playerName = localStorage.getItem('playerName');
+    let wordLength = randomWord.length;
+    let incorrectGuesses = document.querySelector('#incorrectGuesses').innerText;
+    
+    const todaysDate = new Date();
+    const timePlayed = `${todaysDate.getHours()}:${todaysDate.getMinutes()} ${todaysDate.getDate()}/${todaysDate.getMonth()+1}`;
+    
+    saveScore(playerName, incorrectGuesses, wordLength, 'won', score, timePlayed);
 
-	document.querySelector('.gameover').style.display = 'flex';
+	// document.querySelector('.gameover').style.display = 'flex';
 }
 
 //Här är en funktion som hämtar tidigare sparade poäng från localstorage. Poängen blir som en lista med sparade objekt så använder jag JSON som ändrar det till ett "JavaScript" objekt istället :P tror jag har förklarat det rätt. Om det finns poäng läggs dom till i en lista.  
 
 
+//Koden är "sur" nu för att vi inte anropat displayScores någonstans, det kan vi göra sen när vi vill visa dom
+function displayScores() {
+    let scores = JSON.parse(localStorage.getItem('scores')) || [];
 
-function dispalyScores() {
-	let scores = JSON.parse(localStorage.getItem('scores')) || [];
+    if (scores.length > 0) {  // Korrigerad stavning av "length"
+        let scoreList = '';
+        scores.forEach(score => {
+            scoreList += `<li>Spelare: ${score.name}, Felgissningar: ${score.incorrectGuesses}, Ordlängd: ${score.wordLength}, Poäng: ${score.score}, Tid: ${score.timePlayed}</li>`;
+        });
+        document.querySelector('.score-container ul').innerHTML = scoreList;
+    } else {
+        document.querySelector('.score-container ul').innerHTML = "<li>Inga poäng sparade än.</li>";
+    }
 
-	if (scores.lenght > 0) {
-		let scoreList = '';
-		scores.forEach(score => {
-			scoreList += `<li>Spelare: ${score.name}, Felgissningar: ${incorrectGuesses}, Ordlängd: ${score.wordLength}</li>`;
-
-		}) ;
-		document.querySelector('.score-container ul').innerHTML = scoreList;
-	} else {
-		document.querySelector('.score-container ul').innerHTML = "<li>Inga poäng sparade än.</li>";
-	}
-
-	// document.querySelector('.score-container').style.display = 'flex';
-	// document.querySelector('.game-container').style.display = 'none';
-	// document.querySelector('.win').style.display = 'none';
-	// document.querySelector('.gameover').style.display = 'none';
+   
 }
 
 //här börjar storage.js
