@@ -55,7 +55,7 @@ guessButton.addEventListener('click', function() {
       wrongLetters.push(inputValue);
       console.log('Felaktig bokstav: ' + inputValue);
       updateWrongLettersDisplay(); // Uppdatera felaktiga gissningar
-      wrongGuessCounter()
+      wrongGuessCounter() //en kroppsdel varje varje fel boktav
     }
   }
 });
