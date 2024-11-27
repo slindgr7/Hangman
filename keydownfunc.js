@@ -30,7 +30,8 @@ function updateWordDisplay() {
 
   //  visa vinstmeddelande
   if (allGuessed) {
-      gameWon();
+      gameWon()
+      resetGame()
   }
 }
 
@@ -50,7 +51,7 @@ guessButton.addEventListener('click', function() {
 
     if (secretWord.includes(inputValue)) {
       updateWordDisplay();
-      
+
     } else {
       // annars, lägg till den i felaktiga gissningar
       wrongLetters.push(inputValue);
@@ -59,7 +60,8 @@ guessButton.addEventListener('click', function() {
       wrongGuessCounter(wrongGuessCount) //Anropa wrongGuessCounter för att uppdatera feedback
 
       if (wrongGuessCount === 6) {
-        gameOver(); 
+        gameOver()
+        resetGame()
         
       }
     }
@@ -86,12 +88,11 @@ const redanGissatText = document.querySelector('.redanGissat');
 hintButton.addEventListener('click', showHint);
 
 function showHint() {
-  if (!hintUsed) { // Kolla om hint inte har använts
+  if (!hintUsed) { // kolla om hint inte har använts
     const remainingLetters = secretWord.split("").filter(letter => !guessedLetters.includes(letter));
     if (remainingLetters.length > 0) {
       const randomLetter = remainingLetters[Math.floor(Math.random() * remainingLetters.length)];
       guessedLetters.push(randomLetter);
-      console.log("Slumpmässig hint: " + randomLetter);
       updateWordDisplay();
       
       hintText.textContent = `Hint: En bokstav i ordet är '${randomLetter}'`;
@@ -106,11 +107,9 @@ function showHint() {
   }
 }
 
-// När du startar en ny omgång, glöm inte att återställa flaggan och dölja meddelandet:
 function startNewRound() {
-  hintUsed = false; // Återställ flaggan när en ny omgång börjar
+  hintUsed = false; // Återställ när en ny omgång börjar
   redanGissatText.style.display = 'none'; // Dölj meddelandet för en ny omgång
-  // Reset andra spelelement här också
 }
 
 
