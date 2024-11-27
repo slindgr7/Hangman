@@ -14,7 +14,7 @@
     <script type="module" src="keydownfunc.js"></script>
     <script type="module" src="storage.js"></script>
     <script type="module" src="score.js"></script>
-    <!-- <script type="module" src="script.js"></script> -->
+    <script type="module" src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,7 +28,7 @@
         <h1 class="h1-homes-screen">Välkommen till Hangman!</h1>
       </header>
       <section class="home-screen-section2">
-        <label class="home-screen-label" for="player-name"
+        <label class="home-screen-label" for="player-name-input"
           >Ange ditt namn:</label
         >
         <input
@@ -115,15 +115,13 @@
         <button type="submit" class="guess-btn">Gissa</button>
       </div>
 
-      <p>
-        class="guessed-letters"><span
-          >Gissade bokstäver: class="show-guessed-letters"></span
-        >
+      <p class="guessed-letters">Gissade bokstäver:<span class="show-guessed-letters"></span>
       </p>
 
       <div class="hint">
         <button class="hint-btn">Hint</button>
-        <p class="hint-text">"Lorem ipsum dolor sit amet...</p>
+        <p class="hint-text"></p>
+        <p class="redanGissat" style="display: none;">Du kan bara använda hint en gång</p>
       </div>
     </section>
 
