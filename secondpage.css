@@ -31,9 +31,14 @@ h2 {
     margin-bottom: 1em;
 
 }   
+.guess-btn:hover {
+	cursor: pointer;
+	border: 3px solid rgb(165, 167, 168);
+	background-color: rgb(187, 191, 192);
+	color: rgb(250, 104, 36);
 
+}
 button:hover {
-    /* background-color: #005ce6; */
 	cursor: pointer;
 	border: 3px solid rgb(165, 167, 168);
 	background-color: rgb(187, 191, 192);
@@ -41,8 +46,8 @@ button:hover {
 
 }
 #letter-input{
-    font-size: 18px;
-    color: rgb(119, 113, 113);
+    font-size: 22px;
+    color: rgb(67, 65, 65);
     height: 50px;
     width: 120px;
     padding: 0.3em;
@@ -54,8 +59,8 @@ button:hover {
   width: 8rem;
   font-size: 1.3em;
 	font-weight: bold;
-	padding: 0.30em;
-	margin: 0.25em;
+	padding: 0.25em;
+	margin: 0.20em;
 	border-radius: 8px;
 	border: 3px solid rgb(104, 105, 107);
 	background-color: rgb(255, 255, 255);
@@ -64,7 +69,7 @@ button:hover {
 
 .guess-btn:focus {
     transform: scale(1.05);
-    background-color: #a3c2e0; /* Lite ljusare blå vid fokus */
+    background-color: #b4bbc2; 
     border-color: #94b4ca;
     outline: none; 
 
@@ -89,7 +94,9 @@ button:hover {
 }
 
 .show-guessed-letters {
-    color: red;    
+    color: red; 
+    font-size: 18px;
+    font-weight: bold;   
 
 }
 
@@ -109,7 +116,7 @@ button:hover {
   
 .hint-text {
     font-size: 16px;
-    color: #656161;
+    color: #434040;
     font-weight: lighter;
     display: none; 
 
@@ -126,7 +133,7 @@ button:hover {
 
 #letter-input:focus {
     border-color: #c0c2c4;
-    background-color: #b1b5b6;
+    background-color: rgb(236, 233, 233);
     animation: focusAnimation 0.3s ease-out;
     outline: none;
  }
@@ -143,7 +150,7 @@ button:hover {
 @keyframes removeFocus {
   0% {
       transform: scale(1.05);
-      background-color: #a3c2e0;
+      background-color: #a1b8cf;
       border-color: #94b4ca;
   }
   100% {

@@ -30,33 +30,30 @@ function updateWordDisplay() {
 
   //  visa vinstmeddelande
   if (allGuessed) {
-    console.log("anropar gameWon")
       gameWon();
   }
 }
 
-// Funktion för att uppdatera felaktiga gissningar
+// uppdatera felaktiga gissningar
 function updateWrongLettersDisplay() {
   wrongLettersDisplay.textContent = wrongLetters.join(", ");
 }
 
 guessButton.addEventListener('click', function() {
-  const inputValue = letterInput.value.toLowerCase(); // Omvandla till små bokstäver
+  const inputValue = letterInput.value.toLowerCase(); 
   letterInput.value = ""; // Rensa inputfältet
 
   // if-sats för att kontrollera om bokstaven är ny 
   if (inputValue && !guessedLetters.includes(inputValue) && !wrongLetters.includes(inputValue)) {
     guessedLetters.push(inputValue); // Lägg till bokstaven i gissade bokstäver
-    console.log('lägger till värdet: ' + inputValue);
 
 
     if (secretWord.includes(inputValue)) {
-      // Om bokstaven finns i det hemliga ordet, uppdatera ordet
       updateWordDisplay();
+      
     } else {
       // annars, lägg till den i felaktiga gissningar
       wrongLetters.push(inputValue);
-      console.log('Felaktig bokstav: ' + inputValue);
       updateWrongLettersDisplay(); 
       wrongGuessCount++  // Öka räknaren för felaktiga gissningar
       wrongGuessCounter(wrongGuessCount) //Anropa wrongGuessCounter för att uppdatera feedback
@@ -73,9 +70,9 @@ import { getRandomWord } from './random-word.js'
 
 import { wrongGuessCounter } from './counter.js';  
 
-import { gameWon } from './score.js';
+import { gameWon } from './score.js'
 
-import { gameOver } from './score.js';
+import { gameOver } from './score.js'
 
 
 //Hint 
