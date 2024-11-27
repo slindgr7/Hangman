@@ -153,37 +153,40 @@
     <div class="input-letter-section"></div>
     <!-- <button type="reset" class="spela-om-btn hide">Spela om</button> -->
     <section class="score-container hide">
-      <dialog>
+      <dialog open>
         <header>
           <h4>Score Screen</h4>
           <p id="score">Score: 0</p>
         </header>
 
-        <section class="user-details">
-          <div>
-            <p>Name</p>
+        <div>
+          <p class="sort">Sort by:</p>
+          <button id="sort-by-guesses">Incorrect guesses</button>
+          <button id="sort-by-date">Time/Date</button>
+        </div>
+
+        <ul class="user-details">
+          <li>
+            <p>Name:</p>
             <p id="username"></p>
-          </div>
-
-          <div>
-            <p id="result">Result</p>
-            <p></p>
-          </div>
-
-          <div>
-            <p>Time/Date</p>
+          </li>
+          <li>
+            <p>Result:</p>
+            <p id="result"></p>
+          </li>
+          <li>
+            <p>Time/Date:</p>
             <p id="currentTime">07:33 <span>20/11</span></p>
-          </div>
-
-          <div>
-            <p>Incorrect guesses</p>
-            <p id="incorrectGuesses"></p>
-          </div>
-          <div>
-            <p>The word's length</p>
-            <p></p>
-          </div>
-        </section>
+          </li>
+          <li>
+            <p>Incorrect guesses:</p>
+            <p id="incorrectGuesses">2</p>
+          </li>
+          <li>
+            <p>The word's length:</p>
+            <p id="wordLength"></p>
+          </li>
+        </ul>
         <button id="close-score">Back to Game</button>
       </dialog>
     </section>
