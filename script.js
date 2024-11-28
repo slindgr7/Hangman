@@ -90,7 +90,7 @@ function saveScore(playerName, incorrectGuesses, wordLength, result, score, time
 }
 
 
-//funktion för vad som händer när spelet är slut och spelaren förlorade, då "hämtas" gameover delen i html-filen och visas på skärmen
+//funktion för vad som händer när spelet är, (och spelaren förlorat) funktionen hämtar spelarens namn, fel gissningar, ordets längd, samt sparar dagens datum, tid som spelaren spelade osv
 //Koden är "sur" nu för att vi inte anropat gameOver någonstans, det kan vi göra sen när vi vill visa dom
 function gameOver() {
     let playerName = localStorage.getItem('playerName');
@@ -102,11 +102,13 @@ function gameOver() {
     
     saveScore(playerName, incorrectGuesses, wordLength, 'lost', score, timePlayed);
 
-	// document.querySelector('.gameover').style.display = 'flex';
+	 document.querySelector('.gameover').style.display = 'flex';
+	 saveScore(playerName, incorrectGuesses, wordLength, 'lost', score, timePlayed);
 }
 //Koden är "sur" nu för att vi inte anropat gameWon någonstans, det kan vi göra sen när vi vill visa dom
+// samma typ av funktion som den ovan bara att spelaren vunnit här
 function gameWon() {
-    score += 10;  // 10 poäng för vinst
+    score += 10;  
     let playerName = localStorage.getItem('playerName');
     let wordLength = randomWord.length;
     let incorrectGuesses = document.querySelector('#incorrectGuesses').innerText;
@@ -117,6 +119,7 @@ function gameWon() {
     saveScore(playerName, incorrectGuesses, wordLength, 'won', score, timePlayed);
 
 	// document.querySelector('.gameover').style.display = 'flex';
+	// saveScore(playerName, incorrectGuesses, wordLength, 'won', score, timePlayed);
 }
 
 //Här är en funktion som hämtar tidigare sparade poäng från localstorage. Poängen blir som en lista med sparade objekt så använder jag JSON som ändrar det till ett "JavaScript" objekt istället :P tror jag har förklarat det rätt. Om det finns poäng läggs dom till i en lista.  
@@ -126,7 +129,7 @@ function gameWon() {
 function displayScores() {
     let scores = JSON.parse(localStorage.getItem('scores')) || [];
 
-    if (scores.length > 0) {  // Korrigerad stavning av "length"
+    if (scores.length > 0) {  
         let scoreList = '';
         scores.forEach(score => {
             scoreList += `<li>Spelare: ${score.name}, Felgissningar: ${score.incorrectGuesses}, Ordlängd: ${score.wordLength}, Poäng: ${score.score}, Tid: ${score.timePlayed}</li>`;

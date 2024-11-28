@@ -1,7 +1,7 @@
 
 
 .gameover {
-	display: flex;
+	display: none;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
