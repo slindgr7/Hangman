@@ -72,9 +72,9 @@ import { getRandomWord } from './random-word.js'
 
 import { wrongGuessCounter } from './counter.js';  
 
-import { gameWon } from './score.js'
+import { gameWon } from './win-gameover-scores.js'
 
-import { gameOver } from './score.js'
+import { gameOver } from './win-gameover-scores.js'
 
 
 //Hint 
