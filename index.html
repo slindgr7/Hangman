@@ -53,13 +53,13 @@
             Hard
           </label>
         </div>
+        <button id="show-score">View Score</button>
         <button class="home-screen-play-button" id="play-button">Play</button>
         <button class="home-screen-score-button">Score</button>
       </section>
     </section>
 
     <section class="game-container">
-      <button id="show-score">View Score</button>
       <h2>Hänga gubben</h2>
       <p class="game-info">Gissa bokstäver för att lösa ordet!</p>
 
@@ -130,12 +130,13 @@
         <button type="submit" class="guess-btn">Gissa</button>
       </div>
 
-      <p class="guessed-letters">Gissade bokstäver: <span class="show-guessed-letters"></span>
+      <p class="guessed-letters">
+        Gissade bokstäver: <span class="show-guessed-letters"></span>
       </p>
 
       <div class="hint">
         <button class="hint-btn">Hint</button>
-        <p class="hint-text"</p>
+        <p class="hint-text"></p>
       </div>
     </section>
 
@@ -179,28 +180,7 @@
           <button id="sort-by-date">Time/Date</button>
         </div>
 
-        <ul class="user-details">
-          <li>
-            <p>Name:</p>
-            <p id="username"></p>
-          </li>
-          <li>
-            <p>Result:</p>
-            <p id="result"></p>
-          </li>
-          <li>
-            <p>Time/Date:</p>
-            <p id="currentTime">07:33 <span>20/11</span></p>
-          </li>
-          <li>
-            <p>Incorrect guesses:</p>
-            <p id="incorrectGuesses">2</p>
-          </li>
-          <li>
-            <p>The word's length:</p>
-            <p id="wordLength"></p>
-          </li>
-        </ul>
+        <ul class="user-details"></ul>
         <button id="close-score">Back to Game</button>
       </dialog>
     </section>

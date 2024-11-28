@@ -45,6 +45,7 @@
 			margin-bottom: 3rem;
 			padding: 0.5rem;
 			cursor: pointer;
+}
 
 	}
 
@@ -81,7 +82,7 @@
 
 	}
 
-	}
+	
 .user-details {
 	display: flex;
 	justify-content:space-evenly;
