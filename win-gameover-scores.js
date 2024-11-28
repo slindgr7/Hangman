@@ -14,12 +14,12 @@ export function gameOver() {
 	//  document.querySelector('.gameover').style.display = 'flex';
 	 saveScore(playerName, incorrectGuesses, wordLength, 'lost', score, timePlayed);
      showGameOverContainer();
-     document.querySelector('.gameover-p1').innerText = `Det hemliga ordet var: ${getRandomWord}`;
+     document.querySelector('.gameover-p1').innerText = `Det hemliga ordet var: ${getRandomWord()}`;
      document.querySelector('.gameover-p2').innerText = `Ditt antal gissningar var: ${incorrectGuesses}`;
 }
 
 export function gameWon() {
-    score += 10;  
+     
     let playerName = localStorage.getItem('playerName');
     let wordLength = getRandomWord.length;
     let incorrectGuesses = document.querySelector('#incorrectGuesses').innerText;

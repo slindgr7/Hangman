@@ -55,7 +55,7 @@ currentTime.innerText = `${currentHour}:${currentMinute}    ${currentDay}/${curr
 const scoreElement = document.querySelector('#score');
 let score = 0;
 
-function updateScore(points) {
+export function updateScore(points) {
     score += points; 
     scoreElement.innerText = `Score: ${score}`;
 	return score;
