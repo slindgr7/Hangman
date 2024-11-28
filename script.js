@@ -118,8 +118,8 @@ function gameWon() {
     
     saveScore(playerName, incorrectGuesses, wordLength, 'won', score, timePlayed);
 
-	// document.querySelector('.gameover').style.display = 'flex';
-	// saveScore(playerName, incorrectGuesses, wordLength, 'won', score, timePlayed);
+	document.querySelector('.gameover').style.display = 'flex';
+	saveScore(playerName, incorrectGuesses, wordLength, 'won', score, timePlayed);
 }
 
 //Här är en funktion som hämtar tidigare sparade poäng från localstorage. Poängen blir som en lista med sparade objekt så använder jag JSON som ändrar det till ett "JavaScript" objekt istället :P tror jag har förklarat det rätt. Om det finns poäng läggs dom till i en lista.  
