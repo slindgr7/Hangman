@@ -33,7 +33,7 @@ export function gameWon() {
 	saveScore(playerName, incorrectGuesses, wordLength, 'won', score, timePlayed);
 	showWinContainer()
 	document.querySelector('.win-p1').innerText = `Du lyckades hitta det hemliga ordet!`;
-	document.querySelector('.win-p2').innerText = `Dina poäng blev: ${score}`;
+	// document.querySelector('.win-p2').innerText = `Dina poäng blev: ${score}`;
     
 }
 
