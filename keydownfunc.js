@@ -1,3 +1,4 @@
+
 import { getRandomWord } from './random-word.js'  
 
 import { wrongGuessCounter } from './counter.js';  
@@ -39,12 +40,30 @@ function updateWordDisplay() {
   //  visa vinstmeddelande
   if (allGuessed) {
       gameWon()
+    
+      
   }
 }
 
 // uppdatera felaktiga gissningar
 function updateWrongLettersDisplay() {
   wrongLettersDisplay.textContent = wrongLetters.join(", ");
+}
+
+
+const scoreElement = document.querySelector('#score');
+let score = 0; 
+
+function updateScore(isCorrectGuess) {
+  if (isCorrectGuess) {
+    score += 1; 
+  } else {
+    score -= 1; 
+  }
+
+  scoreElement.innerText = `Score: ${score}`;
+
+  return score;
 }
 
 guessButton.addEventListener('click', function() {
@@ -58,6 +77,7 @@ guessButton.addEventListener('click', function() {
 
     if (secretWord.includes(inputValue)) {
       updateWordDisplay();
+	  updateScore(true);
 
     } else {
       // annars, lägg till den i felaktiga gissningar
@@ -65,8 +85,10 @@ guessButton.addEventListener('click', function() {
       updateWrongLettersDisplay(); 
       wrongGuessCount++  // Öka räknaren för felaktiga gissningar
       wrongGuessCounter(wrongGuessCount) //Anropa wrongGuessCounter för att uppdatera feedback
+	  updateScore(false);
 
       if (wrongGuessCount === 6) {
+        console.log("wrongGuessCount är 6")
         gameOver()
         
       }

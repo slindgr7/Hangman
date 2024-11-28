@@ -1,5 +1,6 @@
-import {showGameOverContainer} from './hide-funcation.js'
+import {showGameOverContainer, showWinContainer} from './hide-funcation.js'
 import { getRandomWord } from './random-word.js';
+
 
 export function gameOver() {
     let playerName = localStorage.getItem('playerName');
@@ -11,15 +12,15 @@ export function gameOver() {
     
     saveScore(playerName, incorrectGuesses, wordLength, 'lost', score, timePlayed);
 
-	//  document.querySelector('.gameover').style.display = 'flex';
+	
 	 saveScore(playerName, incorrectGuesses, wordLength, 'lost', score, timePlayed);
      showGameOverContainer();
-     document.querySelector('.gameover-p1').innerText = `Det hemliga ordet var: ${getRandomWord}`;
+     document.querySelector('.gameover-p1').innerText = `Det hemliga ordet var: ${getRandomWord()}`;
      document.querySelector('.gameover-p2').innerText = `Ditt antal gissningar var: ${incorrectGuesses}`;
 }
 
 export function gameWon() {
-    score += 10;  
+     
     let playerName = localStorage.getItem('playerName');
     let wordLength = getRandomWord.length;
     let incorrectGuesses = document.querySelector('#incorrectGuesses').innerText;
@@ -27,11 +28,12 @@ export function gameWon() {
     const todaysDate = new Date();
     const timePlayed = `${todaysDate.getHours()}:${todaysDate.getMinutes()} ${todaysDate.getDate()}/${todaysDate.getMonth()+1}`;
     
-    saveScore(playerName, incorrectGuesses, wordLength, 'won', score, timePlayed);
 
-	// document.querySelector('.gameover').style.display = 'flex';
+	
 	saveScore(playerName, incorrectGuesses, wordLength, 'won', score, timePlayed);
-
+	showWinContainer()
+	document.querySelector('.win-p1').innerText = `Du lyckades hitta det hemliga ordet!`;
+	// document.querySelector('.win-p2').innerText = `Dina poäng blev: ${score}`;
     
 }
 

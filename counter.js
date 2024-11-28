@@ -60,16 +60,16 @@ currentTime.innerText = `${currentHour}:${currentMinute}    ${currentDay}/${curr
 
 
 // Poäng i dialog-rutan.
-const scoreElement = document.querySelector('#score');
-let score = 0;
+// const scoreElement = document.querySelector('#score');
+// let score = 0;
 
-function updateScore(points) {
-    score += points; 
-    scoreElement.innerText = `Score: ${score}`;
-	return score;
-}
+// function updateScore(points) {
+//     score += points; 
+//     scoreElement.innerText = `Score: ${score}`;
+// 	return score;
+// }
 
-updateScore()
+// updateScore()
 //console.log(updateScore(10));
 
 

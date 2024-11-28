@@ -10,7 +10,7 @@
 	/* font-size: 4em; */
 	color: rgb(230, 153, 11);
 }
-.gameover-p {
+.gameover-p1, .gameover-p2 {
 	/* font-size: 2em; */
 	color: rgb(245, 160, 4);
 }
