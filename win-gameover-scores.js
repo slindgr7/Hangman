@@ -5,7 +5,7 @@ import { getRandomWord } from './random-word.js';
 export function gameOver() {
     let playerName = localStorage.getItem('playerName');
     let wordLength = getRandomWord.length;
-    let incorrectGuesses = document.querySelector('#incorrectGuesses').innerText;
+    let incorrectGuesses = document.querySelector('#sort-by-guesses')
     
     const todaysDate = new Date();
     const timePlayed = `${todaysDate.getHours()}:${todaysDate.getMinutes()} ${todaysDate.getDate()}/${todaysDate.getMonth()+1}`;
@@ -17,14 +17,14 @@ export function gameOver() {
      showGameOverContainer();
      // cant use get randomWord for $ need a variable and not whole fun.
      document.querySelector('.gameover-p1').innerText = `Det hemliga ordet var: ${getRandomWord()}`;
-     document.querySelector('.gameover-p2').innerText = `Ditt antal gissningar var: ${incorrectGuesses}`;
+    //  document.querySelector('.gameover-p2').innerText = `Ditt antal gissningar var: ${incorrectGuesses}`;
 }
 
 export function gameWon() {
      
     let playerName = localStorage.getItem('playerName');
     let wordLength = getRandomWord.length;
-    let incorrectGuesses = document.querySelector('#incorrectGuesses').innerText;
+    let incorrectGuesses = document.querySelector('#sort-by-guesses')
     
     const todaysDate = new Date();
     const timePlayed = `${todaysDate.getHours()}:${todaysDate.getMinutes()} ${todaysDate.getDate()}/${todaysDate.getMonth()+1}`;
