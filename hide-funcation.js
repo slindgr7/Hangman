@@ -16,6 +16,7 @@ function hideGameContainer() {
     let gameContainerElements = document.querySelectorAll('section.game-container *');
     gameContainerElements.forEach(function(element) {
         element.setAttribute('hidden', true);
+        document.querySelector('section.game-container').style.display = 'none';
     });
 }
 
@@ -23,6 +24,7 @@ function showGameContainer() {
     let gameContainerElements = document.querySelectorAll('section.game-container *');
     gameContainerElements.forEach(function(element) {
         element.removeAttribute('hidden');
+        document.querySelector('section.game-container').style.display = 'flex';
     });
 }
 

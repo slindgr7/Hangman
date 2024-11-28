@@ -1,6 +1,6 @@
 import { hideHomeScreenContainer, showHomeScreenContainer, hideGameContainer, showGameContainer
     ,showGameOverContainer, hideGameOverContainer, showWinContainer, hideWinContainer 
-    ,showScoreContainer, hideScoreContainer ,showUserDetails, hideUserDetails } from "./CSS/JS-filer/hide-funcation.js";
+    ,showScoreContainer, hideScoreContainer ,showUserDetails, hideUserDetails } from "./hide-funcation.js";
     import { words } from './swedish-words.js';
 
 // är är knapper med hide och show function
@@ -11,8 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
         showGameContainer();
     });
     document.querySelector('.home-screen-score-button').addEventListener('click', () => {
-        hideHomeScreenContainer();
-        showScoreContainer();
+        // hideHomeScreenContainer();
+        // showScoreContainer();
+        hideGameContainer()
     });
 });
 // Game screen buttons that hide and show 
