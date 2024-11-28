@@ -1,3 +1,4 @@
+
 // Dialog-ruta för Score screen
 const showScore = document.querySelector('#show-score')
 const closeScoreBtn = document.querySelector('#close-score')
@@ -8,6 +9,7 @@ dialog.addEventListener('click', event => {
 	event.stopPropagation()
 })
 showScore.addEventListener('click', () => {
+	scoreList();
 	scoreContainer.classList.remove('hide')
 	dialog.show()
 })
@@ -18,6 +20,12 @@ function closeDialog() {
 	dialog.close()
 	scoreContainer.classList.add('hide')
 }
+
+
+
+
+
+
 
 
 
