@@ -29,7 +29,7 @@ export function gameWon() {
     
     saveScore(playerName, incorrectGuesses, wordLength, 'won', score, timePlayed);
 
-	document.querySelector('.gameover').style.display = 'flex';
+	// document.querySelector('.gameover').style.display = 'flex';
 	saveScore(playerName, incorrectGuesses, wordLength, 'won', score, timePlayed);
 
     
