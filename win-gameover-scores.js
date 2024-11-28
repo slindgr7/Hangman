@@ -47,5 +47,19 @@ function displayScores() {
 
    
 }
-import { showGameOverContainer } from './hide-funcation.js'
-import { getRandomWord } from './random-word.js'
+
+
+function saveScore(playerName, incorrectGuesses, wordLength, result, score, timePlayed) {
+	let newScore = {
+		name: playerName,
+		incorrectGuesses: incorrectGuesses,
+		wordLength: wordLength,
+		result: result,
+		score: score,
+		timePlayed: timePlayed
+	};
+
+	let allScores = JSON.parse(localStorage.getItem('scores')) || [];
+	allScores.push(newScore);
+	localStorage.setItem('scores', JSON.stringify(allScores));
+}
