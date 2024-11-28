@@ -1,3 +1,11 @@
+import { getRandomWord } from './random-word.js'  
+
+import { wrongGuessCounter } from './counter.js';  
+
+import { gameWon } from './win-gameover-scores.js'
+
+import { gameOver } from './win-gameover-scores.js'
+
 const secretWord = getRandomWord(); 
 const wordDisplay = document.querySelector(".word-display");
 const wrongLettersDisplay = document.querySelector(".show-guessed-letters");
@@ -31,7 +39,6 @@ function updateWordDisplay() {
   //  visa vinstmeddelande
   if (allGuessed) {
       gameWon()
-      resetGame()
   }
 }
 
@@ -61,20 +68,11 @@ guessButton.addEventListener('click', function() {
 
       if (wrongGuessCount === 6) {
         gameOver()
-        resetGame()
         
       }
     }
   }
 });
-
-import { getRandomWord } from './random-word.js'  
-
-import { wrongGuessCounter } from './counter.js';  
-
-import { gameWon } from './win-gameover-scores.js'
-
-import { gameOver } from './win-gameover-scores.js'
 
 
 //Hint 
