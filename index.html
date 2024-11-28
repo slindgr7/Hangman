@@ -15,6 +15,7 @@
     <script type="module" src="storage.js"></script>
     <script type="module" src="score.js"></script>
     <script type="module" src="script.js"></script>
+    <!-- <script type="module" src="script.js"></script> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,6 +39,20 @@
           placeholder="Skriv ditt namn"
         />
         <p id="meddelande"></p>
+        <div class="radio-buttons">
+          <label class="easy-button">
+            <input type="radio" name="difficulty" value="easy" checked />
+            Easy
+          </label>
+          <label class="medium-button">
+            <input type="radio" name="difficulty" value="medium" />
+            Medium
+          </label>
+          <label class="hard-button">
+            <input type="radio" name="difficulty" value="hard" />
+            Hard
+          </label>
+        </div>
         <button class="home-screen-play-button" id="play-button">Play</button>
         <button class="home-screen-score-button">Score</button>
       </section>
@@ -52,7 +67,7 @@
         <figure class="">
           <svg
             width="350"
-            height="565"
+            height="350"
             viewBox="0 0 501 565"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -110,44 +125,42 @@
           type="text"
           id="letter-input"
           maxlength="1"
-          placeholder="Knappa in en bokstav.."
+          placeholder="bokstav"
         />
         <button type="submit" class="guess-btn">Gissa</button>
       </div>
 
-      <p>
-        class="guessed-letters"><span
-          >Gissade bokstäver: class="show-guessed-letters"></span
-        >
+      <p class="guessed-letters">Gissade bokstäver: <span class="show-guessed-letters"></span>
       </p>
 
       <div class="hint">
         <button class="hint-btn">Hint</button>
-        <p class="hint-text">"Lorem ipsum dolor sit amet...</p>
+        <p class="hint-text"></p>
+        <p class="redanGissat" style="display: none;">Du kan bara använda hint en gång</p>
       </div>
     </section>
 
     <section class="gameover">
-      <header>
-        <h3 class="titel-gameover">Game Over</h3>
+      <header hidden="true">
+        <h3 class="titel-gameover" hidden="true">Game Over</h3>
       </header>
-      <section>
-        <p class="gameover-p">Det hemliga ordet var:</p>
-        <p class="gameover-p">Ditt antal gissningar var:</p>
-        <button class="gameover-button">Play Again</button>
-        <button class="gameover-score-button">View Score</button>
+      <section hidden="true">
+        <p class="gameover-p" hidden="true">Det hemliga ordet var:</p>
+        <p class="gameover-p" hidden="true">Ditt antal gissningar var:</p>
+        <button class="gameover-button" hidden="true">Play Again</button>
+        <button class="gameover-score-button" hidden="true">View Score</button>
       </section>
     </section>
 
     <section class="win">
-      <header>
-        <h3 class="titel-win">Bra jobbat!</h3>
+      <header hidden="true">
+        <h3 class="titel-win" hidden="true">Bra jobbat!</h3>
       </header>
-      <section>
-        <p class="win-p">Du lyckades hitta det hemliga ordet!</p>
-        <p class="win-p">Ditt antal gissningar var:</p>
-        <button class="win-button">Play again</button>
-        <button class="win-score-button">Poäng-tavlan</button>
+      <section hidden="true">
+        <p class="win-p" hidden="true">Du lyckades hitta det hemliga ordet!</p>
+        <p class="win-p" hidden="true">Ditt antal gissningar var:</p>
+        <button class="win-button" hidden="true">Play again</button>
+        <button class="win-score-button" hidden="true">Poäng-tavlan</button>
       </section>
     </section>
 
@@ -155,40 +168,42 @@
     <div class="input-letter-section"></div>
     <!-- <button type="reset" class="spela-om-btn hide">Spela om</button> -->
     <section class="score-container hide">
-      <dialog>
+      <dialog open>
         <header>
           <h4>Score Screen</h4>
           <p id="score">Score: 0</p>
         </header>
 
-        <section class="user-details">
-          <div>
-            <p>Name</p>
+        <div>
+          <p class="sort">Sort by:</p>
+          <button id="sort-by-guesses">Incorrect guesses</button>
+          <button id="sort-by-date">Time/Date</button>
+        </div>
+
+        <ul class="user-details">
+          <li>
+            <p>Name:</p>
             <p id="username"></p>
-          </div>
-
-          <div>
-            <p id="result">Result</p>
-            <p></p>
-          </div>
-
-          <div>
-            <p>Time/Date</p>
+          </li>
+          <li>
+            <p>Result:</p>
+            <p id="result"></p>
+          </li>
+          <li>
+            <p>Time/Date:</p>
             <p id="currentTime">07:33 <span>20/11</span></p>
-          </div>
-
-          <div>
-            <p>Incorrect guesses</p>
-            <p id="incorrectGuesses"></p>
-          </div>
-          <div>
-            <p>The word's length</p>
-            <p></p>
-          </div>
-        </section>
+          </li>
+          <li>
+            <p>Incorrect guesses:</p>
+            <p id="incorrectGuesses">2</p>
+          </li>
+          <li>
+            <p>The word's length:</p>
+            <p id="wordLength"></p>
+          </li>
+        </ul>
         <button id="close-score">Back to Game</button>
       </dialog>
     </section>
-    <script src="keydownfunc.js"></script>
   </body>
 </html>

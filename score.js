@@ -40,7 +40,7 @@ function saveScore(playerName, incorrectGuesses, wordLength, result) {
 }
 
 //funktion för vad som händer när spelet är slut och spelaren förlorade, då "hämtas" gameover delen i html-filen och visas på skärmen
-function gameOver() {
+export function gameOver() {
 	let playerName = document.querySelector('.player-name').textContent;
 	let incorrectGuesses = //här i behöver vi ha ett element som håller koll på hur många felgissningar spelaren har gjort;
 	// let wordLength = // här i behövs ett element som håller koll på ordens längd;
@@ -50,7 +50,7 @@ function gameOver() {
 	document.querySelector('.gameover').style.display = 'flex';
 }
 
-function gameWon() {
+export function gameWon() {
 	let playerName = document.querySelector('.player-name').textContent;
 	let incorrectGuesses = //här i behöver vi ha ett element som håller koll på hur många felgissningar spelaren har gjort;
 	// let wordLength = // här i behövs ett element som håller koll på ordens längd;

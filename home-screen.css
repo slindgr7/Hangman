@@ -53,6 +53,16 @@ body {
 	background-color: rgb(255, 255, 255);
 	color: rgb(228, 78, 8);
   }
+
+  .radio-buttons {
+    font-weight: bold;
+    padding: 0.30em;
+    margin: 0.25em;
+    border-radius: 8px;
+    border: 3px solid rgb(238, 241, 243);
+    background-color: rgb(255, 255, 255);
+    color: rgb(228, 78, 8);
+  }
   
 .home-screen-play-button:hover {
     /* background-color: #005ce6; */
