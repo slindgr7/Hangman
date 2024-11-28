@@ -1,3 +1,4 @@
+
 import { getRandomWord } from './random-word.js'  
 
 import { wrongGuessCounter } from './counter.js';  
@@ -39,6 +40,8 @@ function updateWordDisplay() {
   //  visa vinstmeddelande
   if (allGuessed) {
       gameWon()
+    
+      
   }
 }
 
@@ -85,6 +88,7 @@ guessButton.addEventListener('click', function() {
 	  updateScore(false);
 
       if (wrongGuessCount === 6) {
+        console.log("wrongGuessCount är 6")
         gameOver()
         
       }
