@@ -15,6 +15,7 @@ export function gameOver() {
 	
 	 saveScore(playerName, incorrectGuesses, wordLength, 'lost', score, timePlayed);
      showGameOverContainer();
+     // cant use get randomWord for $ need a variable and not whole fun.
      document.querySelector('.gameover-p1').innerText = `Det hemliga ordet var: ${getRandomWord()}`;
      document.querySelector('.gameover-p2').innerText = `Ditt antal gissningar var: ${incorrectGuesses}`;
 }
