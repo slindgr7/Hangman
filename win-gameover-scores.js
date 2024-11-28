@@ -1,3 +1,6 @@
+import {showGameOverContainer} from './hide-funcation.js'
+import { getRandomWord } from './random-word.js';
+
 export function gameOver() {
     let playerName = localStorage.getItem('playerName');
     let wordLength = getRandomWord.length;
@@ -63,3 +66,4 @@ function saveScore(playerName, incorrectGuesses, wordLength, result, score, time
 	allScores.push(newScore);
 	localStorage.setItem('scores', JSON.stringify(allScores));
 }
+
