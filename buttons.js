@@ -6,6 +6,9 @@ const scoreButtonLose = document.querySelector('.gameover-score-button')
 const scoreButtonwin = document.querySelector('.win-score-button')
 const ScoreButtonHomescreen = document.querySelector('.home-screen-score-button')
 const dialog = document.querySelector('dialog')
+const showScore = document.querySelector('#show-score')
+const closeScoreBtn = document.querySelector('#close-score')
+const scoreContainer = document.querySelector('.score-container')
 
 playButtonlose.addEventListener('click', function() {
         showHomeScreenContainer()
