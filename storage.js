@@ -8,42 +8,39 @@ const meddelande = document.getElementById('meddelande');
 
 
 
-// function updateGameDetails(playerName, score, incorrectGuesses, wordLength, result) { 
-// 	let games = JSON.parse(localStorage.getItem('games')) || []; // hämtar games från local storage, om det inte finns något så skapas en tom array
-// 	let gameIndex = games.findIndex(game => game.player === playerName); // kollar om det finns ett game med samma player name
+function updateGameDetails(playerName, score, incorrectGuesses, wordLength, result) { 
+	let games = JSON.parse(localStorage.getItem('games')) || []; // hämtar games från local storage, om det inte finns något så skapas en tom array
+	let gameIndex = games.findIndex(game => game.player === playerName); // kollar om det finns ett game med samma player name
 
-// 	if (gameIndex !== -1) { // om det finns ett game med samma player name så uppdateras det
-// 		games[gameIndex].score = score; 						// uppdaterar score
-// 		games[gameIndex].incorrectGuesses = incorrectGuesses;	// uppdaterar incorrect guesses
-// 		games[gameIndex].wordLength = wordLength; 				// uppdaterar word length
-// 		games[gameIndex].result = result; 						// uppdaterar result
-// 		games[gameIndex].date = new Date().toLocaleString();	// uppdaterar date
-// 	} else { 		// om det inte finns ett game med samma player name så skapas ett nytt game
-// 		let gameDetails = { 						
-// 			player: playerName, 					
-// 			score: score, 		 					
-// 			date: new Date().toLocaleString(), 		
-// 			incorrectGuesses: incorrectGuesses, 	
-// 			wordLength: wordLength, 				
-// 			result: result 							
-// 		};
-// 		games.push(gameDetails); // lägger till det nya game i games arrayen
-// 	}
+	if (gameIndex !== -1) { // om det finns ett game med samma player name så uppdateras det
+		games[gameIndex].score = score; 						// uppdaterar score
+		games[gameIndex].incorrectGuesses = incorrectGuesses;	// uppdaterar incorrect guesses
+		games[gameIndex].wordLength = wordLength; 				// uppdaterar word length
+		games[gameIndex].result = result; 						// uppdaterar result
+		games[gameIndex].date = new Date().toLocaleString();	// uppdaterar date
+	} else { 		// om det inte finns ett game med samma player name så skapas ett nytt game
+		let gameDetails = { 						
+			player: playerName, 					
+			score: score, 		 					
+			date: new Date().toLocaleString(), 		
+			incorrectGuesses: incorrectGuesses, 	
+			wordLength: wordLength, 				
+			result: result 							
+		};
+		games.push(gameDetails); // lägger till det nya game i games arrayen
+	}
 
-// 	localStorage.setItem('games', JSON.stringify(games)); // sparar games arrayen i local storage
-// }
+	localStorage.setItem('games', JSON.stringify(games)); // sparar games arrayen i local storage
+}
 
 // export the function
-// export { updateGameDetails };
+export { updateGameDetails };
 
 	
 
 
-<<<<<<< HEAD
  playButton.addEventListener('click', function () {
-=======
 playButton.addEventListener('click', function () {
->>>>>>> 000bcc5fd0404783e5cd2965c638253d5278e041
 	const playerName = playerNameInput.value;
 
 	if (playerName !== "") {
