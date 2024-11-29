@@ -4,7 +4,9 @@ const playButtonlose = document.querySelector('.gameover-button')
 const playButtonwin = document.querySelector('.win-button')
 const scoreButtonLose = document.querySelector('.gameover-score-button')
 const scoreButtonwin = document.querySelector('.win-score-button')
-
+const showScoreBtn = document.querySelector('#show-score')
+const closeScoreBtn = document.querySelector('#close-score')
+const dialog = document.querySelector('dialog')
 
 playButtonlose.addEventListener('click', function() {
         showHomeScreenContainer()
@@ -16,10 +18,15 @@ playButtonwin.addEventListener('click', function() {
         hideWinContainer()
     });
 
-scoreButtonLose.addEventListener('click', function(){
-
+dialog.addEventListener('click', event => {
+        event.stopPropagation()
     })
+scoreButtonLose.addEventListener('click', () => {
+    scoreContainer.classList.remove('hide')
+    dialog.show()
+})
 
-scoreButtonwin.addEventListener('click', function(){
-
+scoreButtonwin.addEventListener('click', () => {
+    scoreContainer.classList.remove('hide')
+    dialog.show()
 })
