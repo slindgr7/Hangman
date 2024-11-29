@@ -66,6 +66,9 @@ function updateWordDisplay() {
   //  visa vinstmeddelande
   if (allGuessed) {
       gameWon()
+      updateGameDetails(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
+      hideGameContainer(); // Dölj spelet för att visa gamer over
+
     
       
   }
