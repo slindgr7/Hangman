@@ -2,6 +2,8 @@ import {showGameOverContainer, showWinContainer} from './hide-funcation.js'
 import { getRandomWord } from './random-word.js';
 
 
+
+
 export function gameOver() {
     let playerName = localStorage.getItem('playerName');
     let wordLength = getRandomWord.length;
@@ -16,7 +18,8 @@ export function gameOver() {
 	 saveScore(playerName, incorrectGuesses, wordLength, 'lost', score, timePlayed);
      showGameOverContainer();
      // cant use get randomWord for $ need a variable and not whole fun.
-     document.querySelector('.gameover-p1').innerText = `Det hemliga ordet var: ${getRandomWord()}`;
+    const randomWord = getRandomWord;
+    document.querySelector('.gameover-p1').innerText = "Det hemliga ordet är " + randomWord;
     //  document.querySelector('.gameover-p2').innerText = `Ditt antal gissningar var: ${incorrectGuesses}`;
 }
 
@@ -69,4 +72,3 @@ function saveScore(playerName, incorrectGuesses, wordLength, result, score, time
 	allScores.push(newScore);
 	localStorage.setItem('scores', JSON.stringify(allScores));
 }
-
