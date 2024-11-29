@@ -9,7 +9,7 @@ import { gameOver } from './win-gameover-scores.js'
 
 import { updateGameDetails } from './storage.js';
 
-import { hideGameContainer, hideHomeScreenContainer } from './hide-funcation.js';
+import { hideGameContainer, hideHomeScreenContainer, showGameContainer } from './hide-funcation.js';
 
 const secretWord = getRandomWord(); 
 const wordDisplay = document.querySelector(".word-display");
@@ -30,6 +30,7 @@ playButton.addEventListener('click', function () {
   const playerNameInput = document.getElementById('player-name-input'); 
   const playerName = playerNameInput.value.trim(); 
   hideHomeScreenContainer();
+  showGameContainer();
 
 
   if (playerName !== "") {
