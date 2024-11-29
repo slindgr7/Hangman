@@ -18,8 +18,8 @@ export function gameOver() {
 	 saveScore(playerName, incorrectGuesses, wordLength, 'lost', score, timePlayed);
      showGameOverContainer();
      // cant use get randomWord for $ need a variable and not whole fun.
-    const randomWord = getRandomWord;
-    document.querySelector('.gameover-p1').innerText = "Det hemliga ordet är " + randomWord;
+    // const randomWord = getRandomWord() // detta gör så hemliga order körs 2 gånger så man inte får samma som hängagubben
+    // document.querySelector('.gameover-p1').innerText = "Det hemliga ordet är " + randomWord; // detta måste ligga i keydownfun.js
     //  document.querySelector('.gameover-p2').innerText = `Ditt antal gissningar var: ${incorrectGuesses}`;
 }
 

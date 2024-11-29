@@ -9,7 +9,7 @@ import { gameOver } from './win-gameover-scores.js'
 
 import { updateGameDetails } from './storage.js';
 
-import { hideGameContainer, hideHomeScreenContainer, showGameContainer } from './hide-funcation.js';
+import { hideGameContainer, hideHomeScreenContainer, showGameContainer, showGameOverContainer } from './hide-funcation.js';
 
 
 const secretWord = getRandomWord(); 
@@ -26,6 +26,7 @@ let currentplayer = ""; // spelarens current name sparas denna variabel
 const playButton = document.getElementById('play-button');
 const meddelande = document.getElementById('meddelande');
 
+document.querySelector('.gameover-p1').innerText = "Det hemliga ordet är " + secretWord;
 
 playButton.addEventListener('click', function () { 
   const playerNameInput = document.getElementById('player-name-input'); 
@@ -70,6 +71,7 @@ function updateWordDisplay() {
       gameWon()
       updateGameDetails(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
       hideGameContainer(); // Dölj spelet för att visa gamer over
+      
 
     
       
@@ -120,8 +122,8 @@ guessButton.addEventListener('click', function() {
 
       if (wrongGuessCount === 6) {
         console.log("wrongGuessCount är 6")
-        gameOver()
-         updateGameDetails(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
+        gameOver() // detta måste köras tidgare för att randomword() ska funka med lose
+        updateGameDetails(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
         hideGameContainer(); // Dölj spelet för att visa gamer over
         
       }
