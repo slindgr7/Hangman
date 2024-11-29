@@ -39,7 +39,7 @@ export { updateGameDetails };
 	
 
 
-/* playButton.addEventListener('click', function () {
+playButton.addEventListener('click', function () {
 	const playerName = playerNameInput.value;
 
 	if (playerName !== "") {
@@ -75,5 +75,5 @@ function saveScore() {
 		scores[playerIndex] = playerScores;
 		localStorage.setItem('scores', JSON.stringify(scores));
 	}
-} */
+} 
 

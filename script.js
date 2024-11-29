@@ -1,4 +1,4 @@
-import { hideHomeScreenContainer, showHomeScreenContainer, hideGameContainer, showGameContainer
+/* import { hideHomeScreenContainer, showHomeScreenContainer, hideGameContainer, showGameContainer
     ,showGameOverContainer, hideGameOverContainer, showWinContainer, hideWinContainer 
     ,showScoreContainer, hideScoreContainer ,showUserDetails, hideUserDetails } from "./hide-funcation.js";
     import { words } from './swedish-words.js';
@@ -201,4 +201,4 @@ scoreContainer.addEventListener('click', closeDialog)
 function closeDialog() {
 	dialog.close()
 	scoreContainer.classList.add('hide')
-}
+} */

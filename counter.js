@@ -22,40 +22,7 @@ function closeDialog() {
 }
 
 
-const users = [
-    {
-        "name": "Sally",
-        "incorrectGuesses": 3,
-        "wordLength": 5,
-        "result": "Win",
-        "score": 3,
-        "timePlayed": "07:33 20/11"
-    },  {
-        "name": "Emma",
-        "incorrectGuesses": 5,
-        "wordLength": 7,
-        "result": "Win",
-        "score": 28,
-        "timePlayed": "09:45 23/11"
-    },
-	{
-        "name": "Andreas",
-        "incorrectGuesses": 6,
-        "wordLength": 8,
-        "result": "Lost",
-        "score": 9,
-        "timePlayed": "19:45 13/11"
-    },
-	{
-        "name": "Sara",
-        "incorrectGuesses": 6,
-        "wordLength": 10,
-        "result": "Lost",
-        "score": 38,
-        "timePlayed": "14:25 18/11"
-    }
-
-];
+const users = JSON.parse(localStorage.getItem('games')) || [];
 
 localStorage.setItem('scores', JSON.stringify(users));
 
