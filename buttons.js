@@ -4,7 +4,7 @@ const playButtonlose = document.querySelector('.gameover-button')
 const playButtonwin = document.querySelector('.win-button')
 const scoreButtonLose = document.querySelector('.gameover-score-button')
 const scoreButtonwin = document.querySelector('.win-score-button')
-const ScoreButtonHomescreen = document.querySelector('.hoem-screen-score-button')
+const ScoreButtonHomescreen = document.querySelector('.home-screen-score-button')
 const dialog = document.querySelector('dialog')
 
 playButtonlose.addEventListener('click', function() {

@@ -22,47 +22,51 @@ function closeDialog() {
 }
 
 
-const users = [
-    {
-        "name": "Sally",
-        "incorrectGuesses": 3,
-        "wordLength": 5,
-        "result": "Win",
-        "score": 3,
-        "timePlayed": "07:33 20/11"
-    },  {
-        "name": "Emma",
-        "incorrectGuesses": 5,
-        "wordLength": 7,
-        "result": "Win",
-        "score": 28,
-        "timePlayed": "09:45 23/11"
-    },
-	{
-        "name": "Andreas",
-        "incorrectGuesses": 6,
-        "wordLength": 8,
-        "result": "Lost",
-        "score": 9,
-        "timePlayed": "19:45 13/11"
-    },
-	{
-        "name": "Sara",
-        "incorrectGuesses": 6,
-        "wordLength": 10,
-        "result": "Lost",
-        "score": 38,
-        "timePlayed": "14:25 18/11"
-    }
 
-];
 
-localStorage.setItem('scores', JSON.stringify(users));
 
+    // {
+    //     "name": "Sally",
+    //     "incorrectGuesses": 3,
+    //     "wordLength": 5,
+    //     "result": "Win",
+    //     "score": 3,
+    //     "timePlayed": "07:33 20/11"
+    // },  
+	// {
+    //     "name": "Emma",
+    //     "incorrectGuesses": 5,
+    //     "wordLength": 7,
+    //     "result": "Win",
+    //     "score": 28,
+    //     "timePlayed": "09:45 23/11"
+    // },
+	// {
+    //     "name": "Andreas",
+    //     "incorrectGuesses": 6,
+    //     "wordLength": 8,
+    //     "result": "Lost",
+    //     "score": 9,
+    //     "timePlayed": "19:45 13/11"
+    // },
+	// {
+    //     "name": "Sara",
+    //     "incorrectGuesses": 6,
+    //     "wordLength": 10,
+    //     "result": "Lost",
+    //     "score": 38,
+    //     "timePlayed": "14:25 18/11"
+    // }
+
+
+
+// localStorage.setItem('scores', JSON.stringify(users));
+
+let users = JSON.parse(localStorage.getItem('scores')) || [];
 
 function scoreList() {
     const allScores = JSON.parse(localStorage.getItem('scores')) || [];
-
+	console.log(allScores);
 	const sortedScores = allScores.sort((a, b) => b.score - a.score);
 
 	// const sortedScores = allScores.sort(function (a, b) {
@@ -93,7 +97,7 @@ function scoreList() {
 	
 
 	allScores.forEach((element)=> {
-		console.log(`Element: ${element}`)
+		// console.log(`Element: ${element}`)
 		let name = document.createElement("p")
 		let result = document.createElement("p")
 		let incorrectGuesses = document.createElement("p")
@@ -119,26 +123,26 @@ function scoreList() {
 
 }
 
-const sortByGuessesButton = document.querySelector('#sort-by-guesses');
-const sortByDateButton = document.querySelector('#sort-by-date');
+// const sortByGuessesButton = document.querySelector('#sort-by-guesses');
+// const sortByDateButton = document.querySelector('#sort-by-date');
 
-sortByGuessesButton.addEventListener('click', () => {
+// sortByGuessesButton.addEventListener('click', () => {
 
-})
+// })
 
 
 
 // Användarnamn.
-const playerNameInput = document.getElementById('player-name-input');
-const playButton = document.getElementById('play-button');
-const meddelande = document.getElementById('meddelande');
-const userName = document.querySelector('#username');
+// const playerNameInput = document.getElementById('player-name-input');
+// const playButton = document.getElementById('play-button');
+// const meddelande = document.getElementById('meddelande');
+// const userName = document.querySelector('#username');
 
 
-playButton.addEventListener('click', function () {
-	const playerName = playerNameInput.value;
-	userName.innerText = playerName;
-});
+// playButton.addEventListener('click', function () {
+// 	const playerName = playerNameInput.value;
+// 	userName.innerText = playerName;
+// });
 
 
 
