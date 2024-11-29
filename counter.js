@@ -71,13 +71,13 @@ function scoreList() {
     scoreDiv.innerHTML = '';
     timePlayedDiv.innerHTML = '';
 
-    // Tydliggör vad som ska visas som rubrik (detta ska bara göras en gång)
-    nameDiv.textContent = 'Name';
-    resultDiv.textContent = 'Result';
-    incorrectGuessesDiv.textContent = 'Incorrect Guesses';
-    wordLengthDiv.textContent = 'Word length';
-    scoreDiv.textContent = 'Score';
-    timePlayedDiv.textContent = 'Time/date';
+    // Tydliggör vad som ska visas som rubrik
+		nameDiv.textContent = 'Name';
+		wordLengthDiv.textContent = 'Score';
+		incorrectGuessesDiv.textContent = 'Incorrect Guesses';
+		scoreDiv.textContent = 'Result';    // Första
+		resultDiv.textContent = 'Word length';  // Andra
+		timePlayedDiv.textContent = 'Time/date';
 
     // Loopa igenom alla sparade poäng och skapa ett nytt element för varje
     sortedScores.forEach((element) => {
@@ -92,17 +92,17 @@ function scoreList() {
         result.innerText = element.result || 'N/A';  // Sätt till 'N/A' om inget resultat finns
         name.innerText = element.name || 'N/A';  // Sätt till 'N/A' om inget namn finns
         incorrectGuesses.innerText = element.incorrectGuesses || '0';  // Om inga felgissningar finns, sätt till 0
-        wordLength.innerText = element.wordLength || '0';  // Om ordlängd saknas, sätt till 0
+		wordLength.innerText = element.wordLength || '0';  // Om ordlängd saknas, sätt till 0
         score.innerText = element.score || '0';  // Om poäng saknas, sätt till 0
         timePlayed.innerText = element.timePlayed || 'N/A';  // Om ingen tid finns, sätt till 'N/A'
 
-        // Lägg till de nya elementen i divarna
-        nameDiv.appendChild(name);
-        resultDiv.appendChild(result);
-        incorrectGuessesDiv.appendChild(incorrectGuesses);
-        wordLengthDiv.appendChild(wordLength);
-        scoreDiv.appendChild(score);
-        timePlayedDiv.appendChild(timePlayed);
+       // Lägg till de nya elementen i divarna
+			nameDiv.appendChild(name);
+			wordLengthDiv.appendChild(wordLength);
+			incorrectGuessesDiv.appendChild(incorrectGuesses);
+			scoreDiv.appendChild(score);    // Flytta score hit för att visa det innan 'result'
+			resultDiv.appendChild(result);  // Resultat kommer nu efter score
+			timePlayedDiv.appendChild(timePlayed);
     });
 }
 

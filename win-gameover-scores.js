@@ -2,60 +2,40 @@ import {showGameOverContainer, showWinContainer} from './hide-funcation.js'
 import { getRandomWord } from './random-word.js';
 
 
-export function gameOver() {
+export function gameOver() { 
     let playerName = localStorage.getItem('playerName');
-    let wordLength = getRandomWord.length;
-    let incorrectGuesses = document.querySelector('#sort-by-guesses')
+    let word = getRandomWord(); // Få det slumpmässiga ordet
+    let wordLength = word.length; // Hämta längden på ordet
+    let incorrectGuesses = document.querySelector('#sort-by-guesses').innerText; // Hämta antal felgissningar
     
     const todaysDate = new Date();
     const timePlayed = `${todaysDate.getHours()}:${todaysDate.getMinutes()} ${todaysDate.getDate()}/${todaysDate.getMonth()+1}`;
     
-    saveScore(playerName, incorrectGuesses, wordLength, 'lost', score, timePlayed);
+    // Spara resultatet som 'lost'
+    saveScore(playerName, incorrectGuesses, wordLength, 'lost', 0, timePlayed);
 
-	
-	 saveScore(playerName, incorrectGuesses, wordLength, 'lost', score, timePlayed);
-     showGameOverContainer();
-     // cant use get randomWord for $ need a variable and not whole fun.
-     document.querySelector('.gameover-p1').innerText = `Det hemliga ordet var: ${getRandomWord()}`;
-    //  document.querySelector('.gameover-p2').innerText = `Ditt antal gissningar var: ${incorrectGuesses}`;
+    showGameOverContainer();
+    document.querySelector('.gameover-p1').innerText = `Det hemliga ordet var: ${word}`;
+    document.querySelector('.gameover-p2').innerText = `Ditt antal gissningar var: ${incorrectGuesses}`;
 }
 
 export function gameWon() {
-     
     let playerName = localStorage.getItem('playerName');
-    let wordLength = getRandomWord.length;
-    let incorrectGuesses = document.querySelector('#sort-by-guesses')
+    let word = getRandomWord(); // Få det slumpmässiga ordet
+    let wordLength = word.length; // Hämta längden på ordet
+    let incorrectGuesses = document.querySelector('#sort-by-guesses').innerText; // Hämta antal felgissningar
     
     const todaysDate = new Date();
     const timePlayed = `${todaysDate.getHours()}:${todaysDate.getMinutes()} ${todaysDate.getDate()}/${todaysDate.getMonth()+1}`;
-    
 
-	
-	saveScore(playerName, incorrectGuesses, wordLength, 'won', score, timePlayed);
-	showWinContainer()
-	document.querySelector('.win-p1').innerText = `Du lyckades hitta det hemliga ordet!`;
-	// document.querySelector('.win-p2').innerText = `Dina poäng blev: ${score}`;
-    
+    // Spara resultatet som 'won'
+    saveScore(playerName, incorrectGuesses, wordLength, 'won', 100, timePlayed);
+
+    showWinContainer();
+    document.querySelector('.win-p1').innerText = `Du lyckades hitta det hemliga ordet!`;
 }
 
-// export function displayScores() {
-// 	let scores = JSON.parse(localStorage.getItem('scores')) || [];
-  
-// 	if (scores.length > 0) {  
-// 		let scoreList = '';
-// 		scores.forEach(score => {
-// 			scoreList += `<li>Spelare: ${score.name}, Felgissningar: ${score.incorrectGuesses}, Ordlängd: ${score.wordLength}, Poäng: ${score.score}, Tid: ${score.timePlayed}</li>`;
-// 		});
-// 		document.querySelector('.score-container ul').innerHTML = scoreList;
-// 	} else {
-// 		document.querySelector('.score-container ul').innerHTML = "<li>Inga poäng sparade än.</li>";
-// 	}
-//   }
-  
-  // Calling the function when the document is loaded
-//   document.addEventListener('DOMContentLoaded', () => {
-// 	displayScores(); // Call to display the scores when the page loads
-//   });
+
 
 
 // Funktion för att spara poäng till localStorage
