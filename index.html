@@ -10,12 +10,7 @@
     <link rel="stylesheet" href="/css/win.css" />
     <link rel="stylesheet" href="/css/secondpage.css"/>
     <link rel="stylesheet" href="/css/home-screen.css" />
-    <script type="module" src="counter.js"></script>
-    <script type="module" src="hide-funcation.js"></script>
-    <script type="module" src="keydownfunc.js"></script>
-    <script type="module" src="storage.js"></script>
-    <script type="module" src="win-gameover-scores.js"></script>
-    <script type="module" src="buttons.js"></script>
+    
     <!-- <script type="module" src="script.js"></script> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,15 +25,14 @@
         <h1 class="h1-homes-screen">Välkommen till Hangman!</h1>
       </header>
       <section class="home-screen-section2">
-        <label class="home-screen-label" for="player-name"
-          >Ange ditt namn:</label
-        >
+        <label class="home-screen-label" for="player-name-input">Ange ditt namn:</label>
         <input
           id="player-name-input"
           class="input-screen"
           type="text"
           placeholder="Skriv ditt namn"
         />
+		<p id="username"></p>
         <p id="meddelande"></p>
         <div class="radio-buttons">
           <label class="easy-button">
@@ -192,5 +186,11 @@
         <button id="close-score">Back to Game</button>
       </dialog>
     </section>
+	<script type="module" src="counter.js"></script>
+    <script type="module" src="hide-funcation.js"></script>
+    <script type="module" src="keydownfunc.js"></script>
+    <script type="module" src="storage.js"></script>
+    <script type="module" src="win-gameover-scores.js"></script>
+    <script type="module" src="buttons.js"></script>
   </body>
 </html>

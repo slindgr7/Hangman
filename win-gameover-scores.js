@@ -38,35 +38,50 @@ export function gameWon() {
     
 }
 
-function displayScores() {
-    let scores = JSON.parse(localStorage.getItem('scores')) || [];
+// export function displayScores() {
+// 	let scores = JSON.parse(localStorage.getItem('scores')) || [];
+  
+// 	if (scores.length > 0) {  
+// 		let scoreList = '';
+// 		scores.forEach(score => {
+// 			scoreList += `<li>Spelare: ${score.name}, Felgissningar: ${score.incorrectGuesses}, Ordlängd: ${score.wordLength}, Poäng: ${score.score}, Tid: ${score.timePlayed}</li>`;
+// 		});
+// 		document.querySelector('.score-container ul').innerHTML = scoreList;
+// 	} else {
+// 		document.querySelector('.score-container ul').innerHTML = "<li>Inga poäng sparade än.</li>";
+// 	}
+//   }
+  
+  // Calling the function when the document is loaded
+//   document.addEventListener('DOMContentLoaded', () => {
+// 	displayScores(); // Call to display the scores when the page loads
+//   });
 
-    if (scores.length > 0) {  
-        let scoreList = '';
-        scores.forEach(score => {
-            scoreList += `<li>Spelare: ${score.name}, Felgissningar: ${score.incorrectGuesses}, Ordlängd: ${score.wordLength}, Poäng: ${score.score}, Tid: ${score.timePlayed}</li>`;
-        });
-        document.querySelector('.score-container ul').innerHTML = scoreList;
-    } else {
-        document.querySelector('.score-container ul').innerHTML = "<li>Inga poäng sparade än.</li>";
-    }
 
-   
-}
-
-
+// Funktion för att spara poäng till localStorage
 function saveScore(playerName, incorrectGuesses, wordLength, result, score, timePlayed) {
-	let newScore = {
-		name: playerName,
-		incorrectGuesses: incorrectGuesses,
-		wordLength: wordLength,
-		result: result,
-		score: score,
-		timePlayed: timePlayed
-	};
 
-	let allScores = JSON.parse(localStorage.getItem('scores')) || [];
-	allScores.push(newScore);
-	localStorage.setItem('scores', JSON.stringify(allScores));
+    // Resten av koden...
+
+    // Hämta tidigare sparade poäng eller en tom array om det inte finns några
+    let allScores = JSON.parse(localStorage.getItem('scores')) || [];
+
+    // Skapa ett nytt score-objekt
+    let newScore = {
+        name: playerName,
+        incorrectGuesses: incorrectGuesses,
+        wordLength: wordLength,
+        result: result,
+        score: score,
+        timePlayed: timePlayed
+    };
+
+    // Lägg till den nya poängen i listan
+    allScores.push(newScore);
+
+    // Spara hela listan tillbaka till localStorage
+    localStorage.setItem('scores', JSON.stringify(allScores));
+
 }
-
+  
+export { saveScore };

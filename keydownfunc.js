@@ -6,8 +6,9 @@ import { wrongGuessCounter } from './counter.js';
 import { gameWon } from './win-gameover-scores.js'
 
 import { gameOver } from './win-gameover-scores.js'
+import { saveScore } from './win-gameover-scores.js'
 
-import { updateGameDetails } from './storage.js';
+// import { updateGameDetails } from './storage.js';
 
 import { hideGameContainer, hideHomeScreenContainer, showGameContainer } from './hide-funcation.js';
 
@@ -67,7 +68,7 @@ function updateWordDisplay() {
   //  visa vinstmeddelande
   if (allGuessed) {
       gameWon()
-      updateGameDetails(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
+      saveScore(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
       hideGameContainer(); // Dölj spelet för att visa gamer over
 
     
@@ -120,7 +121,7 @@ guessButton.addEventListener('click', function() {
       if (wrongGuessCount === 6) {
         console.log("wrongGuessCount är 6")
         gameOver()
-        updateGameDetails(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
+        saveScore(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
         hideGameContainer(); // Dölj spelet för att visa gamer over
         
       }
