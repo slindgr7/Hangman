@@ -1,3 +1,5 @@
+
+
 // Dialog-ruta för Score screen
 const showScore = document.querySelector('#show-score')
 const closeScoreBtn = document.querySelector('#close-score')
@@ -22,11 +24,8 @@ function closeDialog() {
 }
 
 
-<<<<<<< HEAD
 
-=======
-const users = JSON.parse(localStorage.getItem('games')) || [];
->>>>>>> 000bcc5fd0404783e5cd2965c638253d5278e041
+
 
 
     // {
@@ -65,12 +64,15 @@ const users = JSON.parse(localStorage.getItem('games')) || [];
 
 
 // localStorage.setItem('scores', JSON.stringify(users));
+const users = JSON.parse(localStorage.getItem('games')) || [];
 
-let users = JSON.parse(localStorage.getItem('scores')) || [];
+localStorage.setItem('scores', JSON.stringify(users));
+
+let games = JSON.parse(localStorage.getItem('scores')) || [];
 
 function scoreList() {
     const allScores = JSON.parse(localStorage.getItem('scores')) || [];
-	console.log(allScores);
+	
 	const sortedScores = allScores.sort((a, b) => b.score - a.score);
 
 	// const sortedScores = allScores.sort(function (a, b) {
@@ -181,55 +183,55 @@ function scoreList() {
 
 
 //svg-parts
-const parts = [
-	document.querySelector('#ground'),
-	document.querySelector('#scaffold'),
-	document.querySelector('#head'),
-	document.querySelector('#body'),
-	document.querySelector('#arms'),
-	document.querySelector('#legs'),
-]
+// const parts = [
+// 	document.querySelector('#ground'),
+// 	document.querySelector('#scaffold'),
+// 	document.querySelector('#head'),
+// 	document.querySelector('#body'),
+// 	document.querySelector('#arms'),
+// 	document.querySelector('#legs'),
+// ]
 
-const hangmanTest = document.querySelector('#test-svg');
-parts[0].classList.add('hidden-svg-parts');
-parts[1].classList.add('hidden-svg-parts');
-parts[2].classList.add('hidden-svg-parts');
-parts[3].classList.add('hidden-svg-parts');
-parts[4].classList.add('hidden-svg-parts');
-parts[5].classList.add('hidden-svg-parts');
+// const hangmanTest = document.querySelector('#test-svg');
+// parts[0].classList.add('hidden-svg-parts');
+// parts[1].classList.add('hidden-svg-parts');
+// parts[2].classList.add('hidden-svg-parts');
+// parts[3].classList.add('hidden-svg-parts');
+// parts[4].classList.add('hidden-svg-parts');
+// parts[5].classList.add('hidden-svg-parts');
 
 // Funktion för varje fel gissning av bokstav.
-const incorrectGuessesDisplay = document.querySelector('#sort-by-guesses')
-let incorrectGuesses = 0;
+// const incorrectGuessesDisplay = document.querySelector('#sort-by-guesses')
+// let incorrectGuesses = 0;
 // incorrectGuessesDisplay.innerText = incorrectGuesses;
 
-export function wrongGuessCounter() {
-	incorrectGuesses += 1;
-	incorrectGuessesDisplay.innerText = incorrectGuesses;
+// export function wrongGuessCounter() {
+// 	incorrectGuesses += 1;
+// 	incorrectGuessesDisplay.innerText = incorrectGuesses;
 
-	if (incorrectGuesses === 1) {
-		parts[0].classList.add('block-svg-parts');
-	} 	
-	else if (incorrectGuesses === 2) {
-		parts[1].classList.add('block-svg-parts');
+// 	if (incorrectGuesses === 1) {
+// 		parts[0].classList.add('block-svg-parts');
+// 	} 	
+// 	else if (incorrectGuesses === 2) {
+// 		parts[1].classList.add('block-svg-parts');
 		
-	} else if (incorrectGuesses === 3) {
-		parts[2].classList.add('block-svg-parts');
+// 	} else if (incorrectGuesses === 3) {
+// 		parts[2].classList.add('block-svg-parts');
 		
-	}
-	else if (incorrectGuesses === 4) {
-		parts[3].classList.add('block-svg-parts');
+// 	}
+// 	else if (incorrectGuesses === 4) {
+// 		parts[3].classList.add('block-svg-parts');
 		
-	}
-	else if (incorrectGuesses === 5) {
-		parts[4].classList.add('block-svg-parts');
+// 	}
+// 	else if (incorrectGuesses === 5) {
+// 		parts[4].classList.add('block-svg-parts');
 		
-	}
-	else if (incorrectGuesses === 6){
-		parts[5].classList.add('block-svg-parts');
-		console.log('Game Over visas!');
-	}
-}
+// 	}
+// 	else if (incorrectGuesses === 6){
+// 		parts[5].classList.add('block-svg-parts');
+// 		console.log('Game Over visas!');
+// 	}
+// }
 
 
 
