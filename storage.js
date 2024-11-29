@@ -39,7 +39,6 @@ export { updateGameDetails };
 	
 
 
- playButton.addEventListener('click', function () {
 playButton.addEventListener('click', function () {
 	const playerName = playerNameInput.value;
 
