@@ -7,6 +7,10 @@ import { gameWon } from './win-gameover-scores.js'
 
 import { gameOver } from './win-gameover-scores.js'
 
+import { updateGameDetails } from './storage.js';
+
+import { hideGameContainer, hideHomeScreenContainer, showGameContainer } from './hide-funcation.js';
+
 const secretWord = getRandomWord(); 
 const wordDisplay = document.querySelector(".word-display");
 const wrongLettersDisplay = document.querySelector(".show-guessed-letters");
@@ -16,6 +20,29 @@ const guessButton = document.querySelector('.guess-btn');
 let wrongGuessCount = 0;
 let guessedLetters = []; // lista-gissade bokstäver
 let wrongLetters = [];   // lista- felaktiga bokstäver
+let currentplayer = document.getElementById('player-name-input').value; // spelarens current name sparas denna variabel
+
+const playButton = document.getElementById('play-button');
+const meddelande = document.getElementById('meddelande');
+
+// detta är en eventlistener för att spara spelarens namn och hidar home screen container
+playButton.addEventListener('click', function () { 
+  const playerNameInput = document.getElementById('player-name-input'); 
+  const playerName = playerNameInput.value.trim(); 
+  hideHomeScreenContainer();
+  showGameContainer();
+
+
+  if (playerName !== "") {
+    currentplayer = playerName;
+
+    meddelande.textContent = `Namnet ${playerName} har sparats `;
+    meddelande.style.color = `green`;
+  } else {
+    meddelande.textContent = 'Skriv in ett namn';
+    meddelande.style.color = 'red';
+  }
+});
 
 
 // Funktion uppdatera ordet
@@ -40,6 +67,9 @@ function updateWordDisplay() {
   //  visa vinstmeddelande
   if (allGuessed) {
       gameWon()
+      updateGameDetails(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
+      hideGameContainer(); // Dölj spelet för att visa gamer over
+
     
       
   }
@@ -90,6 +120,8 @@ guessButton.addEventListener('click', function() {
       if (wrongGuessCount === 6) {
         console.log("wrongGuessCount är 6")
         gameOver()
+        updateGameDetails(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
+        hideGameContainer(); // Dölj spelet för att visa gamer over
         
       }
     }
