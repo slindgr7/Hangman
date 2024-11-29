@@ -22,7 +22,11 @@ function closeDialog() {
 }
 
 
+<<<<<<< HEAD
 
+=======
+const users = JSON.parse(localStorage.getItem('games')) || [];
+>>>>>>> 000bcc5fd0404783e5cd2965c638253d5278e041
 
 
     // {

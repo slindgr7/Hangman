@@ -39,7 +39,11 @@ const meddelande = document.getElementById('meddelande');
 	
 
 
+<<<<<<< HEAD
  playButton.addEventListener('click', function () {
+=======
+playButton.addEventListener('click', function () {
+>>>>>>> 000bcc5fd0404783e5cd2965c638253d5278e041
 	const playerName = playerNameInput.value;
 
 	if (playerName !== "") {

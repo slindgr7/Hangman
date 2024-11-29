@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 // import { hideHomeScreenContainer, showHomeScreenContainer, hideGameContainer, showGameContainer
 //     ,showGameOverContainer, hideGameOverContainer, showWinContainer, hideWinContainer 
 //     ,showScoreContainer, hideScoreContainer ,showUserDetails, hideUserDetails } from "./hide-funcation.js";
 //     import { words } from './swedish-words.js';
+=======
+/* import { hideHomeScreenContainer, showHomeScreenContainer, hideGameContainer, showGameContainer
+    ,showGameOverContainer, hideGameOverContainer, showWinContainer, hideWinContainer 
+    ,showScoreContainer, hideScoreContainer ,showUserDetails, hideUserDetails } from "./hide-funcation.js";
+    import { words } from './swedish-words.js';
+>>>>>>> 000bcc5fd0404783e5cd2965c638253d5278e041
 
 // // är är knapper med hide och show function
 // // home screen buttons that hide and show , need a DOMContentLoaded to load
@@ -198,7 +205,14 @@
 // closeScoreBtn.addEventListener('click', closeDialog)
 // scoreContainer.addEventListener('click', closeDialog)
 
+<<<<<<< HEAD
 // function closeDialog() {
 // 	dialog.close()
 // 	scoreContainer.classList.add('hide')
 // }
+=======
+function closeDialog() {
+	dialog.close()
+	scoreContainer.classList.add('hide')
+} */
+>>>>>>> 000bcc5fd0404783e5cd2965c638253d5278e041

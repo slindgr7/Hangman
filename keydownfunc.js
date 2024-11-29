@@ -11,6 +11,7 @@ import { gameOver } from './win-gameover-scores.js'
 
 import { hideGameContainer, hideHomeScreenContainer, showGameContainer } from './hide-funcation.js';
 
+
 const secretWord = getRandomWord(); 
 const wordDisplay = document.querySelector(".word-display");
 const wrongLettersDisplay = document.querySelector(".show-guessed-letters");
