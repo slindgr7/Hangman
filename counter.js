@@ -183,55 +183,55 @@ function scoreList() {
 
 
 //svg-parts
-// const parts = [
-// 	document.querySelector('#ground'),
-// 	document.querySelector('#scaffold'),
-// 	document.querySelector('#head'),
-// 	document.querySelector('#body'),
-// 	document.querySelector('#arms'),
-// 	document.querySelector('#legs'),
-// ]
+const parts = [
+	document.querySelector('#ground'),
+	document.querySelector('#scaffold'),
+	document.querySelector('#head'),
+	document.querySelector('#body'),
+	document.querySelector('#arms'),
+	document.querySelector('#legs'),
+]
 
-// const hangmanTest = document.querySelector('#test-svg');
-// parts[0].classList.add('hidden-svg-parts');
-// parts[1].classList.add('hidden-svg-parts');
-// parts[2].classList.add('hidden-svg-parts');
-// parts[3].classList.add('hidden-svg-parts');
-// parts[4].classList.add('hidden-svg-parts');
-// parts[5].classList.add('hidden-svg-parts');
+const hangmanTest = document.querySelector('#test-svg');
+parts[0].classList.add('hidden-svg-parts');
+parts[1].classList.add('hidden-svg-parts');
+parts[2].classList.add('hidden-svg-parts');
+parts[3].classList.add('hidden-svg-parts');
+parts[4].classList.add('hidden-svg-parts');
+parts[5].classList.add('hidden-svg-parts');
 
-// Funktion för varje fel gissning av bokstav.
-// const incorrectGuessesDisplay = document.querySelector('#sort-by-guesses')
-// let incorrectGuesses = 0;
-// incorrectGuessesDisplay.innerText = incorrectGuesses;
+//Funktion för varje fel gissning av bokstav.
+const incorrectGuessesDisplay = document.querySelector('#incorrectGuesses')
+let incorrectGuesses = 0;
+incorrectGuessesDisplay.innerText = incorrectGuesses;
 
-// export function wrongGuessCounter() {
-// 	incorrectGuesses += 1;
-// 	incorrectGuessesDisplay.innerText = incorrectGuesses;
+export function wrongGuessCounter() {
+	incorrectGuesses += 1;
+	incorrectGuessesDisplay.innerText = incorrectGuesses;
 
-// 	if (incorrectGuesses === 1) {
-// 		parts[0].classList.add('block-svg-parts');
-// 	} 	
-// 	else if (incorrectGuesses === 2) {
-// 		parts[1].classList.add('block-svg-parts');
+	if (incorrectGuesses === 1) {
+		parts[0].classList.add('block-svg-parts');
+	} 	
+	else if (incorrectGuesses === 2) {
+		parts[1].classList.add('block-svg-parts');
 		
-// 	} else if (incorrectGuesses === 3) {
-// 		parts[2].classList.add('block-svg-parts');
+	} else if (incorrectGuesses === 3) {
+		parts[2].classList.add('block-svg-parts');
 		
-// 	}
-// 	else if (incorrectGuesses === 4) {
-// 		parts[3].classList.add('block-svg-parts');
+	}
+	else if (incorrectGuesses === 4) {
+		parts[3].classList.add('block-svg-parts');
 		
-// 	}
-// 	else if (incorrectGuesses === 5) {
-// 		parts[4].classList.add('block-svg-parts');
+	}
+	else if (incorrectGuesses === 5) {
+		parts[4].classList.add('block-svg-parts');
 		
-// 	}
-// 	else if (incorrectGuesses === 6){
-// 		parts[5].classList.add('block-svg-parts');
-// 		console.log('Game Over visas!');
-// 	}
-// }
+	}
+	else if (incorrectGuesses === 6){
+		parts[5].classList.add('block-svg-parts');
+		console.log('Game Over visas!');
+	}
+}
 
 
 

@@ -39,24 +39,23 @@ export { updateGameDetails };
 	
 
 
- playButton.addEventListener('click', function () {
-playButton.addEventListener('click', function () {
-	const playerName = playerNameInput.value;
+// playButton.addEventListener('click', function () {
+// 	const playerName = playerNameInput.value;
 
-	if (playerName !== "") {
-		let players = JSON.parse(localStorage.getItem('players')) || [];
-		if (!players.includes(playerName)) {
-			players.push(playerName);
-			localStorage.setItem('players', JSON.stringify(players));
-		}
+// 	if (playerName !== "") {
+// 		let players = JSON.parse(localStorage.getItem('players')) || [];
+// 		if (!players.includes(playerName)) {
+// 			players.push(playerName);
+// 			localStorage.setItem('players', JSON.stringify(players));
+// 		}
 
-		meddelande.textContent = `Namnet ${playerName} har sparats `;
-		meddelande.style.color = `green`;
-	} else {
-		meddelande.textContent = 'Skriv in ett namn';
-		meddelande.style.color = 'red';
-	}
-});
+// 		meddelande.textContent = `Namnet ${playerName} har sparats `;
+// 		meddelande.style.color = `green`;
+// 	} else {
+// 		meddelande.textContent = 'Skriv in ett namn';
+// 		meddelande.style.color = 'red';
+// 	}
+// });
 
 function saveScore() {
 	let players = JSON.parse(localStorage.getItem('players')) || [];

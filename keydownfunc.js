@@ -7,7 +7,7 @@ import { gameWon } from './win-gameover-scores.js'
 
 import { gameOver } from './win-gameover-scores.js'
 
-// import { updateGameDetails } from './storage.js';
+import { updateGameDetails } from './storage.js';
 
 import { hideGameContainer, hideHomeScreenContainer, showGameContainer } from './hide-funcation.js';
 
