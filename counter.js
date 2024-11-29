@@ -73,8 +73,8 @@ function scoreList() {
 
     // Tydliggör vad som ska visas som rubrik
 		nameDiv.textContent = 'Name';
-		wordLengthDiv.textContent = 'Score';
-		incorrectGuessesDiv.textContent = 'Incorrect Guesses';
+		wordLengthDiv.textContent = 'Incorrect Guesses'; // byte plats på denna med 77 'Incorrect Guesses';
+		incorrectGuessesDiv.textContent = 'Score';   // byte plats på denna med 76 'Score'
 		scoreDiv.textContent = 'Result';    // Första
 		resultDiv.textContent = 'Word length';  // Andra
 		timePlayedDiv.textContent = 'Time/date';
