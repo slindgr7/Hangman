@@ -89,27 +89,19 @@
 	text-align: center;
 	gap: 1rem;
 	color: rgb(215, 215, 215);
-	border-bottom: 1px solid rgba(194, 126, 0, 0.708);	
-
-
-
-
-	li {
-		list-style: none;
-	}
-
-	p:nth-child(odd) {
+	
+	#name, #result, #incorrectGuesses, #wordLength, #userScore, #timePlayed {
 		font-size: 1rem;
-		font-weight: bold;
-
+		font-weight: 700;
 	}
 
-	p:nth-child(even) {
+	p {
 		font-size: 1rem;
 		letter-spacing: 3px;
 		margin: 1.5rem 0rem 0.5rem 0rem;
 		font-weight: 400;
 		color: rgba(194, 126, 0, 0.708);
+
 	}
 
 
