@@ -21,12 +21,12 @@ const guessButton = document.querySelector('.guess-btn');
 let wrongGuessCount = 0;
 let guessedLetters = []; // lista-gissade bokstäver
 let wrongLetters = [];   // lista- felaktiga bokstäver
-let currentplayer = document.getElementById('player-name-input').value; // spelarens current name sparas denna variabel
+let currentplayer = ""; // spelarens current name sparas denna variabel
 
 const playButton = document.getElementById('play-button');
 const meddelande = document.getElementById('meddelande');
 
-// detta är en eventlistener för att spara spelarens namn och hidar home screen container
+
 playButton.addEventListener('click', function () { 
   const playerNameInput = document.getElementById('player-name-input'); 
   const playerName = playerNameInput.value.trim(); 
@@ -121,7 +121,7 @@ guessButton.addEventListener('click', function() {
       if (wrongGuessCount === 6) {
         console.log("wrongGuessCount är 6")
         gameOver()
-        // updateGameDetails(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
+         updateGameDetails(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
         hideGameContainer(); // Dölj spelet för att visa gamer over
         
       }
