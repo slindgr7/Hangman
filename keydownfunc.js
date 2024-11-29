@@ -10,13 +10,17 @@ import { saveScore } from './win-gameover-scores.js'
 
 // import { updateGameDetails } from './storage.js';
 
-import { hideGameContainer, hideHomeScreenContainer, showGameContainer } from './hide-funcation.js';
+import { hideGameContainer, hideHomeScreenContainer, showGameContainer, showGameOverContainer, showWinContainer } from './hide-funcation.js';
+
+
 
 const secretWord = getRandomWord(); 
 const wordDisplay = document.querySelector(".word-display");
 const wrongLettersDisplay = document.querySelector(".show-guessed-letters");
 const letterInput = document.getElementById("letter-input");
 const guessButton = document.querySelector('.guess-btn');
+
+
 
 let wrongGuessCount = 0;
 let guessedLetters = []; // lista-gissade bokstäver
@@ -67,9 +71,10 @@ function updateWordDisplay() {
 
   //  visa vinstmeddelande
   if (allGuessed) {
-      gameWon()
-      saveScore(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
+      // gameWon()
+      saveScore(currentplayer, score, wrongGuessCount,  secretWord.length, 'win'); // Uppdatera spelet i local storage 
       hideGameContainer(); // Dölj spelet för att visa gamer over
+      showWinContainer();
 
     
       
@@ -120,9 +125,10 @@ guessButton.addEventListener('click', function() {
 
       if (wrongGuessCount === 6) {
         console.log("wrongGuessCount är 6")
-        gameOver()
-        saveScore(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
+        // gameOver()
+        saveScore(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost', new Date().toLocaleString()); // Uppdatera spelet i local storage 
         hideGameContainer(); // Dölj spelet för att visa gamer over
+        showGameOverContainer();
         
       }
     }
