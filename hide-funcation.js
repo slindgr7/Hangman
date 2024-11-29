@@ -30,7 +30,6 @@ function showGameContainer() {
 
 function showGameOverContainer() {
     let gameOverContainerElements = document.querySelectorAll('section.gameover *');
-    console.log(gameOverContainerElements)
     gameOverContainerElements.forEach(function(element) {
         element.removeAttribute('hidden');
     });

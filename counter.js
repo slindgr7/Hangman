@@ -49,7 +49,7 @@ const currentHour = todaysDate.getHours()
 const currentMinute = todaysDate.getMinutes() < 10 ? '0' + todaysDate.getMinutes() : todaysDate.getMinutes();
 const currentDay = todaysDate.getDate()
 const currentMonth = todaysDate.getMonth()+1
-const currentTime = document.querySelector('#currentTime')
+const currentTime = document.querySelector('#sort-by-date')
 
 currentTime.innerText = `${currentHour}:${currentMinute}    ${currentDay}/${currentMonth}`
 
@@ -92,7 +92,7 @@ parts[4].classList.add('hidden-svg-parts');
 parts[5].classList.add('hidden-svg-parts');
 
 // Funktion för varje fel gissning av bokstav.
-const incorrectGuessesDisplay = document.querySelector('#incorrectGuesses')
+const incorrectGuessesDisplay = document.querySelector('#sort-by-guesses')
 let incorrectGuesses = 0;
 incorrectGuessesDisplay.innerText = incorrectGuesses;
 
