@@ -1,4 +1,3 @@
-
 // Dialog-ruta för Score screen
 const showScore = document.querySelector('#show-score')
 const closeScoreBtn = document.querySelector('#close-score')
@@ -17,15 +16,115 @@ closeScoreBtn.addEventListener('click', closeDialog)
 scoreContainer.addEventListener('click', closeDialog)
 
 function closeDialog() {
+
 	dialog.close()
 	scoreContainer.classList.add('hide')
 }
 
 
+const users = [
+    {
+        "name": "Sally",
+        "incorrectGuesses": 3,
+        "wordLength": 5,
+        "result": "Win",
+        "score": 3,
+        "timePlayed": "07:33 20/11"
+    },  {
+        "name": "Emma",
+        "incorrectGuesses": 5,
+        "wordLength": 7,
+        "result": "Win",
+        "score": 28,
+        "timePlayed": "09:45 23/11"
+    },
+	{
+        "name": "Andreas",
+        "incorrectGuesses": 6,
+        "wordLength": 8,
+        "result": "Lost",
+        "score": 9,
+        "timePlayed": "19:45 13/11"
+    },
+	{
+        "name": "Sara",
+        "incorrectGuesses": 6,
+        "wordLength": 10,
+        "result": "Lost",
+        "score": 38,
+        "timePlayed": "14:25 18/11"
+    }
+
+];
+
+localStorage.setItem('scores', JSON.stringify(users));
 
 
+function scoreList() {
+    const allScores = JSON.parse(localStorage.getItem('scores')) || [];
+
+	const sortedScores = allScores.sort((a, b) => b.score - a.score);
+
+	// const sortedScores = allScores.sort(function (a, b) {
+	// 	if (b.score > a.score) {
+	// 		return 1; 
+	// 	} else if (b.score < a.score) {
+	// 		return -1; 
+	// 	} else {
+	// 		return 0; 
+	// 	}
+	// });
+	
+
+	let nameDiv = document.querySelector("#name")
+	let resultDiv = document.querySelector("#result")
+	let incorrectGuessesDiv = document.querySelector("#incorrectGuesses")
+	let wordLengthDiv = document.querySelector("#wordLength")
+	let scoreDiv = document.querySelector("#userScore")
+	let timePlayedDiv = document.querySelector("#timePlayed")
 
 
+	nameDiv.textContent = 'Name';
+	resultDiv.textContent = 'Result';
+	incorrectGuessesDiv.textContent = 'Incorrect Guesses';
+	wordLengthDiv.textContent = 'Word length';
+	scoreDiv.textContent = 'Score';
+	timePlayedDiv.textContent = 'Time/date';
+	
+
+	allScores.forEach((element)=> {
+		console.log(`Element: ${element}`)
+		let name = document.createElement("p")
+		let result = document.createElement("p")
+		let incorrectGuesses = document.createElement("p")
+		let wordLength = document.createElement("p")
+		let score = document.createElement("p")
+		let timePlayed = document.createElement("p")
+
+		result.innerText = element.result
+		name.innerText = element.name
+		incorrectGuesses.innerText = element.incorrectGuesses
+		wordLength.innerText = element.wordLength
+		score.innerText = element.score
+		timePlayed.innerText = element.timePlayed
+
+		nameDiv.appendChild(name)
+		resultDiv.appendChild(result)
+		incorrectGuessesDiv.appendChild(incorrectGuesses)
+		wordLengthDiv.appendChild(wordLength)
+		scoreDiv.appendChild(score)
+		timePlayedDiv.appendChild(timePlayed)
+	})
+
+
+}
+
+const sortByGuessesButton = document.querySelector('#sort-by-guesses');
+const sortByDateButton = document.querySelector('#sort-by-date');
+
+sortByGuessesButton.addEventListener('click', () => {
+
+})
 
 
 
@@ -44,16 +143,16 @@ playButton.addEventListener('click', function () {
 
 
 // Dagens tid och datum.
-const todaysDate = new Date();
-const currentHour = todaysDate.getHours() 
-const currentMinute = todaysDate.getMinutes() < 10 ? '0' + todaysDate.getMinutes() : todaysDate.getMinutes();
-const currentDay = todaysDate.getDate()
-const currentMonth = todaysDate.getMonth()+1
-const currentTime = document.querySelector('#sort-by-date')
+// const todaysDate = new Date();
+// const currentHour = todaysDate.getHours() 
+// const currentMinute = todaysDate.getMinutes() < 10 ? '0' + todaysDate.getMinutes() : todaysDate.getMinutes();
+// const currentDay = todaysDate.getDate()
+// const currentMonth = todaysDate.getMonth()+1
+// const currentTime = document.querySelector('#currentTime')
 
-currentTime.innerText = `${currentHour}:${currentMinute}    ${currentDay}/${currentMonth}`
+// currentTime.innerText = `${currentHour}:${currentMinute}    ${currentDay}/${currentMonth}`
 
-// Detta måste in i localStorage
+//Detta måste in i localStorage
 
 
 
@@ -94,7 +193,7 @@ parts[5].classList.add('hidden-svg-parts');
 // Funktion för varje fel gissning av bokstav.
 const incorrectGuessesDisplay = document.querySelector('#sort-by-guesses')
 let incorrectGuesses = 0;
-incorrectGuessesDisplay.innerText = incorrectGuesses;
+// incorrectGuessesDisplay.innerText = incorrectGuesses;
 
 export function wrongGuessCounter() {
 	incorrectGuesses += 1;
