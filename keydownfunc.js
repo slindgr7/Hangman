@@ -72,7 +72,7 @@ function updateWordDisplay() {
   //  visa vinstmeddelande
   if (allGuessed) {
       // gameWon()
-      saveScore(currentplayer, score, wrongGuessCount,  secretWord.length, 'win'); // Uppdatera spelet i local storage 
+      saveScore(currentplayer, score, wrongGuessCount,  secretWord.length, 'win', new Date().toLocaleString()); // Uppdatera spelet i local storage 
       hideGameContainer(); // Dölj spelet för att visa gamer over
       showWinContainer();
 
