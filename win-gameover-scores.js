@@ -42,6 +42,7 @@ export function gameWon() {
 	document.querySelector('.win-p1').innerText = `Du lyckades hitta det hemliga ordet!`;
 	// document.querySelector('.win-p2').innerText = `Dina poäng blev: ${score}`;
     
+
 }
 
 function displayScores() {

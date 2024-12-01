@@ -1,11 +1,7 @@
 import { getRandomWord } from './random-word.js'  
-
 import { wrongGuessCounter, hideFigure } from './counter.js';  
-
 import { gameWon, gameOver  } from './win-gameover-scores.js'
-
 import { updateGameDetails } from './storage.js';
-
 import { hideGameContainer, hideHomeScreenContainer, showHomeScreenContainer, showGameContainer, hideGameOverContainer, showGameOverContainer, hideWinContainer  } from './hide-funcation.js';
 
 const incorrectGuessesDisplay = document.querySelector('#incorrectGuesses');
@@ -81,9 +77,11 @@ function updateWordDisplay() {
 
   //  visa vinstmeddelande
   if (allGuessed) {
-      gameWon()
-      updateGameDetails(currentplayer, score, wrongGuessCount, secretWord.length, 'lost');
-      hideGameContainer(); 
+      setTimeout(()=>{
+        gameWon()
+        updateGameDetails(currentplayer, score, wrongGuessCount, secretWord.length, 'lost');
+        hideGameContainer(); 
+      }, 2000)
   }
 }
 
@@ -92,14 +90,20 @@ function updateWrongLettersDisplay() {
   wrongLettersDisplay.textContent = wrongLetters.join(", ");
 }
 
-guessButton.addEventListener('click', function() {
+guessButton.addEventListener('click', handleInput);
+letterInput.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    handleInput()
+  }
+})
+
+function handleInput() {
   const inputValue = letterInput.value.toLowerCase(); 
   letterInput.value = ""; // Rensa inputfältet
 
   // if-sats för att kontrollera om bokstaven är ny 
   if (inputValue && !guessedLetters.includes(inputValue) && !wrongLetters.includes(inputValue)) {
     guessedLetters.push(inputValue); // Lägg till bokstaven i gissade bokstäver
-
 
     if (secretWord.includes(inputValue)) {
       updateWordDisplay();
@@ -127,8 +131,7 @@ guessButton.addEventListener('click', function() {
       }
     }
   }
-});
-
+}
 
 //Hint 
 
@@ -170,17 +173,14 @@ function startNewRound() {
 
 const winButton = document.querySelector('.win-button');
 winButton.addEventListener('click', resetGame)
-  
 
 const gameOverButton = document.querySelector('.gameover-button');
 gameOverButton.addEventListener('click', resetGame)
 
-/**
- * this function resets the game
- * we reset all variables, numbers, arrays etc
- * we hide the endscreen-container and show the startscreen
- * we reset the figure
- */
+//denna funktion resetar spelet, alla variabler, nummer etc
+//gömmer gameover-container och visa homeScreen
+//resetar figuren
+
 function resetGame() {
   console.log("resetGame anropas");
  
@@ -201,9 +201,5 @@ function resetGame() {
   
   incorrectGuessesDisplay.innerText = incorrectGuesses;
   scoreElement.innerText = `Score: ${score}`;
-
-  //parts.forEach(part => part.classList.remove('block-svg-parts'));
-
-  //document.querySelector('.gameover-button').hidden = true;
-  //document.querySelector('.win-button').hidden = true; 
 };
+
