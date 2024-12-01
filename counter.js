@@ -217,11 +217,12 @@ const incorrectGuessesDisplay = document.querySelector('#incorrectGuesses')
 let incorrectGuesses = 0;
 incorrectGuessesDisplay.innerText = incorrectGuesses;
 
-export function wrongGuessCounter() {
+
+export function wrongGuessCounter(incorrectGuesses) {
 
 	console.log("wrongGuessCounter startar, incorrectGuesses:", incorrectGuesses);
 
-	incorrectGuesses += 1;
+	//incorrectGuesses += 1;
     incorrectGuessesDisplay.innerText = incorrectGuesses;
 
     if (incorrectGuesses === 1) {

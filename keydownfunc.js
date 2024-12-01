@@ -25,7 +25,6 @@ let currentplayer = ""; // spelarens current name sparas denna variabel
 const playButton = document.getElementById('play-button');
 const meddelande = document.getElementById('meddelande');
 
-document.querySelector('.gameover-p1').innerText = "Det hemliga ordet är: " + secretWord;
 
 playButton.addEventListener('click', function () { 
   const playerNameInput = document.getElementById('player-name-input'); 
@@ -116,10 +115,14 @@ guessButton.addEventListener('click', function() {
 	    updateScore(false);
 
       if (wrongGuessCount === 6) {
-        console.log("wrongGuessCount är 6")
+        console.log("spelet är över, vi går till slutscreen")
+        setTimeout(()=>{
         gameOver() // detta måste köras tidgare för att randomword() ska funka med lose
         updateGameDetails(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
         hideGameContainer(); // Dölj spelet för att visa gamer over
+        document.querySelector('.gameover-p1').innerText = "Det hemliga ordet är: " + secretWord;
+        document.querySelector('.gameover-p2').innerText = `Ditt antal gissningar var: ${incorrectGuesses}`;
+      }, 2000)
         
       }
     }
@@ -172,56 +175,35 @@ winButton.addEventListener('click', resetGame)
 const gameOverButton = document.querySelector('.gameover-button');
 gameOverButton.addEventListener('click', resetGame)
 
+/**
+ * this function resets the game
+ * we reset all variables, numbers, arrays etc
+ * we hide the endscreen-container and show the startscreen
+ * we reset the figure
+ */
 function resetGame() {
   console.log("resetGame anropas");
  
   guessedLetters = [];
-  console.log("guessedLetters anropas");
-
   wrongLetters = [];
-  console.log("wrongLetters anropas");
-
   wrongGuessCount = 0;
-  console.log("wrongGuessCount anropas");
-
-  //wrongGuessCount++;
-  console.log("wrongGuess++ anropas");
-
   score = 0;
-  console.log("score anropas");
+  incorrectGuesses = 0;
 
-  //updateWordDisplay();
-  console.log("updateWordDisplay anropas");
-
+  updateWordDisplay();
   updateWrongLettersDisplay();
-  console.log("updateWrongLetterDisplay anropas");
-
-  scoreElement.innerText = `Score: ${score}`;
-  console.log("scoreElement anropas");
 
   hideWinContainer();
-  console.log("hideWinContainer anropas");
-
-  //showHomeScreenContainer();
-  console.log("showHomeScreenContainer anropas");
-
-  //showGameContainer()
-  console.log("showGameContainer anropas");
-
   hideFigure()
-  console.log("hideFigure anropas");
-
-  getRandomWord()
-
-  incorrectGuesses = 0; // Återställ incorrectGuesses
-  console.log("incorrectGuesses anropas");
-
-  incorrectGuessesDisplay.innerText = incorrectGuesses;
-
-  parts.forEach(part => part.classList.remove('block-svg-parts'));
-
-  document.querySelector('.gameover-button').hidden = true;
-
-  document.querySelector('.win-button').hidden = true;
+  hideGameOverContainer();
+  showGameContainer()
+  showHomeScreenContainer();
   
-}
+  incorrectGuessesDisplay.innerText = incorrectGuesses;
+  scoreElement.innerText = `Score: ${score}`;
+
+  //parts.forEach(part => part.classList.remove('block-svg-parts'));
+
+  //document.querySelector('.gameover-button').hidden = true;
+  //document.querySelector('.win-button').hidden = true; 
+};
