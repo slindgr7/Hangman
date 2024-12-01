@@ -1,4 +1,4 @@
-import {showGameOverContainer, showWinContainer} from './hide-funcation.js'
+import { hideHomeScreenContainer, showGameOverContainer, showWinContainer} from './hide-funcation.js'
 import { getRandomWord } from './random-word.js';
 
 
@@ -6,7 +6,7 @@ import { getRandomWord } from './random-word.js';
 
 export function gameOver() {
     let playerName = localStorage.getItem('playerName');
-    let wordLength = getRandomWord.length;
+    let wordLength = getRandomWord().length; 
     let incorrectGuesses = document.querySelector('#sort-by-guesses')
     
     const todaysDate = new Date();
@@ -17,6 +17,8 @@ export function gameOver() {
 	
 	 saveScore(playerName, incorrectGuesses, wordLength, 'lost', score, timePlayed);
      showGameOverContainer();
+     hideHomeScreenContainer()
+     
      // cant use get randomWord for $ need a variable and not whole fun.
     // const randomWord = getRandomWord() // detta gör så hemliga order körs 2 gånger så man inte får samma som hängagubben
     // document.querySelector('.gameover-p1').innerText = "Det hemliga ordet är " + randomWord; // detta måste ligga i keydownfun.js
@@ -36,6 +38,7 @@ export function gameWon() {
 	
 	saveScore(playerName, incorrectGuesses, wordLength, 'won', score, timePlayed);
 	showWinContainer()
+    hideHomeScreenContainer()
 	document.querySelector('.win-p1').innerText = `Du lyckades hitta det hemliga ordet!`;
 	// document.querySelector('.win-p2').innerText = `Dina poäng blev: ${score}`;
     
