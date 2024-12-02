@@ -2,31 +2,38 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+	
     background-color: white;
     border-radius: 10px;
-    min-width: 350px;
+    min-width: 18em;
     padding: 1em;
     margin-left: 20%;
     margin-right: 20%;
+	margin-top: 5%;
+	
     text-align: center;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);    
 }
 
+.hangman-svg {
+	max-height: 280px;
+}
+
 h2 {
-    font-size: 38px;
+    font-size: 2em;
     margin-bottom: 0.5em;
     color: var(--color);
 }
 
 .game-info {
-    font-size: 22px;
+    font-size: 1em;
     font-weight: bold;
     margin-bottom: 2em;
     color: var(--color);
 }
 
 .guessed-letters {
-    font-size: 22px;
+    font-size: 1em;
     color: #656161;
     margin-bottom: 1em;
 
@@ -169,11 +176,11 @@ button:hover {
     }
   }
 
-  @media (max-width: 350px) {
+  /* @media (max-width: 350px) {
     .game-container {
         margin: 0;
     }
-}
+} */
   
     /* h2 {
       font-size: 30px;
