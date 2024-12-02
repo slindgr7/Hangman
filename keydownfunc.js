@@ -81,7 +81,7 @@ function updateWordDisplay() {
         gameWon(currentplayer,secretWord.length, score )
         // updateGameDetails(currentplayer, score, wrongGuessCount, secretWord.length, 'lost');
         hideGameContainer(); 
-      }, 2000)
+      },)
   }
 }
 
@@ -124,7 +124,7 @@ function handleInput() {
         hideGameContainer(); // Dölj spelet för att visa gamer over
         document.querySelector('.gameover-p1').innerText = "Det hemliga ordet är: " + secretWord;
         document.querySelector('.gameover-p2').innerText = `Ditt antal gissningar var: ${incorrectGuesses}`;
-      }, 2000)
+      }, )
         
       }
     }
