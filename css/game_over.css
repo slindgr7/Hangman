@@ -6,7 +6,7 @@
 	align-items: center;
 	text-align: center;
 	padding-top: 9em;
-
+	gap: 3rem;
 }
 .titel-gameover{
 	font-size: 4em;
@@ -15,6 +15,7 @@
 .gameover-p1, .gameover-p2 {
 	font-size: 2em;
 	color: rgb(245, 160, 4);
+	margin-bottom: 4rem;
 }
 .gameover-button {
 	font-size: 1.8em;

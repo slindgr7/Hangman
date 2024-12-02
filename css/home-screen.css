@@ -5,20 +5,22 @@ body {
 }
 .home-screen-section1 {
     text-align: center;
-    
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
   
 
 .h1-homes-screen {
-   
     color: rgb(194, 126, 0);
     margin-bottom: 2rem;
     padding-top: 1em;
+    font-size: 2rem;
   }
   
 
 .home-screen-label {
-    
+    font-size: 0.8rem;
     display: block;
     margin-bottom: 1rem;
 	color: rgb(194, 126, 0);
@@ -26,7 +28,6 @@ body {
   
 .input-screen[type="text"] {
     padding: 0.5rem;
-   
     border-radius: 0.5rem;
     border: none;
     margin-bottom: 1rem;
@@ -63,6 +64,7 @@ body {
     border: 3px solid rgb(238, 241, 243);
     background-color: rgb(255, 255, 255);
     color: rgb(228, 78, 8);
+    margin-bottom: 2rem;
   }
   
 .home-screen-play-button:hover {
