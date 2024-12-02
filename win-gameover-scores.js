@@ -8,7 +8,7 @@ export function gameOver(currentPlayer) {
     let playerName = currentPlayer
     let word = getRandomWord(); // Få det slumpmässiga ordet
     let wordLength = word.length; // Hämta längden på ordet
-    let incorrectGuesses = document.querySelector('#incorrectGuesses').innerText; // Hämta antal felgissningar
+    let incorrectGuesses = Number(document.querySelector('#incorrectGuesses').innerText); // Hämta antal felgissningar
     
     const todaysDate = new Date();
     const timePlayed = `${todaysDate.getHours()}:${todaysDate.getMinutes()} ${todaysDate.getDate()}/${todaysDate.getMonth()+1}`;
@@ -25,7 +25,7 @@ export function gameWon(currentplayer) {
     let playerName = currentplayer
     let word = getRandomWord(); // Få det slumpmässiga ordet
     let wordLength = word.length; // Hämta längden på ordet
-    let incorrectGuesses = document.querySelector('#incorrectGuesses').innerText; // Hämta antal felgissningar
+    let incorrectGuesses = Number(document.querySelector('#incorrectGuesses').innerText); // Hämta antal felgissningar
     
     const todaysDate = new Date();
     const timePlayed = `${todaysDate.getHours()}:${todaysDate.getMinutes()} ${todaysDate.getDate()}/${todaysDate.getMonth()+1}`;

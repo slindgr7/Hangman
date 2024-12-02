@@ -56,15 +56,14 @@ scoreButtonwin.addEventListener('click', () => {
 
 // localStorage.setItem('scores', JSON.stringify(users));
 
-let games = JSON.parse(localStorage.getItem('scores')) || [];
+//let games = JSON.parse(localStorage.getItem('scores')) || [];
 
 function scoreList() {
     const allScores = JSON.parse(localStorage.getItem('scores')) || [];
-	console.log(allScores)
-
+    console.log(allScores);
+	const games = JSON.parse(localStorage.getItem('scores')) || [];
     const sortedScores = allScores.sort((a, b) => b.score - a.score);
-
-   
+    
     let nameDiv = document.querySelector("#name");
     let resultDiv = document.querySelector("#result");
     let incorrectGuessesDiv = document.querySelector("#incorrectGuesses");
@@ -72,23 +71,23 @@ function scoreList() {
     let scoreDiv = document.querySelector("#userScore");
     let timePlayedDiv = document.querySelector("#timePlayed");
 
+   
+    nameDiv.innerText = '';
+    resultDiv.innerText = '';
+    incorrectGuessesDiv.innerText = '';
+    wordLengthDiv.innerText = '';
+    scoreDiv.innerText = '';
+    timePlayedDiv.innerText = '';
+
     
-    nameDiv.innerHTML = '';
-    resultDiv.innerHTML = '';
-    incorrectGuessesDiv.innerHTML = '';
-    wordLengthDiv.innerHTML = '';
-    scoreDiv.innerHTML = '';
-    timePlayedDiv.innerHTML = '';
+    nameDiv.textContent = 'Name';
+    wordLengthDiv.textContent = 'Word length';
+    incorrectGuessesDiv.textContent = 'Incorrect Guesses';
+    scoreDiv.textContent = 'Score';  
+    resultDiv.textContent = 'Result';
+    timePlayedDiv.textContent = 'Time/date';
 
    
-	nameDiv.textContent = 'Name';
-	wordLengthDiv.textContent = 'Word length';
-	incorrectGuessesDiv.textContent = 'Incorrect Guesses';
-	scoreDiv.textContent = 'Score';  
-	resultDiv.textContent = 'Result';
-	timePlayedDiv.textContent = 'Time/date';
-
-    
     sortedScores.forEach((element) => {
         let name = document.createElement("p");
         let result = document.createElement("p");
@@ -99,27 +98,128 @@ function scoreList() {
 
         result.innerText = element.result || 'N/A'; 
         name.innerText = element.name || 'N/A';  
-        incorrectGuesses.innerText = element.incorrectGuesses || '0'; 
-		wordLength.innerText = element.wordLength || '0';  
-        score.innerText = element.score || '0';  
-        timePlayed.innerText = element.timePlayed || 'N/A';  
+        incorrectGuesses.innerText = element.incorrectGuesses || 0; 
+        wordLength.innerText = element.wordLength || 0;  
+        score.innerText = element.score || 0;  
+        timePlayed.innerText = element.timePlayed || 'N/A'; 
 
-		nameDiv.appendChild(name);
-		wordLengthDiv.appendChild(wordLength);
-		incorrectGuessesDiv.appendChild(incorrectGuesses);
-		scoreDiv.appendChild(score);    
-		resultDiv.appendChild(result);  
-		timePlayedDiv.appendChild(timePlayed);
+     
+        nameDiv.appendChild(name);
+        wordLengthDiv.appendChild(wordLength);
+        incorrectGuessesDiv.appendChild(incorrectGuesses);
+        scoreDiv.appendChild(score);    
+        resultDiv.appendChild(result);  
+        timePlayedDiv.appendChild(timePlayed);
     });
+
+
+    const sortByGuessesButton = document.querySelector('#sort-by-guesses');
+    sortByGuessesButton.addEventListener('click', () => {
+		const games = JSON.parse(localStorage.getItem('scores')) || [];
+        const sortedIncorrectGuessesList = games.sort((a, b) => b.incorrectGuesses - a.incorrectGuesses);
+        nameDiv.innerText = '';
+        resultDiv.innerText = '';
+        incorrectGuessesDiv.innerText = '';
+        wordLengthDiv.innerText = '';
+        scoreDiv.innerText = '';
+        timePlayedDiv.innerText = '';
+
+       
+        nameDiv.textContent = 'Name';
+        wordLengthDiv.textContent = 'Word length';
+        incorrectGuessesDiv.textContent = 'Incorrect Guesses';
+        scoreDiv.textContent = 'Score';  
+        resultDiv.textContent = 'Result';
+        timePlayedDiv.textContent = 'Time/date';
+
+
+        sortedIncorrectGuessesList.forEach((element) => {
+            let name = document.createElement("p");
+            let result = document.createElement("p");
+            let incorrectGuesses = document.createElement("p");
+            let wordLength = document.createElement("p");
+            let score = document.createElement("p");
+            let timePlayed = document.createElement("p");
+
+            result.innerText = element.result || 'N/A'; 
+            name.innerText = element.name || 'N/A';  
+            incorrectGuesses.innerText = element.incorrectGuesses || 0; 
+            wordLength.innerText = element.wordLength || 0;  
+            score.innerText = element.score || 0;  
+            timePlayed.innerText = element.timePlayed || 'N/A'; 
+
+            
+            nameDiv.appendChild(name);
+            wordLengthDiv.appendChild(wordLength);
+            incorrectGuessesDiv.appendChild(incorrectGuesses);
+            scoreDiv.appendChild(score);    
+            resultDiv.appendChild(result);  
+            timePlayedDiv.appendChild(timePlayed);
+        });
+    });
+
+	const sortByDateButton = document.querySelector('#sort-by-date');
+	sortByDateButton.addEventListener('click', () => {
+		const games = JSON.parse(localStorage.getItem('scores')) || [];
+		const sortedByDateList = games.sort((a, b) => new Date(b.timePlayed) - new Date(a.timePlayed));
+		
+		let nameDiv = document.querySelector("#name");
+		let resultDiv = document.querySelector("#result");
+		let incorrectGuessesDiv = document.querySelector("#incorrectGuesses");
+		let wordLengthDiv = document.querySelector("#wordLength");
+		let scoreDiv = document.querySelector("#userScore");
+		let timePlayedDiv = document.querySelector("#timePlayed");
+
+		nameDiv.innerHTML = '';
+		resultDiv.innerHTML = '';
+		incorrectGuessesDiv.innerHTML = '';
+		wordLengthDiv.innerHTML = '';
+		scoreDiv.innerHTML = '';
+		timePlayedDiv.innerHTML = '';
+
+		
+		nameDiv.textContent = 'Name';
+		wordLengthDiv.textContent = 'Word length';
+		incorrectGuessesDiv.textContent = 'Incorrect Guesses';
+		scoreDiv.textContent = 'Score';  
+		resultDiv.textContent = 'Result';
+		timePlayedDiv.textContent = 'Time/date';
+
+	
+		sortedByDateList.forEach((element) => {
+			let name = document.createElement("p");
+			let result = document.createElement("p");
+			let incorrectGuesses = document.createElement("p");
+			let wordLength = document.createElement("p");
+			let score = document.createElement("p");
+			let timePlayed = document.createElement("p");
+
+			result.innerText = element.result || 'N/A'; 
+			name.innerText = element.name || 'N/A';  
+			incorrectGuesses.innerText = element.incorrectGuesses || 0; 
+			wordLength.innerText = element.wordLength || 0;  
+			score.innerText = element.score || 0;  
+			timePlayed.innerText = element.timePlayed || 'N/A'; 
+
+		
+			nameDiv.appendChild(name);
+			wordLengthDiv.appendChild(wordLength);
+			incorrectGuessesDiv.appendChild(incorrectGuesses);
+			scoreDiv.appendChild(score);    
+			resultDiv.appendChild(result);  
+			timePlayedDiv.appendChild(timePlayed);
+		});
+});
 }
 
-// const sortByGuessesButton = document.querySelector('#sort-by-guesses');
-// const sortByDateButton = document.querySelector('#sort-by-date');
 
-// sortByGuessesButton.addEventListener('click', (event) => {
-// 	console.log(event.target.innerText)
-// })
-
+//document.getElementById("name").firstElementChild.innerText = element.name
+		//document.getElementById("result").firstElementChild.innerText = element.result
+		//document.getElementById("incorrectGuesses").firstElementChild.innerText = element.incorrectGuesses
+		// document.getElementById("wordLength").firstElementChild.innerText = element.wordLength
+		// document.getElementById("userScore").firstElementChild.innerText = element.score
+		// document.getElementById("timePlayed").firstElementChild.innerText = element.timePlayed
+		//console.log(element.name)
 
 
 // Användarnamn.
