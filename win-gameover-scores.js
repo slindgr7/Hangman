@@ -4,75 +4,66 @@ import { getRandomWord } from './random-word.js';
 
 
 
-export function gameOver() {
-    let playerName = localStorage.getItem('playerName');
-    let wordLength = getRandomWord().length; 
-    let incorrectGuesses = document.querySelector('#sort-by-guesses')
+export function gameOver(currentPlayer) { 
+    let playerName = currentPlayer
+    let word = getRandomWord(); // Få det slumpmässiga ordet
+    let wordLength = word.length; // Hämta längden på ordet
+    let incorrectGuesses = document.querySelector('#incorrectGuesses').innerText; // Hämta antal felgissningar
     
     const todaysDate = new Date();
     const timePlayed = `${todaysDate.getHours()}:${todaysDate.getMinutes()} ${todaysDate.getDate()}/${todaysDate.getMonth()+1}`;
     
-    saveScore(playerName, incorrectGuesses, wordLength, 'lost', score, timePlayed);
+    // Spara resultatet som 'lost'
+    saveScore(playerName, incorrectGuesses, wordLength, 'lost', 0, timePlayed);
 
-	
-	 saveScore(playerName, incorrectGuesses, wordLength, 'lost', score, timePlayed);
-     showGameOverContainer();
-     hideHomeScreenContainer()
-     
-     // cant use get randomWord for $ need a variable and not whole fun.
-    // const randomWord = getRandomWord() // detta gör så hemliga order körs 2 gånger så man inte får samma som hängagubben
-    // document.querySelector('.gameover-p1').innerText = "Det hemliga ordet är " + randomWord; // detta måste ligga i keydownfun.js
-    //  document.querySelector('.gameover-p2').innerText = `Ditt antal gissningar var: ${incorrectGuesses}`;
+    showGameOverContainer();
+    document.querySelector('.gameover-p1').innerText = `Det hemliga ordet var: ${word}`;
+    document.querySelector('.gameover-p2').innerText = `Ditt antal gissningar var: ${incorrectGuesses}`;
 }
 
-export function gameWon() {
-     
-    let playerName = localStorage.getItem('playerName');
-    let wordLength = getRandomWord.length;
-    let incorrectGuesses = document.querySelector('#sort-by-guesses')
+export function gameWon(currentplayer) {
+    let playerName = currentplayer
+    let word = getRandomWord(); // Få det slumpmässiga ordet
+    let wordLength = word.length; // Hämta längden på ordet
+    let incorrectGuesses = document.querySelector('#incorrectGuesses').innerText; // Hämta antal felgissningar
     
     const todaysDate = new Date();
     const timePlayed = `${todaysDate.getHours()}:${todaysDate.getMinutes()} ${todaysDate.getDate()}/${todaysDate.getMonth()+1}`;
-    
 
-	
-	saveScore(playerName, incorrectGuesses, wordLength, 'won', score, timePlayed);
-	showWinContainer()
-    hideHomeScreenContainer()
-	document.querySelector('.win-p1').innerText = `Du lyckades hitta det hemliga ordet!`;
-	// document.querySelector('.win-p2').innerText = `Dina poäng blev: ${score}`;
-    
+    // Spara resultatet som 'won'
+    saveScore(playerName, incorrectGuesses, wordLength, 'won', 100, timePlayed);
 
-}
-
-function displayScores() {
-    let scores = JSON.parse(localStorage.getItem('scores')) || [];
-
-    if (scores.length > 0) {  
-        let scoreList = '';
-        scores.forEach(score => {
-            scoreList += `<li>Spelare: ${score.name}, Felgissningar: ${score.incorrectGuesses}, Ordlängd: ${score.wordLength}, Poäng: ${score.score}, Tid: ${score.timePlayed}</li>`;
-        });
-        document.querySelector('.score-container ul').innerHTML = scoreList;
-    } else {
-        document.querySelector('.score-container ul').innerHTML = "<li>Inga poäng sparade än.</li>";
-    }
-
-   
+    showWinContainer();
+    document.querySelector('.win-p1').innerText = `Du lyckades hitta det hemliga ordet!`;
 }
 
 
+
+
+// Funktion för att spara poäng till localStorage
 function saveScore(playerName, incorrectGuesses, wordLength, result, score, timePlayed) {
-	let newScore = {
-		name: playerName,
-		incorrectGuesses: incorrectGuesses,
-		wordLength: wordLength,
-		result: result,
-		score: score,
-		timePlayed: timePlayed
-	};
 
-	let allScores = JSON.parse(localStorage.getItem('scores')) || [];
-	allScores.push(newScore);
-	localStorage.setItem('scores', JSON.stringify(allScores));
+    // Resten av koden...
+
+    // Hämta tidigare sparade poäng eller en tom array om det inte finns några
+    let allScores = JSON.parse(localStorage.getItem('scores')) || [];
+
+    // Skapa ett nytt score-objekt
+    let newScore = {
+        name: playerName,
+        wordLength: wordLength,
+        score: score,
+        incorrectGuesses: incorrectGuesses,
+        result: result,
+        timePlayed: timePlayed
+    };
+
+    // Lägg till den nya poängen i listan
+    allScores.push(newScore);
+
+    // Spara hela listan tillbaka till localStorage
+    localStorage.setItem('scores', JSON.stringify(allScores));
+
 }
+  
+export { saveScore };
