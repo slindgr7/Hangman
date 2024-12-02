@@ -78,7 +78,7 @@ function updateWordDisplay() {
   //  visa vinstmeddelande
   if (allGuessed) {
       setTimeout(()=>{
-        gameWon()
+        gameWon(currentplayer)
         updateGameDetails(currentplayer, score, wrongGuessCount, secretWord.length, 'lost');
         hideGameContainer(); 
       }, 2000)
@@ -121,7 +121,7 @@ function handleInput() {
       if (wrongGuessCount === 6) {
         console.log("spelet är över, vi går till slutscreen")
         setTimeout(()=>{
-        gameOver() // detta måste köras tidgare för att randomword() ska funka med lose
+        gameOver(currentplayer) 
         updateGameDetails(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
         hideGameContainer(); // Dölj spelet för att visa gamer over
         document.querySelector('.gameover-p1').innerText = "Det hemliga ordet är: " + secretWord;
