@@ -194,7 +194,7 @@ function resetGame() {
   hideWinContainer();
   hideFigure()
   hideGameOverContainer();
-  showGameContainer()
+  //showGameContainer() vi vill inte se gubben i homescreen vyn
   showHomeScreenContainer();
   
   incorrectGuessesDisplay.innerText = incorrectGuesses;
