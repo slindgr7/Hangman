@@ -5,17 +5,19 @@
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
+	padding-top: 9em;
+
 }
 .titel-gameover{
-	/* font-size: 4em; */
+	font-size: 4em;
 	color: rgb(230, 153, 11);
 }
 .gameover-p1, .gameover-p2 {
-	/* font-size: 2em; */
+	font-size: 2em;
 	color: rgb(245, 160, 4);
 }
 .gameover-button {
-	/* font-size: 1.8em; */
+	font-size: 1.8em;
 	font-weight: bold;
 	padding: 0.30em;
 	margin: 0.25em;
@@ -31,7 +33,7 @@
 	color: rgb(250, 104, 36);
 }
 .gameover-score-button {
-	/* font-size: 1.8em; */
+	font-size: 1.8em;
 	font-weight: bold;
 	padding: 0.30em;
 	margin: 0.25em;
