@@ -1,7 +1,7 @@
 import { getRandomWord } from './random-word.js'  
 import { wrongGuessCounter, hideFigure } from './counter.js';  
 import { gameWon, gameOver  } from './win-gameover-scores.js'
-import { updateGameDetails } from './storage.js';
+// import { updateGameDetails } from './storage.js';
 import { hideGameContainer, hideHomeScreenContainer, showHomeScreenContainer, showGameContainer, hideGameOverContainer, showGameOverContainer, hideWinContainer  } from './hide-funcation.js';
 
 const incorrectGuessesDisplay = document.querySelector('#incorrectGuesses');
@@ -79,7 +79,7 @@ function updateWordDisplay() {
   if (allGuessed) {
       setTimeout(()=>{
         gameWon(currentplayer)
-        updateGameDetails(currentplayer, score, wrongGuessCount, secretWord.length, 'lost');
+        // updateGameDetails(currentplayer, score, wrongGuessCount, secretWord.length, 'lost');
         hideGameContainer(); 
       }, 2000)
   }

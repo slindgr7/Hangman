@@ -164,6 +164,16 @@ export const hideFigure = () => {
 	parts[4].classList.add('hidden-svg-parts');
 	parts[5].classList.add('hidden-svg-parts');
 
+    parts[0].classList.remove('block-svg-parts');
+	parts[1].classList.remove('block-svg-parts');
+	parts[2].classList.remove('block-svg-parts');
+	parts[3].classList.remove('block-svg-parts');
+	parts[4].classList.remove('block-svg-parts');
+	parts[5].classList.remove('block-svg-parts');
+	// incorrectGuesses = 0
+	}
+hideFigure()
+
 // Funktion för varje fel gissning av bokstav.
 const incorrectGuessesDisplay = document.querySelector('#incorrectGuesses')
 let incorrectGuesses = 0;
