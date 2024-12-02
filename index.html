@@ -53,10 +53,10 @@
       </section>
     </section>
 
-    <section class="game-container">
-      <button id="show-score">View Score</button>
-      <h2>Hänga gubben</h2>
-      <p class="game-info">Gissa bokstäver för att lösa ordet!</p>
+    <section class="game-container" style="display: none;">
+      <button id="show-score" hidden="true">View Score</button>
+      <h2 hidden="true">Hänga gubben</h2>
+      <p class="game-info" hidden="true">Gissa bokstäver för att lösa ordet!</p>
 
       <div id="test-svg">
         <figure class="">
@@ -115,6 +115,7 @@
       <p class="ordet">
         Ordet är: <span class="word-display">_ _ _ _ _ _ _ _</span>
       </p>
+      Tryck Enter
       <div class="input-group">
         <input
           type="text"
