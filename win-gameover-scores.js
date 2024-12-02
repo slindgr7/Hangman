@@ -31,12 +31,13 @@ export function gameWon(currentplayer) {
     const timePlayed = `${todaysDate.getHours()}:${todaysDate.getMinutes()} ${todaysDate.getDate()}/${todaysDate.getMonth()+1}`;
 
     // Spara resultatet som 'won'
-    saveScore(playerName, incorrectGuesses, wordLength, 'won', 100, timePlayed);
+    saveScore(playerName, incorrectGuesses, wordLength, 'won', incorrectGuesses-100, timePlayed);
 
     showWinContainer();
     document.querySelector('.win-p1').innerText = `Du lyckades hitta det hemliga ordet!`;
 }
 
+let score = incorrectGuesses-100
 
 
 

@@ -20,11 +20,11 @@ const scoreContainer = document.querySelector('.score-container')
 //         hideWinContainer()
 //     });
 
-dialog.addEventListener('click', event => {
+/* dialog.addEventListener('click', event => {
         event.stopPropagation()
-    })
+    }) */
 
-ScoreButtonHomescreen.addEventListener('click', () => {
+/* ScoreButtonHomescreen.addEventListener('click', () => {
         scoreContainer.classList.remove('hide')
         dialog.show()
     })
@@ -37,3 +37,4 @@ scoreButtonwin.addEventListener('click', () => {
     scoreContainer.classList.remove('hide')
     dialog.show()
 })
+ */

@@ -78,7 +78,7 @@ function updateWordDisplay() {
   //  visa vinstmeddelande
   if (allGuessed) {
       setTimeout(()=>{
-        gameWon(currentplayer)
+        gameWon(currentplayer,secretWord.length, score )
         // updateGameDetails(currentplayer, score, wrongGuessCount, secretWord.length, 'lost');
         hideGameContainer(); 
       }, 2000)

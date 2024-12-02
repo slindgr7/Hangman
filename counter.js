@@ -1,5 +1,8 @@
 
 // Dialog-ruta för Score screen
+const scoreButtonLose = document.querySelector('.gameover-score-button')
+const scoreButtonwin = document.querySelector('.win-score-button')
+const ScoreButtonHomescreen = document.querySelector('.home-screen-score-button')
 const showScore = document.querySelector('#show-score')
 const closeScoreBtn = document.querySelector('#close-score')
 const dialog = document.querySelector('dialog')
@@ -21,7 +24,23 @@ function closeDialog() {
 	dialog.close()
 	scoreContainer.classList.add('hide')
 }
+ScoreButtonHomescreen.addEventListener('click', () => {
+    scoreList(); 
+    scoreContainer.classList.remove('hide');
+    dialog.show();
+});
 
+scoreButtonLose.addEventListener('click', () => {
+    scoreList(); //
+    scoreContainer.classList.remove('hide');
+    dialog.show();
+});
+
+scoreButtonwin.addEventListener('click', () => {
+    scoreList(); //
+    scoreContainer.classList.remove('hide');
+    dialog.show();
+});
 
 // const users = [
 //     {
