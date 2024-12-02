@@ -43,7 +43,7 @@ const meddelande = document.getElementById('meddelande');
 	const playerName = playerNameInput.value;
 
 	if (playerName !== "") {
-		let players = JSON.parse(localStorage.getItem('players')) || [];
+ 		let players = JSON.parse(localStorage.getItem('players')) || [];
 		if (!players.includes(playerName)) {
 			players.push(playerName);
 			localStorage.setItem('players', JSON.stringify(players));
@@ -51,11 +51,11 @@ const meddelande = document.getElementById('meddelande');
 
 		meddelande.textContent = `Namnet ${playerName} har sparats `;
 		meddelande.style.color = `green`;
-	} else {
-		meddelande.textContent = 'Skriv in ett namn';
-		meddelande.style.color = 'red';
-	}
-});
+ 	} else {
+ 		meddelande.textContent = 'Skriv in ett namn';
+ 		meddelande.style.color = 'red';
+ 	}
+ });
 
 function saveScore() {
 	let players = JSON.parse(localStorage.getItem('players')) || [];
@@ -75,5 +75,5 @@ function saveScore() {
 		scores[playerIndex] = playerScores;
 		localStorage.setItem('scores', JSON.stringify(scores));
 	}
-} */
-
+} 
+ */

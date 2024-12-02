@@ -1,5 +1,7 @@
-import {showGameOverContainer, showWinContainer} from './hide-funcation.js'
+import { hideHomeScreenContainer, showGameOverContainer, showWinContainer} from './hide-funcation.js'
 import { getRandomWord } from './random-word.js';
+
+
 
 
 export function gameOver(currentPlayer) { 
@@ -35,6 +37,7 @@ export function gameWon(currentplayer) {
     document.querySelector('.win-p1').innerText = `Du lyckades hitta det hemliga ordet!`;
 }
 
+let score = incorrectGuesses-100
 
 
 

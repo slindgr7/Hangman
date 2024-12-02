@@ -1,18 +1,13 @@
-
 import { getRandomWord } from './random-word.js'  
-
-import { wrongGuessCounter } from './counter.js';  
-
-import { gameWon } from './win-gameover-scores.js'
-
-import { gameOver } from './win-gameover-scores.js'
-import { saveScore } from './win-gameover-scores.js'
-
+import { wrongGuessCounter, hideFigure } from './counter.js';  
+import { gameWon, gameOver  } from './win-gameover-scores.js'
 // import { updateGameDetails } from './storage.js';
+import { hideGameContainer, hideHomeScreenContainer, showHomeScreenContainer, showGameContainer, hideGameOverContainer, showGameOverContainer, hideWinContainer  } from './hide-funcation.js';
 
-import { hideGameContainer, hideHomeScreenContainer, showGameContainer } from './hide-funcation.js';
+const incorrectGuessesDisplay = document.querySelector('#incorrectGuesses');
+let incorrectGuesses = 0;
 
-const secretWord = getRandomWord(); 
+let secretWord = getRandomWord(); 
 const wordDisplay = document.querySelector(".word-display");
 const wrongLettersDisplay = document.querySelector(".show-guessed-letters");
 const letterInput = document.getElementById("letter-input");
@@ -21,17 +16,18 @@ const guessButton = document.querySelector('.guess-btn');
 let wrongGuessCount = 0;
 let guessedLetters = []; // lista-gissade bokstäver
 let wrongLetters = [];   // lista- felaktiga bokstäver
-let currentplayer = document.getElementById('player-name-input').value; // spelarens current name sparas denna variabel
+let currentplayer = ""; // spelarens current name sparas denna variabel
 
 const playButton = document.getElementById('play-button');
 const meddelande = document.getElementById('meddelande');
 
-// detta är en eventlistener för att spara spelarens namn och hidar home screen container
+
 playButton.addEventListener('click', function () { 
   const playerNameInput = document.getElementById('player-name-input'); 
   const playerName = playerNameInput.value.trim(); 
   hideHomeScreenContainer();
   showGameContainer();
+  secretWord = getRandomWord()
 
 
   if (playerName !== "") {
@@ -45,6 +41,20 @@ playButton.addEventListener('click', function () {
   }
 });
 
+const scoreElement = document.querySelector('#score');
+let score = 0; 
+
+function updateScore(isCorrectGuess) {
+  if (isCorrectGuess) {
+    score += 1; 
+  } else {
+    score -= 1; 
+  }
+
+  scoreElement.innerText = `Score: ${score}`;
+
+  return score;
+}
 
 // Funktion uppdatera ordet
 function updateWordDisplay() {
@@ -67,12 +77,11 @@ function updateWordDisplay() {
 
   //  visa vinstmeddelande
   if (allGuessed) {
-      gameWon(currentplayer)
-      //saveScore(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
-      hideGameContainer(); // Dölj spelet för att visa gamer over
-
-    
-      
+      setTimeout(()=>{
+        gameWon(currentplayer,secretWord.length, score )
+        // updateGameDetails(currentplayer, score, wrongGuessCount, secretWord.length, 'lost');
+        hideGameContainer(); 
+      }, 2000)
   }
 }
 
@@ -80,31 +89,19 @@ function updateWordDisplay() {
 function updateWrongLettersDisplay() {
   wrongLettersDisplay.textContent = wrongLetters.join(", ");
 }
-
-
-const scoreElement = document.querySelector('#score');
-let score = 0; 
-
-function updateScore(isCorrectGuess) {
-  if (isCorrectGuess) {
-    score += 1; 
-  } else {
-    score -= 1; 
+letterInput.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    handleInput();
   }
+});
 
-  scoreElement.innerText = `Score: ${score}`;
-
-  return score;
-}
-
-guessButton.addEventListener('click', function() {
+function handleInput() {
   const inputValue = letterInput.value.toLowerCase(); 
   letterInput.value = ""; // Rensa inputfältet
 
   // if-sats för att kontrollera om bokstaven är ny 
   if (inputValue && !guessedLetters.includes(inputValue) && !wrongLetters.includes(inputValue)) {
     guessedLetters.push(inputValue); // Lägg till bokstaven i gissade bokstäver
-
 
     if (secretWord.includes(inputValue)) {
       updateWordDisplay();
@@ -115,25 +112,28 @@ guessButton.addEventListener('click', function() {
       wrongLetters.push(inputValue);
       updateWrongLettersDisplay(); 
       wrongGuessCount++  // Öka räknaren för felaktiga gissningar
+      incorrectGuesses = wrongGuessCount;
       wrongGuessCounter(wrongGuessCount) //Anropa wrongGuessCounter för att uppdatera feedback
-	  updateScore(false);
+	    updateScore(false);
 
       if (wrongGuessCount === 6) {
-        console.log("wrongGuessCount är 6")
-        gameOver(currentplayer)
-        //saveScore(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); 
-        // Uppdatera spelet i local storage 
+        console.log("spelet är över, vi går till slutscreen")
+        setTimeout(()=>{
+        gameOver(currentplayer) 
+        //updateGameDetails(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
         hideGameContainer(); // Dölj spelet för att visa gamer over
+        document.querySelector('.gameover-p1').innerText = "Det hemliga ordet är: " + secretWord;
+        document.querySelector('.gameover-p2').innerText = `Ditt antal gissningar var: ${incorrectGuesses}`;
+      }, 2000)
         
       }
     }
   }
-});
-
+}
 
 //Hint 
 
-let hintUsed = false; // Flagga för att hålla reda på om hint har använts
+let hintUsed = false; 
 
 const hintButton = document.querySelector('.hint-btn'); 
 const hintText = document.querySelector('.hint-text');
@@ -152,7 +152,7 @@ function showHint() {
       hintText.textContent = `Hint: En bokstav i ordet är '${randomLetter}'`;
       hintText.style.display = 'block';
       
-      hintUsed = true; // Sätt flaggan till true efter att en hint har använts
+      hintUsed = true; //true efter att en hint har använts
     } else {
       redanGissatText.style.display = 'block'; // Visa meddelandet om alla bokstäver redan är gissade
     }
@@ -167,4 +167,38 @@ function startNewRound() {
 }
 
 
+//Reset-game
+
+const winButton = document.querySelector('.win-button');
+winButton.addEventListener('click', resetGame)
+
+const gameOverButton = document.querySelector('.gameover-button');
+gameOverButton.addEventListener('click', resetGame)
+
+//denna funktion resetar spelet, alla variabler, nummer etc
+//gömmer gameover-container och visa homeScreen
+//resetar figuren
+
+function resetGame() {
+  console.log("resetGame anropas");
+ 
+  guessedLetters = [];
+  wrongLetters = [];
+  wrongGuessCount = 0;
+  score = 0;
+  incorrectGuesses = 0;
+
+  updateWordDisplay();
+  updateWrongLettersDisplay();
+
+  hideWinContainer();
+  hideFigure()
+  hideGameOverContainer();
+  showGameContainer()
+  showHomeScreenContainer();
+  
+  incorrectGuessesDisplay.innerText = incorrectGuesses;
+  scoreElement.innerText = `Score: ${score}`;
+  
+};
 

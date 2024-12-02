@@ -1,5 +1,8 @@
 
 // Dialog-ruta för Score screen
+const scoreButtonLose = document.querySelector('.gameover-score-button')
+const scoreButtonwin = document.querySelector('.win-score-button')
+const ScoreButtonHomescreen = document.querySelector('.home-screen-score-button')
 const showScore = document.querySelector('#show-score')
 const closeScoreBtn = document.querySelector('#close-score')
 const dialog = document.querySelector('dialog')
@@ -21,7 +24,23 @@ function closeDialog() {
 	dialog.close()
 	scoreContainer.classList.add('hide')
 }
+ScoreButtonHomescreen.addEventListener('click', () => {
+    scoreList(); 
+    scoreContainer.classList.remove('hide');
+    dialog.show();
+});
 
+scoreButtonLose.addEventListener('click', () => {
+    scoreList(); //
+    scoreContainer.classList.remove('hide');
+    dialog.show();
+});
+
+scoreButtonwin.addEventListener('click', () => {
+    scoreList(); //
+    scoreContainer.classList.remove('hide');
+    dialog.show();
+});
 
 // const users = [
 //     {
@@ -37,6 +56,7 @@ function closeDialog() {
 
 // localStorage.setItem('scores', JSON.stringify(users));
 
+let games = JSON.parse(localStorage.getItem('scores')) || [];
 
 function scoreList() {
     const allScores = JSON.parse(localStorage.getItem('scores')) || [];
@@ -154,44 +174,64 @@ const parts = [
 ]
 
 const hangmanTest = document.querySelector('#test-svg');
-parts[0].classList.add('hidden-svg-parts');
-parts[1].classList.add('hidden-svg-parts');
-parts[2].classList.add('hidden-svg-parts');
-parts[3].classList.add('hidden-svg-parts');
-parts[4].classList.add('hidden-svg-parts');
-parts[5].classList.add('hidden-svg-parts');
+
+export const hideFigure = () => {
+	parts[0].classList.add('hidden-svg-parts');
+	parts[1].classList.add('hidden-svg-parts');
+	parts[2].classList.add('hidden-svg-parts');
+	parts[3].classList.add('hidden-svg-parts');
+	parts[4].classList.add('hidden-svg-parts');
+	parts[5].classList.add('hidden-svg-parts');
+
+    parts[0].classList.remove('block-svg-parts');
+	parts[1].classList.remove('block-svg-parts');
+	parts[2].classList.remove('block-svg-parts');
+	parts[3].classList.remove('block-svg-parts');
+	parts[4].classList.remove('block-svg-parts');
+	parts[5].classList.remove('block-svg-parts');
+	// incorrectGuesses = 0
+	}
+hideFigure()
 
 // Funktion för varje fel gissning av bokstav.
 const incorrectGuessesDisplay = document.querySelector('#incorrectGuesses')
 let incorrectGuesses = 0;
-// incorrectGuessesDisplay.innerText = incorrectGuesses;
+incorrectGuessesDisplay.innerText = incorrectGuesses;
 
-export function wrongGuessCounter() {
-	incorrectGuesses += 1;
-	incorrectGuessesDisplay.innerText = incorrectGuesses;
 
-	if (incorrectGuesses === 1) {
-		parts[0].classList.add('block-svg-parts');
-	} 	
-	else if (incorrectGuesses === 2) {
-		parts[1].classList.add('block-svg-parts');
-		
-	} else if (incorrectGuesses === 3) {
-		parts[2].classList.add('block-svg-parts');
-		
-	}
-	else if (incorrectGuesses === 4) {
-		parts[3].classList.add('block-svg-parts');
-		
-	}
-	else if (incorrectGuesses === 5) {
-		parts[4].classList.add('block-svg-parts');
-		
-	}
-	else if (incorrectGuesses === 6){
-		parts[5].classList.add('block-svg-parts');
-		console.log('Game Over visas!');
-	}
+export function wrongGuessCounter(incorrectGuesses) {
+
+	console.log("wrongGuessCounter startar, incorrectGuesses:", incorrectGuesses);
+
+	//incorrectGuesses += 1;
+    incorrectGuessesDisplay.innerText = incorrectGuesses;
+
+    if (incorrectGuesses === 1) {
+        parts[0].classList.add('block-svg-parts');
+        console.log("första kroppsdelen")
+    }
+    else if (incorrectGuesses === 2) {
+        parts[1].classList.add('block-svg-parts');
+        console.log("andra kroppsdelen")
+
+    } else if (incorrectGuesses === 3) {
+        parts[2].classList.add('block-svg-parts');
+        console.log("tredje kroppsdelen")
+
+    }
+    else if (incorrectGuesses === 4) {
+        parts[3].classList.add('block-svg-parts');
+        console.log("fjärde kroppsdelen")
+    }
+    else if (incorrectGuesses === 5) {
+        parts[4].classList.add('block-svg-parts');
+        console.log("femte kroppsdelen")
+    }
+    else if (incorrectGuesses === 6){
+        parts[5].classList.add('block-svg-parts');
+        console.log('Game Over visas!');
+    }
+    console.log("wrongGuessCounter slutar, incorrectGuesses:", incorrectGuesses);
 }
 
 
