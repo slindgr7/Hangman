@@ -67,8 +67,8 @@ function updateWordDisplay() {
 
   //  visa vinstmeddelande
   if (allGuessed) {
-      gameWon()
-      saveScore(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
+      gameWon(currentplayer)
+      //saveScore(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
       hideGameContainer(); // Dölj spelet för att visa gamer over
 
     
@@ -120,8 +120,9 @@ guessButton.addEventListener('click', function() {
 
       if (wrongGuessCount === 6) {
         console.log("wrongGuessCount är 6")
-        gameOver()
-        saveScore(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
+        gameOver(currentplayer)
+        //saveScore(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); 
+        // Uppdatera spelet i local storage 
         hideGameContainer(); // Dölj spelet för att visa gamer over
         
       }

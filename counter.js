@@ -1,8 +1,4 @@
 
-// import { displayScores } from './win-gameover-scores.js';
-
-// Kalla på displayScores när du vill att den ska köras
-// displayScores();
 // Dialog-ruta för Score screen
 const showScore = document.querySelector('#show-score')
 const closeScoreBtn = document.querySelector('#close-score')
@@ -43,19 +39,12 @@ function closeDialog() {
 
 
 function scoreList() {
-    // Hämta data från localStorage (om det finns någon)
     const allScores = JSON.parse(localStorage.getItem('scores')) || [];
+	console.log(allScores)
 
-    // Kontrollera om det finns några poäng
-    if (allScores.length === 0) {
-        console.log('Inga poäng finns sparade');
-        return; // Om inga poäng finns sparade, avbryt funktionen här
-    }
-
-    // Sortera poängen i fallande ordning
     const sortedScores = allScores.sort((a, b) => b.score - a.score);
 
-    // Hitta alla divar för att visa resultaten
+   
     let nameDiv = document.querySelector("#name");
     let resultDiv = document.querySelector("#result");
     let incorrectGuessesDiv = document.querySelector("#incorrectGuesses");
@@ -63,7 +52,7 @@ function scoreList() {
     let scoreDiv = document.querySelector("#userScore");
     let timePlayedDiv = document.querySelector("#timePlayed");
 
-    // Rensa gamla resultat innan nya läggs till
+    
     nameDiv.innerHTML = '';
     resultDiv.innerHTML = '';
     incorrectGuessesDiv.innerHTML = '';
@@ -71,15 +60,15 @@ function scoreList() {
     scoreDiv.innerHTML = '';
     timePlayedDiv.innerHTML = '';
 
-    // Tydliggör vad som ska visas som rubrik
-		nameDiv.textContent = 'Name';
-		wordLengthDiv.textContent = 'Score';
-		incorrectGuessesDiv.textContent = 'Incorrect Guesses';
-		scoreDiv.textContent = 'Result';    // Första
-		resultDiv.textContent = 'Word length';  // Andra
-		timePlayedDiv.textContent = 'Time/date';
+   
+	nameDiv.textContent = 'Name';
+	wordLengthDiv.textContent = 'Word length';
+	incorrectGuessesDiv.textContent = 'Incorrect Guesses';
+	scoreDiv.textContent = 'Score';  
+	resultDiv.textContent = 'Result';
+	timePlayedDiv.textContent = 'Time/date';
 
-    // Loopa igenom alla sparade poäng och skapa ett nytt element för varje
+    
     sortedScores.forEach((element) => {
         let name = document.createElement("p");
         let result = document.createElement("p");
@@ -88,42 +77,40 @@ function scoreList() {
         let score = document.createElement("p");
         let timePlayed = document.createElement("p");
 
-        // Fyll varje element med rätt värde
-        result.innerText = element.result || 'N/A';  // Sätt till 'N/A' om inget resultat finns
-        name.innerText = element.name || 'N/A';  // Sätt till 'N/A' om inget namn finns
-        incorrectGuesses.innerText = element.incorrectGuesses || '0';  // Om inga felgissningar finns, sätt till 0
-		wordLength.innerText = element.wordLength || '0';  // Om ordlängd saknas, sätt till 0
-        score.innerText = element.score || '0';  // Om poäng saknas, sätt till 0
-        timePlayed.innerText = element.timePlayed || 'N/A';  // Om ingen tid finns, sätt till 'N/A'
+        result.innerText = element.result || 'N/A'; 
+        name.innerText = element.name || 'N/A';  
+        incorrectGuesses.innerText = element.incorrectGuesses || '0'; 
+		wordLength.innerText = element.wordLength || '0';  
+        score.innerText = element.score || '0';  
+        timePlayed.innerText = element.timePlayed || 'N/A';  
 
-       // Lägg till de nya elementen i divarna
-			nameDiv.appendChild(name);
-			wordLengthDiv.appendChild(wordLength);
-			incorrectGuessesDiv.appendChild(incorrectGuesses);
-			scoreDiv.appendChild(score);    // Flytta score hit för att visa det innan 'result'
-			resultDiv.appendChild(result);  // Resultat kommer nu efter score
-			timePlayedDiv.appendChild(timePlayed);
+		nameDiv.appendChild(name);
+		wordLengthDiv.appendChild(wordLength);
+		incorrectGuessesDiv.appendChild(incorrectGuesses);
+		scoreDiv.appendChild(score);    
+		resultDiv.appendChild(result);  
+		timePlayedDiv.appendChild(timePlayed);
     });
 }
 
-const sortByGuessesButton = document.querySelector('#sort-by-guesses');
-const sortByDateButton = document.querySelector('#sort-by-date');
+// const sortByGuessesButton = document.querySelector('#sort-by-guesses');
+// const sortByDateButton = document.querySelector('#sort-by-date');
 
-sortByGuessesButton.addEventListener('click', () => {
-
-})
+// sortByGuessesButton.addEventListener('click', (event) => {
+// 	console.log(event.target.innerText)
+// })
 
 
 
 // Användarnamn.
-const playerNameInput = document.getElementById('player-name-input');
-const playButton = document.getElementById('play-button');
-const userName = document.querySelector('#meddelande');  // Använd 'meddelande' istället för 'username'
+// const playerNameInput = document.getElementById('player-name-input');
+// const playButton = document.getElementById('play-button');
+// const userName = document.querySelector('#meddelande'); 
 
-playButton.addEventListener('click', function () {
-    const playerName = playerNameInput.value;
-    userName.innerText = playerName;  // Sätt playerName i 'meddelande'
-});
+// playButton.addEventListener('click', function () {
+//     const playerName = playerNameInput.value;
+//     userName.innerText = playerName;  
+// });
 
 
 // Dagens tid och datum.
@@ -175,7 +162,7 @@ parts[4].classList.add('hidden-svg-parts');
 parts[5].classList.add('hidden-svg-parts');
 
 // Funktion för varje fel gissning av bokstav.
-const incorrectGuessesDisplay = document.querySelector('#sort-by-guesses')
+const incorrectGuessesDisplay = document.querySelector('#incorrectGuesses')
 let incorrectGuesses = 0;
 // incorrectGuessesDisplay.innerText = incorrectGuesses;
 
