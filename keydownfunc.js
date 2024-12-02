@@ -89,13 +89,11 @@ function updateWordDisplay() {
 function updateWrongLettersDisplay() {
   wrongLettersDisplay.textContent = wrongLetters.join(", ");
 }
-
-guessButton.addEventListener('click', handleInput);
 letterInput.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
-    handleInput()
+    handleInput();
   }
-})
+});
 
 function handleInput() {
   const inputValue = letterInput.value.toLowerCase(); 
@@ -122,7 +120,7 @@ function handleInput() {
         console.log("spelet är över, vi går till slutscreen")
         setTimeout(()=>{
         gameOver(currentplayer) 
-        updateGameDetails(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
+        //updateGameDetails(currentplayer, score, wrongGuessCount,  secretWord.length, 'lost'); // Uppdatera spelet i local storage 
         hideGameContainer(); // Dölj spelet för att visa gamer over
         document.querySelector('.gameover-p1').innerText = "Det hemliga ordet är: " + secretWord;
         document.querySelector('.gameover-p2').innerText = `Ditt antal gissningar var: ${incorrectGuesses}`;
