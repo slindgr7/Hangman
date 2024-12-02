@@ -39,7 +39,7 @@ const meddelande = document.getElementById('meddelande');
 	
 
 
-playButton.addEventListener('click', function () {
+/* playButton.addEventListener('click', function () {
 	const playerName = playerNameInput.value;
 
 	if (playerName !== "") {
@@ -76,4 +76,4 @@ function saveScore() {
 		localStorage.setItem('scores', JSON.stringify(scores));
 	}
 } 
-
+ */
