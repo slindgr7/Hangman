@@ -199,5 +199,6 @@ function resetGame() {
   
   incorrectGuessesDisplay.innerText = incorrectGuesses;
   scoreElement.innerText = `Score: ${score}`;
+  
 };
 
