@@ -1,4 +1,4 @@
-import { getRandomWord } from '/random-word.js'  
+import { getRandomWord } from './random-word.js'  
 import { wrongGuessCounter, hideFigure } from './counter.js';  
 import { gameWon, gameOver  } from './win-gameover-scores.js'
 // import { updateGameDetails } from './storage.js';
