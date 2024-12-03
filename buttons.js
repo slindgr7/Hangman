@@ -1,4 +1,4 @@
-import{ showHomeScreenContainer, hideGameOverContainer, hideWinContainer } from './hide-funcation.js'
+import{ showHomeScreenContainer, hideGameOverContainer, hideWinContainer } from '/hide-funcation.js'
 
 //const playButtonlose = document.querySelector('.gameover-button')
 //const playButtonwin = document.querySelector('.win-button')

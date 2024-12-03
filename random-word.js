@@ -1,4 +1,4 @@
-import { words } from './swedish-words.js';
+import { words } from '/swedish-words.js';
 
 
  

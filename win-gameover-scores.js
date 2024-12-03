@@ -1,6 +1,5 @@
-import { hideHomeScreenContainer, showGameOverContainer, showWinContainer} from './hide-funcation.js'
-import { getRandomWord } from './random-word.js';
-
+import { hideHomeScreenContainer, showGameOverContainer, showWinContainer} from '/hide-funcation.js'
+import { getRandomWord } from '/random-word.js';
 
 
 
