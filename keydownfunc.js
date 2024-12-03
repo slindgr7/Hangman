@@ -1,6 +1,6 @@
 import { getRandomWord } from '/random-word.js'  
-import { wrongGuessCounter, hideFigure } from '/counter.js';  
-import { gameWon, gameOver  } from '/win-gameover-scores.js'
+import { wrongGuessCounter, hideFigure } from './counter.js';  
+import { gameWon, gameOver  } from './win-gameover-scores.js'
 // import { updateGameDetails } from './storage.js';
 import { hideGameContainer, hideHomeScreenContainer, showHomeScreenContainer, showGameContainer, hideGameOverContainer, showGameOverContainer, hideWinContainer  } from '/hide-funcation.js';
 
